@@ -1,0 +1,103 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Code, Cloud, Cpu, Shield, Layers, Briefcase, ArrowRight } from 'lucide-astro';
+
+const rolesData = [
+  {
+    category: "Software Engineering & Architecture",
+    icon: Code,
+    roles: [
+      { name: "Full-Stack Software Engineer", slug: "full-stack-developer", desc: "React, Next.js, Node.js, Python, PostgreSQL" },
+      { name: "Frontend Engineer", slug: "frontend-developer", desc: "React, Vue, TypeScript, Tailwind CSS, Web Vitals" },
+      { name: "Backend Architect", slug: "backend-developer", desc: "Node.js, Go, Java Microservices, GraphQL, Redis" },
+      { name: "Mobile App Developer", slug: "mobile-developer", desc: "React Native, Flutter, Swift, Kotlin" }
+    ]
+  },
+  {
+    category: "Cloud Infrastructure & DevOps",
+    icon: Cloud,
+    roles: [
+      { name: "Cloud Infrastructure & DevOps Engineer", slug: "devops-engineer", desc: "AWS, Azure, Kubernetes, Terraform, CI/CD Pipelines" },
+      { name: "Site Reliability Engineer (SRE)", slug: "sre-engineer", desc: "Prometheus, Grafana, Distributed Tracing, Incident Mgmt" }
+    ]
+  },
+  {
+    category: "Data Science & AI / ML",
+    icon: Cpu,
+    roles: [
+      { name: "Data Scientist & AI/ML Specialist", slug: "data-scientist", desc: "PyTorch, LLMs, Vector Databases, MLOps, Data Pipelines" },
+      { name: "Data Engineer", slug: "data-engineer", desc: "Snowflake, Databricks, Apache Spark, dbt, Airflow" }
+    ]
+  },
+  {
+    category: "Cybersecurity & Network Infrastructure",
+    icon: Shield,
+    roles: [
+      { name: "Cybersecurity Lead & Security Engineer", slug: "cybersecurity", desc: "SOC Analysis, Penetration Testing, IAM, Zero-Trust" }
+    ]
+  },
+  {
+    category: "Specialized Enterprise Platforms",
+    icon: Layers,
+    roles: [
+      { name: "ServiceNow & Enterprise Platform Lead", slug: "servicenow-developer", desc: "ITSM, SecOps, Workflow Automation, Integration Hub" }
+    ]
+  },
+  {
+    category: "High-Impact Non-IT & Leadership",
+    icon: Briefcase,
+    roles: [
+      { name: "Technical Product Manager", slug: "product-manager", desc: "Agile Sprints, Roadmap Planning, User Story Mapping" },
+      { name: "Financial Data Analyst", slug: "financial-analyst", desc: "Financial Modeling, Forecasting, BI Dashboards, SQL" }
+    ]
+  }
+];
+---
+
+<Layout 
+  title="In-Demand IT & Leadership Roles Taxonomy | PlexEra"
+  description="Explore top technology and business roles placed by PlexEra. Full-Stack, Cloud, DevOps, AI, Cybersecurity, Product Management, and Finance."
+>
+  <section class="py-20 text-center max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-[#f8fafc]">
+    <span class="text-xs font-extrabold uppercase tracking-widest text-[#19A4A8]">DEMANDED ROLES HUB</span>
+    <h1 class="text-4xl sm:text-6xl font-extrabold text-[#041B3B] mt-2">Specialized Tech Talent Taxonomy</h1>
+    <p class="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto mt-4 font-medium">
+      Explore dedicated placement pathways for engineers, cloud architects, data scientists, and enterprise managers.
+    </p>
+  </section>
+
+  <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 mb-20">
+    {rolesData.map((cat) => {
+      const Icon = cat.icon;
+      return (
+        <div class="space-y-6">
+          <div class="flex items-center gap-3">
+            <div class="p-3 rounded-2xl bg-[#20C5CA]/15 text-[#041B3B] border border-[#20C5CA]/30">
+              <Icon class="w-6 h-6" />
+            </div>
+            <h2 class="text-2xl font-extrabold text-[#041B3B]">{cat.category}</h2>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {cat.roles.map((role) => (
+              <a 
+                href={`/roles/${role.slug}`}
+                class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-300 flex flex-col justify-between group"
+              >
+                <div>
+                  <h3 class="font-bold text-lg text-[#041B3B] group-hover:text-[#0284c7] transition-colors">{role.name}</h3>
+                  <p class="text-xs text-slate-600 mt-2 leading-relaxed">{role.desc}</p>
+                </div>
+
+                <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#041B3B] group-hover:text-[#0284c7]">
+                  <span>View Role Profile</span>
+                  <ArrowRight class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      );
+    })}
+  </section>
+</Layout>

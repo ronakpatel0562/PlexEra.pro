@@ -1,0 +1,83 @@
+---
+import { FileText, Target, Mic, TrendingUp, Zap, ShieldCheck } from 'lucide-astro';
+
+const services = [
+  {
+    icon: FileText,
+    badge: "Branding",
+    title: "ATS Resume & LinkedIn Revamp",
+    description: "Transform your professional profile into an interview magnet with keyword-optimized, high-converting ATS resumes and LinkedIn personal branding."
+  },
+  {
+    icon: Target,
+    badge: "Execution",
+    title: "Targeted Application Strategy",
+    description: "We strategically position your profile in front of key decision-makers across 100+ matching vacancies at leading enterprise organizations."
+  },
+  {
+    icon: Mic,
+    badge: "Coaching",
+    title: "Executive Interview Preparation",
+    description: "Master high-stakes technical and behavioral interviews through practice mock sessions with industry-seasoned engineering mentors."
+  },
+  {
+    icon: TrendingUp,
+    badge: "Compensation",
+    title: "Salary & Compensation Coaching",
+    description: "Command your true market value. Our strategists equip you with data-driven benchmarking and negotiation playbooks to maximize offer packages."
+  },
+  {
+    icon: Zap,
+    badge: "Staffing",
+    title: "Enterprise IT Staffing",
+    description: "Deploy pre-screened Full-Stack, Cloud, DevOps, and Data specialists tailored to your specific architectural milestones and tech stack."
+  },
+  {
+    icon: ShieldCheck,
+    badge: "Retention",
+    title: "First-Year Job Support Safety Net",
+    description: "Our relationship doesn’t end at placement. We provide ongoing technical mentorship and onboarding guidance to guarantee long-term retention."
+  }
+];
+---
+
+<section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="text-center mb-16">
+    <span class="text-xs font-extrabold uppercase tracking-widest text-[#19A4A8]">END-TO-END CAPABILITIES</span>
+    <h2 class="text-3xl sm:text-5xl font-extrabold text-[#041B3B] mt-2">Integrated Talent & Career Solutions Built for Impact</h2>
+    <p class="text-slate-600 max-w-2xl mx-auto mt-3 text-base">Every solution is designed to optimize potential, reduce friction, and deliver tangible career and business results.</p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+    {services.map((service) => {
+      const IconComponent = service.icon;
+      return (
+        <div class="bg-white rounded-3xl p-7 border border-slate-200 shadow-sm hover:shadow-lg hover:border-slate-300 transition-all duration-300 flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <div class="p-3.5 rounded-2xl bg-[#20C5CA]/15 text-[#041B3B] border border-[#20C5CA]/30 group-hover:bg-[#20C5CA] transition-colors">
+                <IconComponent class="w-6 h-6" />
+              </div>
+              <span class="text-[11px] font-bold text-slate-600 uppercase tracking-wider px-2.5 py-1 rounded-full bg-slate-100 border border-slate-200">
+                {service.badge}
+              </span>
+            </div>
+
+            <h3 class="text-xl font-bold text-[#041B3B] group-hover:text-[#0284c7] transition-colors">
+              {service.title}
+            </h3>
+
+            <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+              {service.description}
+            </p>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#041B3B] group-hover:text-[#0284c7]">
+            <span>Explore Capability</span>
+            <span class="group-hover:translate-x-1 transition-transform">→</span>
+          </div>
+        </div>
+      );
+    })}
+  </div>
+</section>

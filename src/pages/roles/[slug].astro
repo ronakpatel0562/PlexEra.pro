@@ -1,0 +1,159 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Sparkles, ArrowRight, CheckCircle2, Code, Building2 } from 'lucide-astro';
+
+export function getStaticPaths() {
+  return [
+    {
+      params: { slug: 'full-stack-developer' },
+      props: {
+        title: "Full-Stack Software Engineer",
+        category: "Software Engineering",
+        salaryRange: "$120k – $180k / yr",
+        skills: ["React / Next.js", "Node.js / Express", "Python / Django", "TypeScript", "PostgreSQL & MongoDB", "REST & GraphQL APIs"],
+        summary: "PlexEra connects principal Full-Stack developers with high-scale tech enterprises. Whether you excel in frontend UI craft or backend system architecture, we engineer your ideal career match.",
+        marketDemand: "High Demand (48h Turnaround for Enterprise Placement)"
+      }
+    },
+    {
+      params: { slug: 'devops-engineer' },
+      props: {
+        title: "Cloud Infrastructure & DevOps Engineer",
+        category: "Cloud & DevOps",
+        salaryRange: "$135k – $195k / yr",
+        skills: ["AWS / Azure / GCP", "Kubernetes & Docker", "Terraform / IaC", "CI/CD Pipelines (GitHub Actions)", "Prometheus & Grafana"],
+        summary: "Accelerate your DevOps trajectory. PlexEra places elite Cloud Infrastructure and Site Reliability engineers into high-availability production environments.",
+        marketDemand: "Critical Demand (Immediate Sprint Augmentation)"
+      }
+    },
+    {
+      params: { slug: 'data-scientist' },
+      props: {
+        title: "Data Scientist & AI/ML Specialist",
+        category: "Data & Artificial Intelligence",
+        salaryRange: "$140k – $210k / yr",
+        skills: ["PyTorch / TensorFlow", "Generative AI & LLM Fine-tuning", "Vector Databases (Pinecone/Qdrant)", "Python & SQL", "MLOps Pipelines"],
+        summary: "Step into cutting-edge AI and Data Science roles. We align machine learning experts with enterprises scaling intelligent automation and predictive models.",
+        marketDemand: "Exponential Growth Category"
+      }
+    },
+    {
+      params: { slug: 'cybersecurity' },
+      props: {
+        title: "Cybersecurity Lead & Security Engineer",
+        category: "Cybersecurity & Infrastructure",
+        salaryRange: "$130k – $190k / yr",
+        skills: ["SOC Operations", "Penetration Testing & Red Teaming", "Identity & Access Mgmt (IAM)", "Zero-Trust Architecture", "Compliance (SOC2/ISO27001)"],
+        summary: "Protect modern enterprise perimeter. PlexEra sources battle-tested cybersecurity engineers and SOC managers to safeguard mission-critical systems.",
+        marketDemand: "High Security Priority Requisition"
+      }
+    },
+    {
+      params: { slug: 'product-manager' },
+      props: {
+        title: "Technical Product Manager",
+        category: "Product & Leadership",
+        salaryRange: "$125k – $185k / yr",
+        skills: ["Product Roadmap Strategy", "Agile & Scrum Methodologies", "System Architecture Fluency", "User Research & PRDs", "Analytics & KPI Tracking"],
+        summary: "Bridge software engineering with strategic vision. We pair technical product managers with tech scale-ups building next-generation SaaS platforms.",
+        marketDemand: "High Executive Leadership Demand"
+      }
+    },
+    {
+      params: { slug: 'financial-analyst' },
+      props: {
+        title: "Financial Data Analyst",
+        category: "Non-IT & Financial Technology",
+        salaryRange: "$105k – $155k / yr",
+        skills: ["Financial Modeling & Forecasting", "SQL & Power BI / Tableau", "Python for Analytics", "Corporate Budgeting", "Risk Analysis"],
+        summary: "Turn raw financial metrics into strategic enterprise growth. We match data-driven financial analysts with fintech scale-ups and Fortune 500 firms.",
+        marketDemand: "Steady Enterprise Demand"
+      }
+    },
+    {
+      params: { slug: 'servicenow-developer' },
+      props: {
+        title: "ServiceNow & Enterprise Platform Lead",
+        category: "Specialized Enterprise Platforms",
+        salaryRange: "$130k – $175k / yr",
+        skills: ["ServiceNow ITSM & ITOM", "Workflow Scripting (JavaScript)", "Integration Hub & APIs", "SecOps & Service Portal", "Platform Architecture"],
+        summary: "Master enterprise workflow transformation. PlexEra connects certified ServiceNow developers with enterprise clients modernizing digital workflows.",
+        marketDemand: "Niche Specialized Platform Demand"
+      }
+    }
+  ];
+}
+
+const { title, category, salaryRange, skills, summary, marketDemand } = Astro.props;
+---
+
+<Layout 
+  title={`Hire / Become a ${title} | PlexEra Roles`}
+  description={`Explore career elevation & enterprise staffing for ${title} at PlexEra. Market compensation: ${salaryRange}.`}
+>
+  <!-- Role Hero -->
+  <section class="py-20 relative overflow-hidden text-center bg-gradient-to-b from-white to-[#f8fafc]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#20C5CA]/15 border border-[#20C5CA]/30 text-[#041B3B] text-xs font-bold mb-6">
+        <Sparkles class="w-4 h-4 text-[#19A4A8]" />
+        <span>{category} TAXONOMY</span>
+      </div>
+
+      <h1 class="text-4xl sm:text-6xl font-extrabold text-[#041B3B] tracking-tight">
+        Hire / Become a <span class="text-[#0284c7]">{title}</span>
+      </h1>
+
+      <p class="mt-4 text-xl font-semibold text-slate-700">
+        PlexEra Precision Placement Pathway
+      </p>
+
+      <p class="mt-6 text-base text-slate-600 max-w-2xl mx-auto leading-relaxed font-medium">
+        {summary}
+      </p>
+
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-4 text-xs font-bold">
+        <div class="px-4 py-2 rounded-xl bg-white border border-slate-200 text-[#041B3B] shadow-xs">
+          💰 Market Compensation: <strong class="text-[#0284c7]">{salaryRange}</strong>
+        </div>
+        <div class="px-4 py-2 rounded-xl bg-white border border-slate-200 text-[#041B3B] shadow-xs">
+          ⚡ Status: <strong class="text-[#19A4A8]">{marketDemand}</strong>
+        </div>
+      </div>
+
+      <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <button 
+          onclick="document.getElementById('booking-modal').classList.remove('hidden')"
+          class="w-full sm:w-auto px-8 py-4 text-base font-bold text-white bg-[#041B3B] hover:bg-[#082854] rounded-2xl flex items-center justify-center gap-2 shadow-lg shadow-[#041B3B]/15 cursor-pointer transition-all hover:scale-[1.01]"
+        >
+          <span>Apply as a Candidate for this Role</span>
+          <ArrowRight class="w-5 h-5" />
+        </button>
+        <button 
+          onclick="document.getElementById('booking-modal').classList.remove('hidden')"
+          class="w-full sm:w-auto px-8 py-4 text-base font-bold neon-button rounded-2xl flex items-center justify-center gap-2 cursor-pointer"
+        >
+          <Building2 class="w-4 h-4 text-[#041B3B]" />
+          <span>Hire {title}s Now</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Tech Stack & Skills -->
+  <section class="py-12 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+    <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-md space-y-6">
+      <h3 class="text-xl font-bold text-[#041B3B] flex items-center gap-2">
+        <Code class="w-5 h-5 text-[#19A4A8]" />
+        <span>Core Stack & Technical Competencies Vetted</span>
+      </h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        {skills.map((skill: string) => (
+          <div class="flex items-center gap-2.5 p-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-semibold text-slate-700">
+            <CheckCircle2 class="w-4 h-4 text-emerald-600 shrink-0" />
+            <span>{skill}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

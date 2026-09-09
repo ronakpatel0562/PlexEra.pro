@@ -1,0 +1,63 @@
+---
+import { ChevronDown, HelpCircle } from 'lucide-astro';
+
+const faqs = [
+  {
+    q: "How does PlexEra differ from traditional staffing or resume agencies?",
+    a: "We offer a complete 360-degree lifecycle. We don't just format resumes; we provide 1-on-1 executive interview coaching, target job applications, negotiate maximum compensation, and offer continuous post-hire technical job support throughout your first year."
+  },
+  {
+    q: "Does PlexEra serve both candidates and enterprise employers?",
+    a: "Yes. We operate a dual-pathway model. For candidates, we provide career acceleration services. For employers, we offer direct hire, contract staffing, and RPO solutions tightly aligned with technical product roadmaps."
+  },
+  {
+    q: "What tech stacks and roles does PlexEra specialize in?",
+    a: "We specialize across modern software engineering (Full-Stack, React, Node, Python, Java), Cloud & DevOps (AWS, Azure, Kubernetes, CI/CD), Data & AI (ML, Data Engineering, Analytics), Cybersecurity, and high-impact Non-IT roles (Product Management, Finance, Healthcare Analytics)."
+  },
+  {
+    q: "How does the First-Year Job Support safety net work?",
+    a: "Once placed, candidates receive access to our senior technical mentors for onboarding advice, architectural guidance, and troubleshooting support during their initial months in the new role to guarantee high performance and retention."
+  }
+];
+---
+
+<section class="py-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="text-center mb-14">
+    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#20C5CA]/15 border border-[#20C5CA]/30 text-[#041B3B] text-xs font-bold uppercase tracking-wider mb-2">
+      <HelpCircle class="w-3.5 h-3.5 text-[#19A4A8]" />
+      <span>Got Questions?</span>
+    </div>
+    <h2 class="text-3xl sm:text-5xl font-extrabold text-[#041B3B] mt-1">Frequently Asked Questions</h2>
+    <p class="text-slate-600 text-sm sm:text-base mt-2">Everything you need to know about our recruitment & career acceleration process.</p>
+  </div>
+
+  <div class="space-y-4">
+    {faqs.map((faq, index) => (
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden transition-colors">
+        <button
+          onclick={`toggleFaq(${index})`}
+          class="w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-base sm:text-lg text-[#041B3B] hover:text-[#0284c7] transition-colors cursor-pointer"
+          aria-expanded="false"
+        >
+          <span>{faq.q}</span>
+          <ChevronDown id={`faq-icon-${index}`} class="w-5 h-5 text-[#19A4A8] shrink-0 transition-transform duration-200" />
+        </button>
+        <div id={`faq-ans-${index}`} class="hidden px-6 pb-6 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
+          {faq.a}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<script is:inline>
+  function toggleFaq(index) {
+    const ans = document.getElementById(`faq-ans-${index}`);
+    const icon = document.getElementById(`faq-icon-${index}`);
+    if (ans && icon) {
+      const isHidden = ans.classList.contains('hidden');
+      ans.classList.toggle('hidden');
+      icon.style.transform = isHidden ? 'rotate(180deg)' : 'rotate(0deg)';
+    }
+  }
+</script>

@@ -1,17 +1,31 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import MetricCounter from '../components/MetricCounter.astro';
+import ClientMarquee from '../components/ClientMarquee.astro';
+import AudienceSelector from '../components/AudienceSelector.astro';
+import ServiceGrid from '../components/ServiceGrid.astro';
+import RolesMarquee from '../components/RolesMarquee.astro';
+import FrameworkTimeline from '../components/FrameworkTimeline.astro';
+import LeadershipGrid from '../components/LeadershipGrid.astro';
+import TestimonialCarousel from '../components/TestimonialCarousel.astro';
+import FaqAccordion from '../components/FaqAccordion.astro';
+import CtaBanner from '../components/CtaBanner.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout 
+  title="PlexEra | IT Staffing & Career Elevation — Where Potential Belongs"
+  description="PlexEra accelerates tech careers and builds world-class engineering teams through precision talent sourcing, ATS resume revamps, interview coaching, and IT staffing."
+>
+  <Hero />
+  <MetricCounter />
+  <ClientMarquee />
+  <AudienceSelector />
+  <ServiceGrid />
+  <RolesMarquee />
+  <FrameworkTimeline />
+  <LeadershipGrid />
+  <TestimonialCarousel />
+  <FaqAccordion />
+  <CtaBanner />
+</Layout>

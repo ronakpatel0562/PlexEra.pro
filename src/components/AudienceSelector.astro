@@ -1,0 +1,123 @@
+---
+import { UserCheck, Building2, CheckCircle, ArrowRight } from 'lucide-astro';
+---
+
+<section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="text-center mb-14">
+    <span class="text-xs font-extrabold uppercase tracking-widest text-[#19A4A8]">DUAL PATHWAY ENGINE</span>
+    <h2 class="text-3xl sm:text-5xl font-extrabold text-[#041B3B] mt-2">Tailored Acceleration for Candidates & Employers</h2>
+    <p class="text-slate-600 max-w-2xl mx-auto mt-3 text-base">Select your trajectory below to see how PlexEra optimizes your potential.</p>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+    
+    <!-- Card A — For Candidates -->
+    <div class="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col justify-between group">
+      <!-- Ambient Glow Accent -->
+      <div class="absolute -top-20 -left-20 w-64 h-64 bg-sky-400/10 rounded-full blur-[80px] pointer-events-none group-hover:bg-sky-400/20 transition-all"></div>
+      
+      <div>
+        <div class="flex items-center justify-between mb-6">
+          <div class="p-3.5 rounded-2xl bg-[#041B3B]/10 text-[#041B3B] border border-[#041B3B]/15">
+            <UserCheck class="w-7 h-7" />
+          </div>
+          <span class="px-3.5 py-1 rounded-full bg-[#041B3B]/10 text-[#041B3B] text-xs font-bold tracking-wider uppercase border border-[#041B3B]/15">
+            FOR CANDIDATES
+          </span>
+        </div>
+
+        <h3 class="text-2xl sm:text-3xl font-extrabold text-[#041B3B] leading-tight">
+          Land Your Dream Tech Role <span class="text-[#0284c7]">3x Faster.</span>
+        </h3>
+
+        <p class="text-slate-600 text-sm sm:text-base mt-4 leading-relaxed">
+          Stop sending resumes into automated ATS voids. Get end-to-end guidance—from resume revamps and mock interviews to compensation negotiation and first-year job support.
+        </p>
+
+        <ul class="mt-8 space-y-3.5 text-sm text-slate-700 font-medium">
+          <li class="flex items-start gap-3">
+            <CheckCircle class="w-5 h-5 text-[#19A4A8] shrink-0 mt-0.5" />
+            <span><strong class="text-[#041B3B]">ATS-Compliant Resume & LinkedIn Revamp:</strong> Keyword-rich, recruiter-tested profiles.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <CheckCircle class="w-5 h-5 text-[#19A4A8] shrink-0 mt-0.5" />
+            <span><strong class="text-[#041B3B]">1-on-1 Mock Interviews:</strong> Practice with senior tech leads from top tech firms.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <CheckCircle class="w-5 h-5 text-[#19A4A8] shrink-0 mt-0.5" />
+            <span><strong class="text-[#041B3B]">Targeted Application Engine:</strong> 100+ precision applications submitted per week.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <CheckCircle class="w-5 h-5 text-[#19A4A8] shrink-0 mt-0.5" />
+            <span><strong class="text-[#041B3B]">Year-1 Onboarding Guarantee:</strong> Continuous technical mentorship after placement.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="mt-10 pt-6 border-t border-slate-200">
+        <a 
+          href="/candidates"
+          class="w-full py-4 px-6 rounded-2xl bg-[#041B3B] hover:bg-[#082854] text-white font-bold text-sm flex items-center justify-center gap-2 transition-all shadow-md hover:shadow-lg"
+        >
+          <span>Start My Career Roadmap</span>
+          <ArrowRight class="w-4 h-4" />
+        </a>
+      </div>
+    </div>
+
+    <!-- Card B — For Employers -->
+    <div class="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col justify-between group">
+      <!-- Ambient Glow Accent -->
+      <div class="absolute -top-20 -right-20 w-64 h-64 bg-[#20C5CA]/10 rounded-full blur-[80px] pointer-events-none group-hover:bg-[#20C5CA]/20 transition-all"></div>
+
+      <div>
+        <div class="flex items-center justify-between mb-6">
+          <div class="p-3.5 rounded-2xl bg-[#20C5CA]/15 text-[#041B3B] border border-[#20C5CA]/30">
+            <Building2 class="w-7 h-7 text-[#041B3B]" />
+          </div>
+          <span class="px-3.5 py-1 rounded-full bg-[#20C5CA]/15 text-[#041B3B] text-xs font-bold tracking-wider uppercase border border-[#20C5CA]/30">
+            FOR EMPLOYERS
+          </span>
+        </div>
+
+        <h3 class="text-2xl sm:text-3xl font-extrabold text-[#041B3B] leading-tight">
+          Build Product-Roadmap-Ready <span class="text-[#19A4A8]">Engineering Teams.</span>
+        </h3>
+
+        <p class="text-slate-600 text-sm sm:text-base mt-4 leading-relaxed">
+          Eliminate hiring bottlenecks with pre-vetted, high-capacity tech talent. We align recruitment with your software milestones and architectural goals.
+        </p>
+
+        <ul class="mt-8 space-y-3.5 text-sm text-slate-700 font-medium">
+          <li class="flex items-start gap-3">
+            <CheckCircle class="w-5 h-5 text-[#19A4A8] shrink-0 mt-0.5" />
+            <span><strong class="text-[#041B3B]">Direct Hire, Contract & Augmentation:</strong> Deployed in as fast as 48 hours.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <CheckCircle class="w-5 h-5 text-[#19A4A8] shrink-0 mt-0.5" />
+            <span><strong class="text-[#041B3B]">Deep Technical Vetting:</strong> Code challenges, architecture audits & soft skills evaluation.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <CheckCircle class="w-5 h-5 text-[#19A4A8] shrink-0 mt-0.5" />
+            <span><strong class="text-[#041B3B]">Recruitment Process Outsourcing (RPO):</strong> End-to-end talent sourcing pipelines.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <CheckCircle class="w-5 h-5 text-[#19A4A8] shrink-0 mt-0.5" />
+            <span><strong class="text-[#041B3B]">Labor Law & Compliance Assurance:</strong> Full US & global back-office support.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="mt-10 pt-6 border-t border-slate-200">
+        <a 
+          href="/employers"
+          class="w-full py-4 px-6 rounded-2xl neon-button text-sm font-bold flex items-center justify-center gap-2"
+        >
+          <span>Scale My Engineering Team</span>
+          <ArrowRight class="w-4 h-4" />
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>

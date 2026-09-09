@@ -1,0 +1,84 @@
+---
+import { Star, Quote, CheckCircle2, User, Building } from 'lucide-astro';
+
+const testimonials = [
+  {
+    type: "Candidate",
+    typeBadge: "Job Seeker Story",
+    badgeIcon: User,
+    quote: "PlexEra completely transformed my job search. Within 3 weeks of their resume revamp and mock interview sessions, I landed a Senior DevOps Engineer role at a Fortune 500 tech firm with a 42% salary increase. The first-year job support gave me immense confidence.",
+    author: "Marcus V.",
+    role: "Placed as Senior DevOps Lead ($165k/yr)",
+    tag: "Verified Candidate Placement"
+  },
+  {
+    type: "Employer",
+    typeBadge: "Enterprise Story",
+    badgeIcon: Building,
+    quote: "Finding production-ready Cloud Architects was stalling our sprint deliverables. PlexEra didn't just send us resumes—they brought us pre-vetted specialists who integrated into our Kubernetes migration in 48 hours.",
+    author: "Sarah T.",
+    role: "VP of Engineering, Scale-Up Enterprise",
+    tag: "Verified Client Partnership"
+  },
+  {
+    type: "Candidate",
+    typeBadge: "Job Seeker Story",
+    badgeIcon: User,
+    quote: "The 1-on-1 mock interview coaching with senior engineering mentors gave me the exact confidence needed for system design rounds. I secured a Senior Full-Stack role with a $25k bump over my initial target.",
+    author: "Priya K.",
+    role: "Placed as Lead Full-Stack Engineer ($150k/yr)",
+    tag: "Verified Candidate Placement"
+  }
+];
+---
+
+<section class="py-20 bg-slate-50 border-y border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <span class="text-xs font-extrabold uppercase tracking-widest text-[#19A4A8]">PROVEN IMPACT</span>
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-[#041B3B] mt-2">Candidate & Client Success Stories</h2>
+      <p class="text-slate-600 max-w-2xl mx-auto mt-3 text-base">Real results from candidates elevating their careers and enterprise leaders building world-class teams.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {testimonials.map((t) => {
+        const BadgeIcon = t.badgeIcon;
+        return (
+          <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-lg hover:border-slate-300 transition-all duration-300 flex flex-col justify-between group">
+            <div>
+              <!-- Header & Star Rating -->
+              <div class="flex items-center justify-between mb-6">
+                <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-[#20C5CA]/15 text-[#041B3B] border border-[#20C5CA]/30">
+                  <BadgeIcon class="w-3.5 h-3.5" />
+                  <span>{t.typeBadge}</span>
+                </div>
+                <div class="flex text-amber-400">
+                  <Star class="w-4 h-4 fill-amber-400" />
+                  <Star class="w-4 h-4 fill-amber-400" />
+                  <Star class="w-4 h-4 fill-amber-400" />
+                  <Star class="w-4 h-4 fill-amber-400" />
+                  <Star class="w-4 h-4 fill-amber-400" />
+                </div>
+              </div>
+
+              <!-- Quote Icon & Text -->
+              <Quote class="w-8 h-8 text-[#041B3B]/20 mb-3" />
+              <p class="text-xs sm:text-sm text-slate-700 leading-relaxed italic">
+                "{t.quote}"
+              </p>
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-slate-100">
+              <div class="font-extrabold text-base text-[#041B3B]">{t.author}</div>
+              <div class="text-xs text-[#0284c7] font-bold">{t.role}</div>
+              <div class="flex items-center gap-1 text-[11px] font-semibold text-emerald-600 mt-2">
+                <CheckCircle2 class="w-3.5 h-3.5" />
+                <span>{t.tag}</span>
+              </div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</section>

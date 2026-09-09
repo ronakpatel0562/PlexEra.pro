@@ -1,0 +1,130 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Building2, ArrowRight, ShieldCheck, CheckCircle2, Award } from 'lucide-astro';
+
+const models = [
+  {
+    id: "contract-staffing",
+    title: "Model A: Contract & Staff Augmentation",
+    tagline: "Deploy Specialists in Under 48 Hours",
+    description: "Rapidly scale sprint capacity with pre-screened Full-Stack, Cloud, DevOps, and Data specialists deployed for short- or long-term product roadmap initiatives.",
+    features: ["48-hour talent deployment SLA", "Zero back-office payroll overhead", "Flexible weekly or monthly terms"]
+  },
+  {
+    id: "direct-hire",
+    title: "Model B: Direct Hire & Executive Search",
+    tagline: "Permanent High-Impact Leaders",
+    description: "Source high-impact permanent leaders, principal engineers, and architects who align tightly with your long-term tech stack and corporate culture.",
+    features: ["Architectural & cultural vetting", "Executive offer negotiation support", "Replacement guarantee safety net"]
+  },
+  {
+    id: "rpo",
+    title: "Model C: Recruitment Process Outsourcing (RPO)",
+    tagline: "End-to-End Talent Pipeline Ownership",
+    description: "Outsource your end-to-end talent sourcing, technical screening, interview scheduling, and onboarding pipelines to PlexEra's dedicated recruitment team.",
+    features: ["Dedicated talent acquisition pod", "Scalable volume recruitment", "Custom hiring metrics reporting"]
+  }
+];
+
+const vettingSteps = [
+  "1. Architectural Code Review & Live Challenge",
+  "2. System Design & Security Compliance Assessment",
+  "3. Communication & Cultural Synergy Vetting",
+  "4. Verified Background & Skill Certification Audit"
+];
+---
+
+<Layout 
+  title="IT Staffing & Tech Recruitment Solutions | PlexEra"
+  description="Build high-performing engineering teams with PlexEra. Fast, pre-vetted contract staffing, direct hire, and RPO aligned with your product roadmap."
+>
+  <!-- Employer Hero -->
+  <section class="py-20 relative overflow-hidden text-center bg-gradient-to-b from-white to-[#f8fafc]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#20C5CA]/15 border border-[#20C5CA]/30 text-[#041B3B] text-xs font-bold mb-6">
+        <Building2 class="w-4 h-4 text-[#19A4A8]" />
+        <span>ENTERPRISE IT RECRUITMENT & STAFFING</span>
+      </div>
+
+      <h1 class="text-4xl sm:text-6xl font-extrabold text-[#041B3B] tracking-tight">
+        Build Roadmap-Ready Engineering Teams <span class="text-[#0284c7]">without Bottlenecks.</span>
+      </h1>
+
+      <p class="mt-4 text-xl font-semibold text-slate-700">
+        Precision Technical Staffing Aligned with Your Architecture & Milestones.
+      </p>
+
+      <p class="mt-6 text-base text-slate-600 max-w-2xl mx-auto leading-relaxed">
+        Generic staffing agencies send resumes. PlexEra delivers pre-vetted, high-capacity tech talent engineered to integrate seamlessly into your engineering workflows.
+      </p>
+
+      <div class="mt-8">
+        <button 
+          onclick="document.getElementById('booking-modal').classList.remove('hidden')"
+          class="px-8 py-4 text-base font-bold neon-button rounded-2xl inline-flex items-center gap-2 shadow-md cursor-pointer transition-all"
+        >
+          <span>Request Technical Talent Strategy Call</span>
+          <ArrowRight class="w-5 h-5" />
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Engagement Models -->
+  <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-extrabold text-[#041B3B]">Enterprise Engagement Models</h2>
+      <p class="text-slate-600 text-sm mt-1">Flexible hiring options tailored to your release timeline.</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      {models.map((model) => (
+        <div id={model.id} class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-lg hover:border-slate-300 transition-all duration-300 flex flex-col justify-between group">
+          <div>
+            <span class="text-xs font-bold text-[#19A4A8] tracking-wider uppercase block mb-1">{model.tagline}</span>
+            <h3 class="text-xl font-extrabold text-[#041B3B]">{model.title}</h3>
+            <p class="text-sm text-slate-600 mt-3 leading-relaxed">{model.description}</p>
+
+            <ul class="mt-6 space-y-2.5 text-xs text-slate-700 font-medium">
+              {model.features.map((feat) => (
+                <li class="flex items-center gap-2">
+                  <CheckCircle2 class="w-4 h-4 text-[#19A4A8] shrink-0" />
+                  <span>{feat}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-slate-100">
+            <button 
+              onclick="document.getElementById('booking-modal').classList.remove('hidden')"
+              class="w-full py-3 rounded-xl bg-[#041B3B] hover:bg-[#082854] text-white font-bold text-xs shadow-xs transition-colors cursor-pointer"
+            >
+              Select Engagement Model →
+            </button>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Technical Screening & Vetting Guarantee -->
+  <section class="py-16 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-md relative overflow-hidden">
+      <div class="text-center mb-10">
+        <Award class="w-10 h-10 text-[#19A4A8] mx-auto mb-2" />
+        <h2 class="text-3xl font-extrabold text-[#041B3B]">4-Step Technical Vetting Guarantee</h2>
+        <p class="text-slate-600 text-sm mt-1">We evaluate engineers across code quality, architecture, and security.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {vettingSteps.map((step) => (
+          <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-sm font-semibold text-slate-800 flex items-center gap-3">
+            <ShieldCheck class="w-5 h-5 text-[#041B3B] shrink-0" />
+            <span>{step}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

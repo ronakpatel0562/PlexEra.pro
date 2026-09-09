@@ -1,0 +1,118 @@
+---
+import { MapPin, Phone, Mail, Clock, ArrowUpRight, Linkedin, Twitter, Github, Youtube } from 'lucide-astro';
+---
+
+<footer class="w-full bg-[#041B3B] border-t border-[#20C5CA]/20 text-slate-300 pt-16 pb-8 text-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+      
+      <!-- Column 1: Brand & Identity -->
+      <div class="space-y-4">
+        <a href="/" class="inline-block">
+          <img 
+            src="/logos/logo-white-full.png" 
+            alt="PlexEra - Where Potential Belongs" 
+            class="h-10 w-auto object-contain" 
+          />
+        </a>
+        
+        <p class="text-xs text-slate-300 leading-relaxed">
+          <em>"Where Potential Belongs"</em> — A global technology staffing and career acceleration firm dedicated to unlocking human ambition and enterprise growth through precision talent alignment.
+        </p>
+
+        <!-- Social Icons -->
+        <div class="flex items-center gap-3 pt-2">
+          <a href="https://linkedin.com" target="_blank" rel="noopener" class="p-2 rounded-lg bg-white/10 hover:bg-[#20C5CA] text-slate-300 hover:text-[#041B3B] transition-colors" aria-label="LinkedIn">
+            <Linkedin class="w-4 h-4" />
+          </a>
+          <a href="https://twitter.com" target="_blank" rel="noopener" class="p-2 rounded-lg bg-white/10 hover:bg-[#20C5CA] text-slate-300 hover:text-[#041B3B] transition-colors" aria-label="Twitter">
+            <Twitter class="w-4 h-4" />
+          </a>
+          <a href="https://github.com" target="_blank" rel="noopener" class="p-2 rounded-lg bg-white/10 hover:bg-[#20C5CA] text-slate-300 hover:text-[#041B3B] transition-colors" aria-label="GitHub">
+            <Github class="w-4 h-4" />
+          </a>
+          <a href="https://youtube.com" target="_blank" rel="noopener" class="p-2 rounded-lg bg-white/10 hover:bg-[#20C5CA] text-slate-300 hover:text-[#041B3B] transition-colors" aria-label="YouTube">
+            <Youtube class="w-4 h-4" />
+          </a>
+        </div>
+      </div>
+
+      <!-- Column 2: Candidate Services -->
+      <div>
+        <h4 class="text-xs font-extrabold text-[#20C5CA] uppercase tracking-wider mb-4">Candidate Acceleration</h4>
+        <ul class="space-y-2.5 text-xs text-slate-300">
+          <li><a href="/candidates#ats-revamp" class="hover:text-[#20C5CA] transition-colors flex items-center gap-1.5"><ArrowUpRight class="w-3 h-3 text-slate-400" /> ATS Resume Revamp</a></li>
+          <li><a href="/candidates#linkedin" class="hover:text-[#20C5CA] transition-colors flex items-center gap-1.5"><ArrowUpRight class="w-3 h-3 text-slate-400" /> LinkedIn Profile Optimization</a></li>
+          <li><a href="/candidates#targeted-apps" class="hover:text-[#20C5CA] transition-colors flex items-center gap-1.5"><ArrowUpRight class="w-3 h-3 text-slate-400" /> Targeted Application Engine</a></li>
+          <li><a href="/candidates#mock-labs" class="hover:text-[#20C5CA] transition-colors flex items-center gap-1.5"><ArrowUpRight class="w-3 h-3 text-slate-400" /> Executive Interview Coaching</a></li>
+          <li><a href="/candidates#salary" class="hover:text-[#20C5CA] transition-colors flex items-center gap-1.5"><ArrowUpRight class="w-3 h-3 text-slate-400" /> Offer & Salary Negotiation</a></li>
+          <li><a href="/candidates#year-1" class="hover:text-[#20C5CA] transition-colors flex items-center gap-1.5"><ArrowUpRight class="w-3 h-3 text-slate-400" /> Year-1 Technical Job Support</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Demanded Roles -->
+      <div>
+        <h4 class="text-xs font-extrabold text-[#20C5CA] uppercase tracking-wider mb-4">In-Demand Tech Roles</h4>
+        <ul class="space-y-2.5 text-xs text-slate-300">
+          <li><a href="/roles/full-stack-developer" class="hover:text-[#20C5CA] transition-colors">Full-Stack & Backend Developers</a></li>
+          <li><a href="/roles/devops-engineer" class="hover:text-[#20C5CA] transition-colors">Cloud & DevOps Engineers</a></li>
+          <li><a href="/roles/data-scientist" class="hover:text-[#20C5CA] transition-colors">Data Scientists & AI Specialists</a></li>
+          <li><a href="/roles/cybersecurity" class="hover:text-[#20C5CA] transition-colors">Cybersecurity Analysts</a></li>
+          <li><a href="/roles/product-manager" class="hover:text-[#20C5CA] transition-colors">Product Managers & Tech Leads</a></li>
+          <li><a href="/roles/financial-analyst" class="hover:text-[#20C5CA] transition-colors">Financial Data Analysts</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Global HQ & Contact -->
+      <div class="space-y-3">
+        <h4 class="text-xs font-extrabold text-[#20C5CA] uppercase tracking-wider mb-4">Global Contact</h4>
+        
+        <div class="text-xs space-y-2.5">
+          <div class="flex items-start gap-2 text-slate-300">
+            <MapPin class="w-4 h-4 text-[#20C5CA] shrink-0 mt-0.5" />
+            <div>
+              <span class="text-white font-bold block">USA Office</span>
+              <span>1201 North Orange St, Suite 700, Wilmington, DE 19801</span>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-2 text-slate-300">
+            <MapPin class="w-4 h-4 text-[#20C5CA] shrink-0 mt-0.5" />
+            <div>
+              <span class="text-white font-bold block">India Delivery Center</span>
+              <span>PlexEra Tech Hub, Hinjewadi Phase 1, Pune, MH 411057</span>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-2 text-slate-300 pt-1">
+            <Phone class="w-3.5 h-3.5 text-[#20C5CA]" />
+            <span>+1 (800) 555-PLEX</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-slate-300">
+            <Mail class="w-3.5 h-3.5 text-[#20C5CA]" />
+            <span>contact@plexera.com</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-slate-400">
+            <Clock class="w-3.5 h-3.5 text-slate-400" />
+            <span>Mon – Fri: 8:00 AM – 8:00 PM EST</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Legal Bar -->
+    <div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+      <div>
+        © 2026 PlexEra LLC. All Rights Reserved.
+      </div>
+      <div class="flex items-center gap-6 font-medium">
+        <a href="#privacy" class="hover:text-white transition-colors">Privacy Policy</a>
+        <a href="#terms" class="hover:text-white transition-colors">Terms of Service</a>
+        <a href="#security" class="hover:text-white transition-colors">Security & Compliance</a>
+      </div>
+    </div>
+  </div>
+</footer>

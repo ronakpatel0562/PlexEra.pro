@@ -1,0 +1,110 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LeadershipGrid from '../components/LeadershipGrid.astro';
+import { Sparkles, Target, ShieldCheck, Heart, Award, MapPin, Globe } from 'lucide-astro';
+
+const coreValues = [
+  {
+    icon: Target,
+    title: "Precision Talent Alignment",
+    desc: "Matching skills, culture, and technical roadmap needs with zero compromise. We don't just fill open seats; we engineer perfect career alignment."
+  },
+  {
+    icon: Heart,
+    title: "End-to-End Commitment",
+    desc: "Standing by candidates and enterprise clients long after the offer letter is signed through our First-Year Job Support safety net."
+  },
+  {
+    icon: ShieldCheck,
+    title: "Radical Transparency",
+    desc: "Clear communication, named executive leadership, and physical office groundings in North America and APAC."
+  },
+  {
+    icon: Award,
+    title: "Engineering Excellence",
+    desc: "Understanding tech from the inside out. Our leaders and mentors bring real engineering leadership backgrounds from top global scale-ups."
+  }
+];
+---
+
+<Layout 
+  title="About PlexEra — Vision, Mission & Executive Leadership"
+  description="Learn about PlexEra's mission to bridge human potential with enterprise growth. Discover our leadership team and global office locations in Delaware and India."
+>
+  <!-- About Hero -->
+  <section class="py-20 relative overflow-hidden text-center bg-gradient-to-b from-white to-[#f8fafc]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#20C5CA]/15 border border-[#20C5CA]/30 text-[#041B3B] text-xs font-bold mb-6">
+        <Sparkles class="w-4 h-4 text-[#19A4A8]" />
+        <span>ABOUT PLEXERA</span>
+      </div>
+
+      <h1 class="text-4xl sm:text-6xl font-extrabold text-[#041B3B] tracking-tight">
+        Bridging Ambition with <span class="text-[#0284c7]">Opportunity.</span>
+      </h1>
+
+      <p class="mt-6 text-base sm:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed font-medium">
+        PlexEra was founded on a single conviction: human potential is unlimited when placed in the right environment. We built PlexEra to eliminate the friction, opacity, and inefficiencies of traditional recruitment, creating a world where every professional and enterprise reaches their true potential.
+      </p>
+    </div>
+  </section>
+
+  <!-- Core Values -->
+  <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <span class="text-xs font-extrabold uppercase tracking-widest text-[#19A4A8]">FOUNDATIONAL PRINCIPLES</span>
+      <h2 class="text-3xl font-extrabold text-[#041B3B] mt-2">Our Core Values</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {coreValues.map((val) => {
+        const Icon = val.icon;
+        return (
+          <div class="bg-white rounded-3xl p-7 border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <div class="p-3 rounded-2xl bg-[#20C5CA]/15 text-[#041B3B] border border-[#20C5CA]/30 w-fit mb-4">
+                <Icon class="w-6 h-6" />
+              </div>
+              <h3 class="font-extrabold text-lg text-[#041B3B] mb-2">{val.title}</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">{val.desc}</p>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </section>
+
+  <!-- Leadership Component -->
+  <LeadershipGrid />
+
+  <!-- Dual Headquarters Showcase -->
+  <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
+    <div class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-md">
+      <div class="text-center mb-10">
+        <Globe class="w-10 h-10 text-[#19A4A8] mx-auto mb-2" />
+        <h2 class="text-3xl font-extrabold text-[#041B3B]">Global Physical Grounding</h2>
+        <p class="text-slate-600 text-sm mt-1">Dual headquarters serving North America & APAC tech ecosystems.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+          <div class="flex items-center gap-2 text-[#041B3B] font-extrabold text-base">
+            <MapPin class="w-5 h-5 text-[#19A4A8]" />
+            <span>USA Corporate Headquarters</span>
+          </div>
+          <p class="text-xs font-medium text-slate-700">1201 North Orange St, Suite 700, Wilmington, DE 19801</p>
+          <div class="text-xs text-slate-500 font-semibold">Direct Contact: +1 (800) 555-PLEX | contact@plexera.com</div>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+          <div class="flex items-center gap-2 text-[#041B3B] font-extrabold text-base">
+            <MapPin class="w-5 h-5 text-[#19A4A8]" />
+            <span>India Delivery & Sourcing Center</span>
+          </div>
+          <p class="text-xs font-medium text-slate-700">PlexEra Tech Hub, Hinjewadi Phase 1, Pune, MH 411057</p>
+          <div class="text-xs text-slate-500 font-semibold">Operations: APAC Talent Vetting & Mentor Labs</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

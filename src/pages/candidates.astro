@@ -1,0 +1,121 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Sparkles, ArrowRight, CheckCircle2, FileText, Target, Mic, DollarSign, ShieldCheck } from 'lucide-astro';
+
+const pillars = [
+  {
+    id: "ats-revamp",
+    number: "01",
+    icon: FileText,
+    title: "ATS Resume & Personal Brand Transformation",
+    description: "Pass automated ATS algorithms and captivate hiring managers with recruiter-vetted formatting, impactful bullet points, and keyword optimization tailored to modern tech stacks.",
+    highlights: ["Keyword optimization for ATS scanners", "LinkedIn profile headline & bio restructuring", "Recruiter-vetted executive formatting"]
+  },
+  {
+    id: "targeted-apps",
+    number: "02",
+    icon: Target,
+    title: "Precision Application Execution Engine",
+    description: "Stop wasting hundreds of hours submitting resumes into void portals. Our specialized application engine applies your profile directly to verified, open requisitions across 100+ top enterprise organizations.",
+    highlights: ["100+ precision applications submitted weekly", "Direct access to hiring manager networks", "Automated application tracking dashboard"]
+  },
+  {
+    id: "mock-labs",
+    number: "03",
+    icon: Mic,
+    title: "High-Stakes Mock Interview Labs",
+    description: "Practice live technical coding, architectural design, and behavioral questions with senior tech leads from Google, Amazon, and Meta backgrounds.",
+    highlights: ["Live 1-on-1 system design reviews", "FAANG behavioral interview playbooks", "Constructive actionable feedback reports"]
+  },
+  {
+    id: "salary",
+    number: "04",
+    icon: DollarSign,
+    title: "Data-Backed Salary & Offer Negotiation",
+    description: "Never leave money on the table. We evaluate market benchmarks for your specific role and location, equipping you to negotiate top-tier base salary, equity, and joining bonuses.",
+    highlights: ["Data-driven compensation benchmarking", "Live offer evaluation playbooks", "Counter-offer script guidance"]
+  },
+  {
+    id: "year-1",
+    number: "05",
+    icon: ShieldCheck,
+    title: "Year-1 Onboarding & Technical Mentorship",
+    description: "Excel from Day 1. Access our expert engineering network for guidance on codebase onboarding, technical troubleshooting, architecture alignment, and performance reviews.",
+    highlights: ["Ongoing senior mentor access", "Onboarding codebase assistance", "12-month retention guarantee"]
+  }
+];
+---
+
+<Layout 
+  title="Candidate Career Services & Tech Placement | PlexEra"
+  description="Elevate your tech career with PlexEra. Get ATS resume revamps, mock interviews, targeted job applications, salary negotiation, and 1-year job support."
+>
+  <!-- Candidate Hero -->
+  <section class="py-20 relative overflow-hidden text-center bg-gradient-to-b from-white to-[#f8fafc]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#20C5CA]/15 border border-[#20C5CA]/30 text-[#041B3B] text-xs font-bold mb-6">
+        <Sparkles class="w-4 h-4 text-[#19A4A8]" />
+        <span>CANDIDATE ACCELERATION PIPELINE</span>
+      </div>
+
+      <h1 class="text-4xl sm:text-6xl font-extrabold text-[#041B3B] tracking-tight">
+        Unlock Your Peak <span class="text-[#0284c7]">Career Trajectory.</span>
+      </h1>
+
+      <p class="mt-4 text-xl font-semibold text-slate-700">
+        Where Potential Belongs — Tailored Placement & Career Engineering.
+      </p>
+
+      <p class="mt-6 text-base text-slate-600 max-w-2xl mx-auto leading-relaxed">
+        Navigating today's competitive IT job market requires more than submitting generic resumes. PlexEra provides tech candidates with an end-to-end career transformation pipeline.
+      </p>
+
+      <div class="mt-8">
+        <button 
+          onclick="document.getElementById('booking-modal').classList.remove('hidden')"
+          class="px-8 py-4 text-base font-bold text-white bg-[#041B3B] hover:bg-[#082854] rounded-2xl inline-flex items-center gap-2 shadow-lg shadow-[#041B3B]/15 cursor-pointer transition-all hover:scale-[1.01]"
+        >
+          <span>Book Your Free Career Acceleration Call</span>
+          <ArrowRight class="w-5 h-5" />
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 Core Pillars Section -->
+  <section class="py-16 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-extrabold text-[#041B3B]">The 5 Core Transformation Pillars</h2>
+      <p class="text-slate-600 text-sm mt-1">Our comprehensive 360-degree candidate support framework.</p>
+    </div>
+
+    {pillars.map((pillar) => {
+      const Icon = pillar.icon;
+      return (
+        <div id={pillar.id} class="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200 shadow-sm relative overflow-hidden group hover:border-slate-300 hover:shadow-md transition-all">
+          <div class="flex flex-col md:flex-row gap-6 md:items-start justify-between">
+            <div class="flex items-start gap-4">
+              <div class="p-3.5 rounded-2xl bg-[#20C5CA]/15 text-[#041B3B] border border-[#20C5CA]/30 shrink-0">
+                <Icon class="w-7 h-7" />
+              </div>
+              <div>
+                <span class="text-xs font-mono font-bold text-[#19A4A8] tracking-wider uppercase">Pillar {pillar.number}</span>
+                <h3 class="text-2xl font-extrabold text-[#041B3B] mt-0.5">{pillar.title}</h3>
+                <p class="text-sm text-slate-600 mt-3 leading-relaxed">{pillar.description}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-6 border-t border-slate-100 grid grid-cols-1 sm:grid-cols-3 gap-3">
+            {pillar.highlights.map((item) => (
+              <div class="flex items-center gap-2 text-xs font-medium text-slate-700 bg-slate-50 p-2.5 rounded-xl border border-slate-200">
+                <CheckCircle2 class="w-4 h-4 text-emerald-600 shrink-0" />
+                <span>{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      );
+    })}
+  </section>
+</Layout>
