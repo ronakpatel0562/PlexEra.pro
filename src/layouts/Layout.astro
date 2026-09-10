@@ -63,5 +63,30 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://plexera.
     </main>
     <Footer />
     <BookingModal />
+    <script>
+      const handleAnchorScroll = () => {
+        const hash = window.location.hash;
+        if (hash) {
+          try {
+            const target = document.querySelector(hash);
+            if (target) {
+              setTimeout(() => {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }, 60);
+            }
+          } catch (e) {
+            // Ignore invalid selector hashes
+          }
+        }
+      };
+
+      if (document.readyState === 'loading') {
+        window.addEventListener('DOMContentLoaded', handleAnchorScroll);
+      } else {
+        handleAnchorScroll();
+      }
+
+      window.addEventListener('hashchange', handleAnchorScroll);
+    </script>
   </body>
 </html>

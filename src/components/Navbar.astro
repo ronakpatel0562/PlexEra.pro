@@ -90,12 +90,12 @@ import { ChevronDown, Sparkles, User, Briefcase, ChevronRight, Menu, X } from 'l
 
       <!-- Header CTAs -->
       <div class="hidden sm:flex items-center gap-3">
-        <a 
-          href="#portal-login" 
-          class="px-4 py-2.5 text-xs font-bold text-slate-700 hover:text-[#041B3B] bg-slate-100 hover:bg-slate-200/80 rounded-xl border border-slate-200 transition-colors"
+        <button 
+          onclick="document.getElementById('booking-modal').classList.remove('hidden')"
+          class="px-4 py-2.5 text-xs font-bold text-slate-700 hover:text-[#041B3B] bg-slate-100 hover:bg-slate-200/80 rounded-xl border border-slate-200 transition-colors cursor-pointer"
         >
           Portal Login
-        </a>
+        </button>
         <button 
           onclick="document.getElementById('booking-modal').classList.remove('hidden')"
           class="px-5 py-2.5 text-xs font-bold neon-button rounded-xl flex items-center gap-1.5 cursor-pointer"
@@ -127,7 +127,7 @@ import { ChevronDown, Sparkles, User, Briefcase, ChevronRight, Menu, X } from 'l
     <a href="/about" class="block px-3 py-2 text-base font-semibold text-slate-700 hover:text-[#041B3B] hover:bg-slate-100 rounded-lg">About Us</a>
     <a href="/contact" class="block px-3 py-2 text-base font-semibold text-slate-700 hover:text-[#041B3B] hover:bg-slate-100 rounded-lg">Contact</a>
     <div class="pt-4 border-t border-slate-200 flex flex-col gap-3">
-      <a href="#portal-login" class="text-center px-4 py-2.5 text-sm font-bold text-slate-700 bg-slate-100 rounded-xl border border-slate-200">Portal Login</a>
+      <button onclick="document.getElementById('booking-modal').classList.remove('hidden'); document.getElementById('mobile-menu').classList.add('hidden')" class="w-full text-center px-4 py-2.5 text-sm font-bold text-slate-700 bg-slate-100 rounded-xl border border-slate-200 cursor-pointer">Portal Login</button>
       <button 
         onclick="document.getElementById('booking-modal').classList.remove('hidden'); document.getElementById('mobile-menu').classList.add('hidden')"
         class="w-full text-center px-5 py-3 text-sm font-bold neon-button rounded-xl"
