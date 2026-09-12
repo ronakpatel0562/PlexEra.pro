@@ -105,7 +105,7 @@ PlexEra bridges the gap between raw human ambition and transformative enterprise
 - **UI Location**: Hero bottom strip / floating stats bar.
 - **Component Style**: 4-column glass card strip with animated stat counters.
 - **Copy & Metrics**:
-  - **Stat 1**: `850+` — `Tech Professionals Placed`
+  - **Stat 1**: `550+` — `Tech Professionals Placed`
   - **Stat 2**: `95%` — `Interview Success Rate`
   - **Stat 3**: `98%` — `Job Search Efficiency Boost`
   - **Stat 4**: `100+` — `Partnered MNCs & Tech Scale-Ups`

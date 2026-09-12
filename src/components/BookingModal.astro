@@ -59,7 +59,7 @@ import { X, Calendar, Upload, CheckCircle2, User, Building } from 'lucide-astro'
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label class="block text-xs font-bold text-slate-700 mb-1.5">Target Tech Role *</label>
+          <label class="block text-xs font-bold text-slate-700 mb-1.5">Target Role Category *</label>
           <select required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm text-slate-900 focus:outline-none focus:border-[#20C5CA] transition-colors">
             <option value="">Select Primary Specialty...</option>
             <option value="fullstack">Full-Stack / Frontend / Backend</option>
@@ -67,6 +67,12 @@ import { X, Calendar, Upload, CheckCircle2, User, Building } from 'lucide-astro'
             <option value="data">Data Science / AI & ML Engineering</option>
             <option value="cyber">Cybersecurity / Security Lead</option>
             <option value="pm">Product Manager / Scrum Lead</option>
+            <option value="mechanical">Mechanical & Manufacturing Engineering</option>
+            <option value="automation">Automation & Controls / PLC</option>
+            <option value="supplychain">Supply Chain & Logistics</option>
+            <option value="healthcare">Healthcare & Life Sciences</option>
+            <option value="construction">Civil & Construction Engineering</option>
+            <option value="finance">Financial & Business Analysis</option>
             <option value="other">Other High-Impact Role</option>
           </select>
         </div>
@@ -89,50 +95,50 @@ import { X, Calendar, Upload, CheckCircle2, User, Building } from 'lucide-astro'
         </div>
       </div>
 
-      <button type="submit" class="w-full py-3.5 px-6 rounded-xl bg-[#041B3B] hover:bg-[#082854] text-white font-bold text-sm tracking-wide shadow-md cursor-pointer transition-all">
-        Schedule Free Candidate Advisory Session →
+      <button type="submit" class="w-full py-3.5 px-6 rounded-xl neon-button text-sm font-bold shadow-md cursor-pointer transition-all">
+        Submit Candidate Application →
       </button>
     </form>
 
-    <!-- Employer Form -->
-    <form id="form-employer" class="space-y-4 hidden" onsubmit="event.preventDefault(); handleFormSubmit('Employer');">
+    <!-- Form 2: Employer Booking -->
+    <form id="form-employer" class="hidden space-y-4" onsubmit="event.preventDefault(); handleFormSubmit('Employer');">
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label class="block text-xs font-bold text-slate-700 mb-1.5">Work Email *</label>
-          <input type="email" required placeholder="manager@company.com" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#20C5CA] transition-colors" />
+          <input type="email" required placeholder="alex@company.com" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#20C5CA] transition-colors" />
         </div>
         <div>
           <label class="block text-xs font-bold text-slate-700 mb-1.5">Company Name *</label>
-          <input type="text" required placeholder="Acme Tech Enterprise" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#20C5CA] transition-colors" />
+          <input type="text" required placeholder="e.g. Acme Corp" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#20C5CA] transition-colors" />
         </div>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label class="block text-xs font-bold text-slate-700 mb-1.5">Staffing Requirement *</label>
-          <select required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm text-slate-900 focus:outline-none focus:border-[#20C5CA] transition-colors">
-            <option value="contract">Contract & Staff Augmentation (48h Turnaround)</option>
-            <option value="direct">Direct Hire / Executive Search</option>
-            <option value="rpo">Full RPO (Recruitment Process Outsourcing)</option>
+          <label class="block text-xs font-bold text-slate-700 mb-1.5">Staffing Service Model</label>
+          <select class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm text-slate-900 focus:outline-none focus:border-[#20C5CA] transition-colors">
+            <option value="contract">Contract / Sprint Augmentation</option>
+            <option value="direct">Direct Hire Placement</option>
+            <option value="rpo">Full RPO Strategy</option>
           </select>
         </div>
         <div>
           <label class="block text-xs font-bold text-slate-700 mb-1.5">Est. Team Size Needed</label>
           <select class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm text-slate-900 focus:outline-none focus:border-[#20C5CA] transition-colors">
-            <option value="1-2">1 - 2 Engineers</option>
-            <option value="3-5">3 - 5 Engineers</option>
-            <option value="6+">6+ Engineers / Pod</option>
+            <option value="1-2">1 - 2 Engineers / Specialists</option>
+            <option value="3-5">3 - 5 Engineers / Specialists</option>
+            <option value="6+">6+ Pod / Enterprise Scale</option>
           </select>
         </div>
       </div>
 
       <div>
-        <label class="block text-xs font-bold text-slate-700 mb-1.5">Key Tech Stack & Requisition Details</label>
-        <textarea rows="3" placeholder="Specify tech stack (e.g. Next.js, Go, Kubernetes) and target hiring timeline..." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#20C5CA] transition-colors"></textarea>
+        <label class="block text-xs font-bold text-slate-700 mb-1.5">Key Skillset & Requisition Details</label>
+        <textarea rows="3" placeholder="Specify requirements (e.g. Next.js, SolidWorks, PLC Programming) and target hiring timeline..." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#20C5CA] transition-colors"></textarea>
       </div>
 
       <button type="submit" class="w-full py-3.5 px-6 rounded-xl neon-button text-sm font-bold shadow-md cursor-pointer transition-all">
-        Request IT Talent Strategy Session →
+        Request Talent Strategy Session →
       </button>
     </form>
 

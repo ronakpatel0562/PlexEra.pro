@@ -1,15 +1,15 @@
 ---
 const clients = [
-  { name: "Meta", category: "Social Technology" },
-  { name: "Amazon Web Services", category: "Cloud Infrastructure" },
-  { name: "Google", category: "Search & AI Systems" },
-  { name: "Microsoft", category: "Enterprise Cloud" },
-  { name: "Apple", category: "Hardware & Platforms" },
-  { name: "Tesla", category: "Autonomous Systems" },
-  { name: "OpenAI", category: "Generative AI Labs" },
-  { name: "NVIDIA", category: "GPU Computing" },
-  { name: "Salesforce", category: "Enterprise SaaS" },
-  { name: "Oracle", category: "Cloud Database" }
+  { name: "Meta", category: "Social Technology", logo: "/logos/clients/meta.svg" },
+  { name: "Amazon Web Services", category: "Cloud Infrastructure", logo: "/logos/clients/aws.svg" },
+  { name: "Google", category: "Search & AI Systems", logo: "/logos/clients/google.svg" },
+  { name: "Microsoft", category: "Enterprise Cloud", logo: "/logos/clients/microsoft.svg" },
+  { name: "Apple", category: "Hardware & Platforms", logo: "/logos/clients/apple.svg" },
+  { name: "Tesla", category: "Autonomous Systems", logo: "/logos/clients/tesla.svg" },
+  { name: "OpenAI", category: "Generative AI Labs", logo: "/logos/clients/openai.svg" },
+  { name: "NVIDIA", category: "GPU Computing", logo: "/logos/clients/nvidia.svg" },
+  { name: "Salesforce", category: "Enterprise SaaS", logo: "/logos/clients/salesforce.svg" },
+  { name: "Oracle", category: "Cloud Database", logo: "/logos/clients/oracle.svg" }
 ];
 ---
 
@@ -25,27 +25,39 @@ const clients = [
     <div class="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-slate-100/90 to-transparent z-10 pointer-events-none"></div>
     <div class="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-slate-100/90 to-transparent z-10 pointer-events-none"></div>
 
-    <div class="animate-marquee flex items-center gap-8 sm:gap-12">
-      <!-- First Loop -->
-      {clients.map((client) => (
-        <div class="flex items-center gap-3 px-6 py-3 rounded-2xl bg-white border border-slate-200/90 shadow-xs shrink-0 hover:border-[#20C5CA] transition-colors">
-          <div class="w-2.5 h-2.5 rounded-full bg-[#20C5CA]"></div>
-          <div class="flex flex-col">
-            <span class="font-bold text-sm text-[#041B3B]">{client.name}</span>
-            <span class="text-[10px] text-slate-500 font-semibold">{client.category}</span>
+    <div class="animate-marquee flex items-center shrink-0">
+      <!-- First Loop Track -->
+      <div class="flex items-center gap-8 sm:gap-12 pr-8 sm:pr-12 shrink-0">
+        {clients.map((client) => (
+          <div class="flex items-center gap-3.5 px-5 py-3 rounded-2xl bg-white border border-slate-200/90 shadow-xs shrink-0 hover:border-[#20C5CA] transition-colors">
+            <div class="w-8 h-8 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 p-1.5">
+              <img src={client.logo} alt={client.name} class="w-full h-full object-contain" />
+            </div>
+            <div class="flex flex-col">
+              <span class="font-bold text-sm text-[#041B3B]">{client.name}</span>
+              <span class="text-[10px] text-slate-500 font-semibold">{client.category}</span>
+            </div>
           </div>
-        </div>
-      ))}
-      <!-- Duplicate Loop for Infinite Scroll -->
-      {clients.map((client) => (
-        <div class="flex items-center gap-3 px-6 py-3 rounded-2xl bg-white border border-slate-200/90 shadow-xs shrink-0 hover:border-[#20C5CA] transition-colors">
-          <div class="w-2.5 h-2.5 rounded-full bg-[#20C5CA]"></div>
-          <div class="flex flex-col">
-            <span class="font-bold text-sm text-[#041B3B]">{client.name}</span>
-            <span class="text-[10px] text-slate-500 font-semibold">{client.category}</span>
+        ))}
+      </div>
+
+      <!-- Second Loop Track (Identical Copy for Infinite Scroll) -->
+      <div class="flex items-center gap-8 sm:gap-12 pr-8 sm:pr-12 shrink-0">
+        {clients.map((client) => (
+          <div class="flex items-center gap-3.5 px-5 py-3 rounded-2xl bg-white border border-slate-200/90 shadow-xs shrink-0 hover:border-[#20C5CA] transition-colors">
+            <div class="w-8 h-8 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 p-1.5">
+              <img src={client.logo} alt={client.name} class="w-full h-full object-contain" />
+            </div>
+            <div class="flex flex-col">
+              <span class="font-bold text-sm text-[#041B3B]">{client.name}</span>
+              <span class="text-[10px] text-slate-500 font-semibold">{client.category}</span>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   </div>
 </section>
+
+
+

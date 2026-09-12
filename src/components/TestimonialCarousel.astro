@@ -28,6 +28,33 @@ const testimonials = [
     author: "Priya K.",
     role: "Placed as Lead Full-Stack Engineer ($150k/yr)",
     tag: "Verified Candidate Placement"
+  },
+  {
+    type: "Candidate",
+    typeBadge: "Job Seeker Story",
+    badgeIcon: User,
+    quote: "PlexEra's targeted application engine and resume revamp opened doors I couldn't reach on my own. Within a month, I accepted an offer as Automation & Controls Lead with a $35k compensation upgrade.",
+    author: "David R.",
+    role: "Placed as Automation & Controls Lead ($145k/yr)",
+    tag: "Verified Candidate Placement"
+  },
+  {
+    type: "Employer",
+    typeBadge: "Enterprise Story",
+    badgeIcon: Building,
+    quote: "Scaling our plant operations required niche Mechanical & Process Engineers fast. PlexEra sourced 4 highly qualified specialists in under 72 hours. Outstanding recruitment quality and responsiveness.",
+    author: "Elena M.",
+    role: "Director of Operations, Industrial Tech Enterprise",
+    tag: "Verified Client Partnership"
+  },
+  {
+    type: "Candidate",
+    typeBadge: "Job Seeker Story",
+    badgeIcon: User,
+    quote: "The offer & salary negotiation coaching alone delivered massive ROI. The mentors helped me articulate my quantitative value and secure a top-tier Principal Financial Data Analyst role.",
+    author: "Robert L.",
+    role: "Placed as Principal Financial Analyst ($135k/yr)",
+    tag: "Verified Candidate Placement"
   }
 ];
 ---
@@ -40,7 +67,7 @@ const testimonials = [
       <p class="text-slate-600 max-w-2xl mx-auto mt-3 text-base">Real results from candidates elevating their careers and enterprise leaders building world-class teams.</p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {testimonials.map((t) => {
         const BadgeIcon = t.badgeIcon;
         return (

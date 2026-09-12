@@ -1,76 +1,559 @@
 ---
-import { Code, Cloud, Cpu, Shield, Layers, Briefcase, ArrowRight } from 'lucide-astro';
+import { 
+  Code, Database, Cloud, Shield, Settings, Server, UserCheck, 
+  Wrench, Cpu, Building2, BadgeCheck, Truck, HeartPulse, TrendingUp, Users, Megaphone,
+  ArrowRight, X, CheckCircle2, Sparkles, Handshake
+} from 'lucide-astro';
 
-const categories = [
+const itCategories = [
   {
+    id: "it-software",
     name: "Software Engineering",
     icon: Code,
-    roles: ["Full-Stack Engineer", "Frontend React/Next.js", "Backend Node/Go/Java Architect", "Mobile (iOS/Android)"]
+    color: "sky",
+    roles: [
+      { name: "Full-Stack Engineer", desc: "React, Next.js, Node.js, Python, PostgreSQL, REST & GraphQL APIs" },
+      { name: "Frontend React/Next.js", desc: "React, Next.js, TypeScript, Tailwind CSS, Performance Optimization" },
+      { name: "Backend Node/Go/Java Architect", desc: "Node.js, Go, Java Microservices, Distributed Systems, Redis" },
+      { name: "Mobile (iOS/Android)", desc: "React Native, Flutter, Swift, Kotlin, Cross-Platform Architecture" },
+      { name: "Embedded Systems Engineer", desc: "C/C++, Real-Time OS, Hardware Integration, Microcontrollers" }
+    ]
   },
   {
+    id: "it-data-ai",
+    name: "Data & AI",
+    icon: Database,
+    color: "sky",
+    roles: [
+      { name: "Machine Learning Engineer", desc: "PyTorch, TensorFlow, LLM Fine-Tuning, Model Deployment, MLOps" },
+      { name: "Data Engineer", desc: "Snowflake, Databricks, Apache Spark, dbt, Airflow, ETL Pipelines" },
+      { name: "AI Solutions Developer", desc: "Generative AI, RAG Systems, Vector DBs (Pinecone), Python, APIs" },
+      { name: "BI Data Analyst", desc: "SQL, Power BI, Tableau, Business Intelligence, Data Warehousing" }
+    ]
+  },
+  {
+    id: "it-cloud-devops",
     name: "Cloud & DevOps",
     icon: Cloud,
-    roles: ["AWS/Azure Cloud Architect", "DevOps Engineer", "Kubernetes Specialist", "Site Reliability Lead"]
+    color: "sky",
+    roles: [
+      { name: "AWS/Azure Cloud Architect", desc: "AWS, Azure, GCP, Cloud Security, Multi-Cloud Architecture" },
+      { name: "DevOps Engineer", desc: "Terraform, Ansible, CI/CD Pipelines, Docker, Cloud Automation" },
+      { name: "Kubernetes Specialist", desc: "Kubernetes, Helm, Service Mesh, Container Orchestration" },
+      { name: "Site Reliability Lead", desc: "Prometheus, Grafana, Distributed Tracing, Incident Management" }
+    ]
   },
   {
-    name: "Data & AI",
-    icon: Cpu,
-    roles: ["Machine Learning Engineer", "Data Engineer", "AI Solutions Developer", "BI Data Analyst"]
-  },
-  {
-    name: "Cybersecurity & Infra",
+    id: "it-cybersecurity",
+    name: "Cybersecurity & Infrastructure",
     icon: Shield,
-    roles: ["Security Operations Lead", "Penetration Tester", "Cloud Security Architect", "Network Engineer"]
+    color: "sky",
+    roles: [
+      { name: "Security Operations Lead", desc: "SOC Operations, SIEM (Splunk/Sentinel), Incident Response" },
+      { name: "Penetration Tester", desc: "Red Teaming, Vulnerability Assessment, Ethical Hacking, OWASP" },
+      { name: "Cloud Security Architect", desc: "IAM, Zero-Trust, SOC2/ISO27001 Compliance, GuardDuty" },
+      { name: "Network Engineer", desc: "Cisco, Palo Alto, Firewalls, VPNs, SD-WAN, Network Topology" }
+    ]
   },
   {
-    name: "Specialized Platforms",
-    icon: Layers,
-    roles: ["ServiceNow Developer", "Salesforce Architect", "SAP Specialist", "Workday Engineer"]
+    id: "it-automation-qa",
+    name: "Automation & QA",
+    icon: Settings,
+    color: "sky",
+    roles: [
+      { name: "QA Automation Lead", desc: "Selenium, Cypress, Playwright, Test Framework Architecture" },
+      { name: "SDET Engineer", desc: "Java/Python Testing, API Automation, CI/CD Test Pipelines" },
+      { name: "Performance Test Engineer", desc: "JMeter, Locust, LoadRunner, Benchmarking & Stress Testing" },
+      { name: "Test Automation Specialist", desc: "Mobile Testing, Appium, Regression Automation" }
+    ]
   },
   {
-    name: "High-Impact Non-IT",
-    icon: Briefcase,
-    roles: ["Technical Product Manager", "Financial Data Analyst", "Healthcare Analytics Lead", "Supply Chain Strategist"]
+    id: "it-infrastructure",
+    name: "IT Infrastructure & Support",
+    icon: Server,
+    color: "sky",
+    roles: [
+      { name: "Systems Administrator", desc: "Linux/Windows Admin, Active Directory, Virtualization (VMware)" },
+      { name: "IT Support Specialist", desc: "Hardware/Software Support, ITIL, Service Desk Management" },
+      { name: "Network Administrator", desc: "Router/Switch Config, DNS/DHCP, Network Monitoring" },
+      { name: "Enterprise Service Desk Lead", desc: "Ticketing Workflows, Team Leadership, SLA Management" }
+    ]
+  },
+  {
+    id: "it-product-pm",
+    name: "Product & Project Management",
+    icon: UserCheck,
+    color: "sky",
+    roles: [
+      { name: "Technical Product Manager", desc: "Agile Roadmaps, PRDs, System Architecture, Sprint Planning" },
+      { name: "IT Project Manager", desc: "PMP, Waterfall/Agile, Budgeting, Resource Allocation" },
+      { name: "Scrum Master", desc: "Kanban, Scrum Ceremonies, Agile Transformation, Team Velocity" },
+      { name: "Agile Delivery Coach", desc: "Enterprise Scaled Agile (SAFe), Organizational Coaching" }
+    ]
   }
 ];
+
+const nonItCategories = [
+  {
+    id: "nonit-manufacturing",
+    name: "Manufacturing & Mechanical",
+    icon: Wrench,
+    color: "amber",
+    roles: [
+      { name: "Mechanical Engineer", desc: "CAD/CAM, SolidWorks, FEA Analysis, Mechanical Design & Thermal Systems" },
+      { name: "Manufacturing Engineer", desc: "Lean Manufacturing, Production Planning, Tooling & Assembly Optimization" },
+      { name: "Production Engineer", desc: "Plant Operations, Process Efficiency, Yield Improvement, Quality Standards" },
+      { name: "Process Engineer", desc: "Chemical/Process Engineering, Mass Transfer, Flow Optimization, P&ID" },
+      { name: "Industrial Engineer", desc: "Workplace Ergonomics, Time & Motion Studies, Capacity Planning" },
+      { name: "Maintenance Engineer", desc: "Preventive Maintenance, TPM, Equipment Reliability, Hydraulic Systems" }
+    ]
+  },
+  {
+    id: "nonit-automation-controls",
+    name: "Automation & Controls",
+    icon: Cpu,
+    color: "amber",
+    roles: [
+      { name: "Automation Engineer", desc: "PLC Programming, SCADA Systems, HMI Development, Industrial IoT" },
+      { name: "Controls Engineer", desc: "Control Systems Architecture, Electrical Schematics, Motion Control" },
+      { name: "PLC Programmer", desc: "Rockwell/Allen-Bradley, Siemens S7, Ladder Logic, Structured Text" },
+      { name: "Instrumentation Engineer", desc: "Sensory Transducers, Control Valves, Calibration, Process Loops" },
+      { name: "Robotics Engineer", desc: "FANUC/KUKA Robotics, End-Effectors, Kinematics, Robotic Cell Design" }
+    ]
+  },
+  {
+    id: "nonit-construction",
+    name: "Construction & Engineering",
+    icon: Building2,
+    color: "amber",
+    roles: [
+      { name: "Civil Engineer", desc: "Structural Analysis, Site Grading, Drainage, Infrastructure Design" },
+      { name: "Project Engineer", desc: "Submittals, RFIs, Subcontractor Coordination, Engineering Approvals" },
+      { name: "Site Engineer", desc: "On-Site Supervision, Quality Audits, Safety Enforcement, Surveying" },
+      { name: "Structural Engineer", desc: "Steel & Concrete Design, Seismic Calculation, Building Code Compliance" },
+      { name: "Construction Manager", desc: "Project Budgeting, Schedule Management (Primavera/MS Project), Site Leadership" }
+    ]
+  },
+  {
+    id: "nonit-quality",
+    name: "Quality & Process",
+    icon: BadgeCheck,
+    color: "amber",
+    roles: [
+      { name: "Quality Assurance Manager", desc: "ISO 9001, Quality Management Systems (QMS), Audit Preparedness" },
+      { name: "Six Sigma / Lean Specialist", desc: "DMAIC Framework, Root Cause Analysis (8D/5-Why), Kaizen Events" },
+      { name: "Quality Control Inspector", desc: "Dimensional Metrology, CMM Inspection, Material Certification" },
+      { name: "EHS Lead", desc: "OSHA Compliance, Environmental Regulations, Workplace Safety Protocols" }
+    ]
+  },
+  {
+    id: "nonit-supply-chain",
+    name: "Supply Chain & Logistics",
+    icon: Truck,
+    color: "amber",
+    roles: [
+      { name: "Supply Chain Analyst", desc: "Data Analytics, Inventory Optimization, Cost Reduction Modeling" },
+      { name: "Procurement Specialist", desc: "Vendor Negotiations, Strategic Sourcing, Contract Management" },
+      { name: "Logistics Coordinator", desc: "Freight Forwarding, Customs Compliance, Fleet Management, Dispatch" },
+      { name: "Warehouse Manager", desc: "WMS Software, Inventory Auditing, Fulfillment & Distribution Ops" },
+      { name: "Demand Planner", desc: "Statistical Forecasting, S&OP Alignment, ERP Demand Modules" },
+      { name: "Supply Chain Manager", desc: "End-to-End Supply Network Management, Global Logistics Strategy" }
+    ]
+  },
+  {
+    id: "nonit-healthcare",
+    name: "Healthcare & Life Sciences",
+    icon: HeartPulse,
+    color: "amber",
+    roles: [
+      { name: "Clinical Research Associate (CRA)", desc: "Clinical Trial Monitoring, GCP Compliance, Site Management" },
+      { name: "Clinical Research Coordinator", desc: "Patient Recruitment, Protocol Compliance, Trial Documentation" },
+      { name: "Laboratory Technician", desc: "Sample Analysis, Assay Preparation, Equipment Maintenance, GLP" },
+      { name: "Quality Assurance Specialist", desc: "GMP/FDA Compliance, CAPA Systems, Batch Record Review" },
+      { name: "Regulatory Affairs Specialist", desc: "FDA Submissions (510k/NDA), Regulatory Strategy, Compliance" },
+      { name: "Medical Laboratory Scientist", desc: "Diagnostic Testing, Hematology, Microbiology, LIMS Operations" }
+    ]
+  },
+  {
+    id: "nonit-finance",
+    name: "Finance & Accounting",
+    icon: TrendingUp,
+    color: "amber",
+    roles: [
+      { name: "Financial Data Analyst", desc: "Financial Modeling, Forecasting, BI Dashboards, Valuation, SQL" },
+      { name: "Corporate Accountant", desc: "GAAP Compliance, General Ledger, Month-End Close, Reconciliations" },
+      { name: "FP&A Lead", desc: "Corporate Budgeting, Financial Variance Analysis, Strategic Planning" },
+      { name: "Risk & Compliance Analyst", desc: "Financial Audit, Anti-Money Laundering (AML), Regulatory Risk" }
+    ]
+  },
+  {
+    id: "nonit-hr",
+    name: "Human Resources",
+    icon: Users,
+    color: "amber",
+    roles: [
+      { name: "Talent Acquisition Specialist", desc: "Technical Sourcing, Candidate Vetting, Applicant Tracking Systems" },
+      { name: "HR Operations Manager", desc: "Payroll Processing, HRIS (Workday/BambooHR), Employee Onboarding" },
+      { name: "Compensation & Benefits Analyst", desc: "Salary Benchmarking, Equity Plans, Benefits Administration" },
+      { name: "HR Business Partner (HRBP)", desc: "Strategic Talent Alignment, Organizational Development, Leadership Retention" }
+    ]
+  },
+  {
+    id: "nonit-sales-marketing",
+    name: "Sales & Marketing",
+    icon: Megaphone,
+    color: "amber",
+    roles: [
+      { name: "B2B Technical Sales Manager", desc: "Enterprise Solution Selling, Pipeline Management, Account Growth" },
+      { name: "Digital Marketing Strategist", desc: "SEO/SEM, Content Strategy, Performance Marketing, CRM Campaigns" },
+      { name: "Account Executive", desc: "Quota Attainment, Contract Negotiation, Client Relationship Mgmt" },
+      { name: "Business Development Manager", desc: "Strategic Partnerships, Lead Generation, Market Expansion" }
+    ]
+  }
+];
+
+// Combine categories for JSON embedding
+const allCategoriesData = [...itCategories, ...nonItCategories].reduce((acc, cat) => {
+  acc[cat.id] = {
+    id: cat.id,
+    name: cat.name,
+    sector: cat.id.startsWith('it-') ? 'IT SECTOR' : 'NON-IT SECTOR',
+    color: cat.color,
+    roles: cat.roles
+  };
+  return acc;
+}, {} as Record<string, any>);
 ---
 
-<section class="py-20 bg-white border-y border-slate-200">
+<section class="py-20 bg-gradient-to-b from-white via-slate-50/50 to-white border-y border-slate-200 relative">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
-      <div>
-        <span class="text-xs font-extrabold uppercase tracking-widest text-[#19A4A8]">TAXONOMY OF EXCELLENCE</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-[#041B3B] mt-2">Roles We Excel in Placing</h2>
-        <p class="text-slate-600 text-sm mt-1">Deep architectural alignment across modern tech stacks and strategic leadership.</p>
+    
+    <!-- Section Header (Matches Image 2) -->
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <span class="text-xs font-extrabold uppercase tracking-widest text-[#0284c7]">YOUR CAREER. OUR EXPERTISE.</span>
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-[#041B3B] mt-2 tracking-tight">
+        Explore Opportunities <span class="bg-gradient-to-r from-[#0284c7] via-[#19A4A8] to-[#20C5CA] bg-clip-text text-transparent">Across Industries</span>
+      </h2>
+      <p class="text-slate-600 text-sm sm:text-base mt-3 font-medium leading-relaxed">
+        Whether you're in IT or Non-IT, we connect talented professionals with leading companies and meaningful opportunities.
+      </p>
+      
+      <!-- Decorative Accent Line -->
+      <div class="flex items-center justify-center gap-1.5 mt-4">
+        <span class="w-10 h-1 bg-[#0284c7] rounded-full"></span>
+        <span class="w-6 h-1 bg-[#19A4A8]/60 rounded-full"></span>
+        <span class="w-2 h-1 bg-[#20C5CA]/40 rounded-full"></span>
       </div>
-      <a href="/roles" class="inline-flex items-center gap-2 text-sm font-bold text-[#041B3B] hover:text-[#0284c7] transition-colors">
-        <span>Explore All 23+ Roles</span>
-        <ArrowRight class="w-4 h-4" />
-      </a>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {categories.map((cat) => {
-        const Icon = cat.icon;
-        return (
-          <div class="bg-[#f8fafc] rounded-3xl p-6 border border-slate-200 hover:border-slate-300 transition-all">
-            <div class="flex items-center gap-3 mb-4">
-              <div class="p-2.5 rounded-xl bg-[#20C5CA]/15 text-[#041B3B] border border-[#20C5CA]/30">
-                <Icon class="w-5 h-5" />
-              </div>
-              <h3 class="font-extrabold text-lg text-[#041B3B]">{cat.name}</h3>
+    <!-- Main Split Grid Container (IT Sector vs Non-IT Sector) -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+      
+      <!-- ================= IT SECTOR BOX ================= -->
+      <div class="bg-gradient-to-b from-[#f0f7ff] via-[#f5f9ff] to-white rounded-3xl p-6 sm:p-8 border border-sky-200/80 shadow-sm relative flex flex-col justify-between hover:shadow-md transition-shadow">
+        
+        <div>
+          <!-- Header Banner -->
+          <div class="flex items-start justify-between gap-4 mb-6">
+            <div class="space-y-2">
+              <span class="inline-block px-3 py-1 rounded-full bg-sky-100/90 text-[#0284c7] font-extrabold text-[11px] uppercase tracking-wider border border-sky-200">
+                IT SECTOR
+              </span>
+              <h3 class="text-2xl sm:text-3xl font-extrabold text-[#041B3B] tracking-tight">
+                Build the Future with Technology
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-600 font-medium leading-relaxed">
+                From code to cloud, explore top IT roles that power innovation.
+              </p>
             </div>
 
-            <div class="flex flex-wrap gap-2 pt-2">
-              {cat.roles.map((role) => (
-                <span class="px-3 py-1.5 rounded-xl bg-white hover:bg-[#20C5CA]/10 text-xs font-semibold text-slate-700 border border-slate-200 transition-colors cursor-default">
-                  {role}
-                </span>
-              ))}
+            <!-- Laptop Graphic Illustration -->
+            <div class="hidden sm:flex shrink-0 w-20 h-20 rounded-2xl bg-gradient-to-br from-sky-500 to-[#041B3B] items-center justify-center text-white shadow-lg shadow-sky-500/20 relative group">
+              <div class="absolute -top-1 -right-1 w-3 h-3 bg-[#20C5CA] rounded-full animate-ping"></div>
+              <div class="p-3 bg-white/15 backdrop-blur-xs rounded-xl">
+                <Code class="w-8 h-8 text-sky-200" />
+              </div>
             </div>
           </div>
-        );
-      })}
+
+          <!-- Category Buttons Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mt-6">
+            {itCategories.map((cat) => {
+              const Icon = cat.icon;
+              return (
+                <button
+                  type="button"
+                  data-category-id={cat.id}
+                  class="category-btn bg-white hover:bg-sky-50/60 border border-slate-200/90 hover:border-sky-300 rounded-2xl p-3.5 flex items-center justify-between shadow-xs hover:shadow-md transition-all duration-200 group text-left w-full cursor-pointer"
+                >
+                  <div class="flex items-center gap-3 pr-2">
+                    <div class="p-2 rounded-xl bg-sky-50 text-[#0284c7] border border-sky-100 group-hover:bg-[#0284c7] group-hover:text-white transition-colors shrink-0">
+                      <Icon class="w-4 h-4" />
+                    </div>
+                    <span class="font-bold text-xs sm:text-sm text-[#041B3B] group-hover:text-[#0284c7] transition-colors leading-tight">
+                      {cat.name}
+                    </span>
+                  </div>
+                  <ArrowRight class="w-4 h-4 text-slate-400 group-hover:text-[#0284c7] group-hover:translate-x-1 transition-all shrink-0" />
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ================= NON-IT SECTOR BOX ================= -->
+      <div class="bg-gradient-to-b from-[#fff8f0] via-[#fffbf7] to-white rounded-3xl p-6 sm:p-8 border border-amber-200/80 shadow-sm relative flex flex-col justify-between hover:shadow-md transition-shadow">
+        
+        <div>
+          <!-- Header Banner -->
+          <div class="flex items-start justify-between gap-4 mb-6">
+            <div class="space-y-2">
+              <span class="inline-block px-3 py-1 rounded-full bg-amber-100/90 text-amber-700 font-extrabold text-[11px] uppercase tracking-wider border border-amber-200">
+                NON-IT SECTOR
+              </span>
+              <h3 class="text-2xl sm:text-3xl font-extrabold text-[#041B3B] tracking-tight">
+                Powering Diverse Industries
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-600 font-medium leading-relaxed">
+                From manufacturing to healthcare, we help you find the right talent across every sector.
+              </p>
+            </div>
+
+            <!-- Factory / Industry Illustration -->
+            <div class="hidden sm:flex shrink-0 w-20 h-20 rounded-2xl bg-gradient-to-br from-amber-500 to-amber-900 items-center justify-center text-white shadow-lg shadow-amber-500/20 relative group">
+              <div class="absolute -top-1 -right-1 w-3 h-3 bg-amber-300 rounded-full animate-ping"></div>
+              <div class="p-3 bg-white/15 backdrop-blur-xs rounded-xl">
+                <Wrench class="w-8 h-8 text-amber-200" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Category Buttons Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mt-6">
+            {nonItCategories.map((cat) => {
+              const Icon = cat.icon;
+              return (
+                <button
+                  type="button"
+                  data-category-id={cat.id}
+                  class="category-btn bg-white hover:bg-amber-50/60 border border-slate-200/90 hover:border-amber-300 rounded-2xl p-3.5 flex items-center justify-between shadow-xs hover:shadow-md transition-all duration-200 group text-left w-full cursor-pointer"
+                >
+                  <div class="flex items-center gap-3 pr-2">
+                    <div class="p-2 rounded-xl bg-amber-50 text-amber-600 border border-amber-100 group-hover:bg-amber-600 group-hover:text-white transition-colors shrink-0">
+                      <Icon class="w-4 h-4" />
+                    </div>
+                    <span class="font-bold text-xs sm:text-sm text-[#041B3B] group-hover:text-amber-700 transition-colors leading-tight">
+                      {cat.name}
+                    </span>
+                  </div>
+                  <ArrowRight class="w-4 h-4 text-slate-400 group-hover:text-amber-600 group-hover:translate-x-1 transition-all shrink-0" />
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+      </div>
+
     </div>
+
+    <!-- ================= BOTTOM CONVERSION BANNER (Matches Image 2 Bottom) ================= -->
+    <div class="bg-gradient-to-r from-emerald-50/90 via-teal-50/90 to-sky-50/90 border border-emerald-200/70 rounded-3xl p-6 sm:p-8 mt-10 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
+      
+      <div class="flex items-center gap-4 text-left">
+        <div class="p-4 rounded-2xl bg-white text-[#0284c7] shadow-md border border-emerald-100 shrink-0">
+          <Handshake class="w-8 h-8 text-[#19A4A8]" />
+        </div>
+        <div>
+          <span class="text-[11px] font-extrabold uppercase tracking-widest text-[#19A4A8]">
+            LET'S BUILD GREAT TEAMS TOGETHER
+          </span>
+          <h3 class="text-xl sm:text-2xl font-extrabold text-[#041B3B] mt-0.5">
+            Your Next Opportunity is Just a Click Away
+          </h3>
+          <div class="flex flex-wrap items-center gap-x-6 gap-y-2 mt-2 text-xs font-bold text-slate-700">
+            <span class="flex items-center gap-1.5"><CheckCircle2 class="w-4 h-4 text-emerald-600" /> Trusted by Top Companies</span>
+            <span class="flex items-center gap-1.5"><CheckCircle2 class="w-4 h-4 text-emerald-600" /> Wide Range of Roles</span>
+            <span class="flex items-center gap-1.5"><CheckCircle2 class="w-4 h-4 text-emerald-600" /> Personalized Support</span>
+            <span class="flex items-center gap-1.5"><CheckCircle2 class="w-4 h-4 text-emerald-600" /> Long-Term Career Growth</span>
+          </div>
+        </div>
+      </div>
+
+      <button 
+        onclick="document.getElementById('booking-modal').classList.remove('hidden')"
+        class="w-full md:w-auto px-8 py-3.5 text-sm font-bold text-white bg-[#0284c7] hover:bg-[#0369a1] rounded-full shadow-lg shadow-sky-500/25 flex items-center justify-center gap-2 cursor-pointer transition-all hover:scale-105 shrink-0"
+      >
+        <span>Explore Jobs</span>
+        <ArrowRight class="w-4 h-4" />
+      </button>
+    </div>
+
   </div>
 </section>
+
+<!-- ================= CATEGORY ROLES POPUP MODAL ================= -->
+<div 
+  id="category-roles-modal" 
+  class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 sm:p-6 bg-slate-900/60 backdrop-blur-sm overflow-y-auto"
+>
+  <div class="relative w-full max-w-3xl bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-2xl animate-fade-in my-auto max-h-[90vh] flex flex-col">
+    
+    <!-- Modal Close Button -->
+    <button 
+      id="close-category-modal-btn"
+      class="absolute top-5 right-5 p-2 rounded-xl text-slate-400 hover:text-[#041B3B] hover:bg-slate-100 transition-colors z-10 cursor-pointer"
+      aria-label="Close modal"
+    >
+      <X class="w-5 h-5" />
+    </button>
+
+    <!-- Modal Dynamic Header -->
+    <div class="mb-6 pb-4 border-b border-slate-100 pr-10 shrink-0">
+      <div class="flex items-center gap-3">
+        <span 
+          id="modal-sector-badge" 
+          class="px-3 py-1 rounded-full text-[11px] font-extrabold uppercase tracking-wider"
+        >
+          SECTOR
+        </span>
+        <span class="text-xs font-bold text-slate-500">TAXONOMY PROFILE</span>
+      </div>
+
+      <h3 
+        id="modal-category-name" 
+        class="text-2xl sm:text-3xl font-extrabold text-[#041B3B] mt-2 flex items-center gap-3"
+      >
+        Category Name
+      </h3>
+      <p class="text-xs sm:text-sm text-slate-600 mt-1 font-medium">
+        Explore supported roles and specialized placement pathways we offer under this category.
+      </p>
+    </div>
+
+    <!-- Modal Roles List / Grid (Scrollable) -->
+    <div 
+      id="modal-roles-grid" 
+      class="overflow-y-auto space-y-3 pr-1 py-1 flex-1 text-left"
+    >
+      <!-- Dynamically populated via JS -->
+    </div>
+
+    <!-- Modal Footer Actions -->
+    <div class="mt-6 pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-3 shrink-0">
+      <p class="text-xs font-semibold text-slate-500 text-center sm:text-left">
+        Ready to hire or apply for roles in this category?
+      </p>
+      <div class="flex items-center gap-3 w-full sm:w-auto">
+        <button 
+          id="modal-apply-btn"
+          class="flex-1 sm:flex-initial px-5 py-2.5 rounded-xl bg-[#041B3B] hover:bg-[#082854] text-white font-bold text-xs shadow-md transition-all cursor-pointer"
+        >
+          Apply / Book Advisory Call →
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Embed JavaScript for Interactive Category Popup Modal -->
+<script is:inline define:vars={{ allCategoriesData }}>
+  document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('category-roles-modal');
+    const closeBtn = document.getElementById('close-category-modal-btn');
+    const modalSectorBadge = document.getElementById('modal-sector-badge');
+    const modalCategoryName = document.getElementById('modal-category-name');
+    const modalRolesGrid = document.getElementById('modal-roles-grid');
+    const modalApplyBtn = document.getElementById('modal-apply-btn');
+
+    function openModalForCategory(categoryId) {
+      const data = allCategoriesData[categoryId];
+      if (!data) return;
+
+      // Update badge
+      if (data.sector === 'IT SECTOR') {
+        modalSectorBadge.textContent = 'IT SECTOR';
+        modalSectorBadge.className = 'px-3 py-1 rounded-full text-[11px] font-extrabold uppercase tracking-wider bg-sky-100 text-[#0284c7] border border-sky-200';
+      } else {
+        modalSectorBadge.textContent = 'NON-IT SECTOR';
+        modalSectorBadge.className = 'px-3 py-1 rounded-full text-[11px] font-extrabold uppercase tracking-wider bg-amber-100 text-amber-700 border border-amber-200';
+      }
+
+      // Update category title
+      modalCategoryName.textContent = data.name;
+
+      // Populate roles
+      modalRolesGrid.innerHTML = data.roles.map((role) => `
+        <div class="p-4 rounded-2xl bg-slate-50/80 border border-slate-200/80 hover:border-slate-300 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3 group">
+          <div>
+            <h4 class="font-extrabold text-base text-[#041B3B] group-hover:text-[#0284c7] transition-colors">${role.name}</h4>
+            <p class="text-xs text-slate-600 mt-1 font-medium">${role.desc}</p>
+          </div>
+          <button 
+            type="button"
+            onclick="openBookingFromRole('${role.name}')"
+            class="self-start sm:self-center px-3.5 py-1.5 rounded-lg bg-white border border-slate-200 hover:border-[#0284c7] text-xs font-bold text-[#041B3B] hover:text-[#0284c7] shadow-2xs transition-all shrink-0 cursor-pointer"
+          >
+            Select Role →
+          </button>
+        </div>
+      `).join('');
+
+      // Show modal
+      modal.classList.remove('hidden');
+    }
+
+    function closeModal() {
+      modal.classList.add('hidden');
+    }
+
+    // Attach category button click handlers
+    document.querySelectorAll('.category-btn').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        const categoryId = btn.getAttribute('data-category-id');
+        openModalForCategory(categoryId);
+      });
+    });
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', closeModal);
+    }
+
+    // Modal backdrop click
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    // Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        closeModal();
+      }
+    });
+
+    if (modalApplyBtn) {
+      modalApplyBtn.addEventListener('click', () => {
+        closeModal();
+        const bookingModal = document.getElementById('booking-modal');
+        if (bookingModal) {
+          bookingModal.classList.remove('hidden');
+        }
+      });
+    }
+  });
+
+  window.openBookingFromRole = function(roleName) {
+    const modal = document.getElementById('category-roles-modal');
+    if (modal) modal.classList.add('hidden');
+    
+    const bookingModal = document.getElementById('booking-modal');
+    if (bookingModal) {
+      bookingModal.classList.remove('hidden');
+    }
+  };
+</script>

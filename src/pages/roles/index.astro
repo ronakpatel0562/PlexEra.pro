@@ -1,8 +1,11 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { Code, Cloud, Cpu, Shield, Layers, Briefcase, ArrowRight } from 'lucide-astro';
+import { 
+  Code, Cloud, Cpu, Shield, Layers, Briefcase, Wrench, Building2, 
+  BadgeCheck, Truck, HeartPulse, TrendingUp, Users, Megaphone, ArrowRight, Settings, Server
+} from 'lucide-astro';
 
-const rolesData = [
+const itSectorData = [
   {
     category: "Software Engineering & Architecture",
     icon: Code,
@@ -30,24 +33,92 @@ const rolesData = [
     ]
   },
   {
-    category: "Cybersecurity & Network Infrastructure",
+    category: "Cybersecurity & Infrastructure",
     icon: Shield,
     roles: [
       { name: "Cybersecurity Lead & Security Engineer", slug: "cybersecurity", desc: "SOC Analysis, Penetration Testing, IAM, Zero-Trust" }
     ]
   },
   {
-    category: "Specialized Enterprise Platforms",
-    icon: Layers,
+    category: "Automation & QA",
+    icon: Settings,
     roles: [
-      { name: "ServiceNow & Enterprise Platform Lead", slug: "servicenow-developer", desc: "ITSM, SecOps, Workflow Automation, Integration Hub" }
+      { name: "QA Automation Lead", slug: "full-stack-developer", desc: "Selenium, Cypress, Playwright, API Testing" },
+      { name: "SDET Engineer", slug: "full-stack-developer", desc: "Test Frameworks, CI/CD Integration, Java/Python" }
     ]
   },
   {
-    category: "High-Impact Non-IT & Leadership",
+    category: "Product & Project Management",
     icon: Briefcase,
     roles: [
-      { name: "Technical Product Manager", slug: "product-manager", desc: "Agile Sprints, Roadmap Planning, User Story Mapping" },
+      { name: "Technical Product Manager", slug: "product-manager", desc: "Agile Sprints, Roadmap Planning, User Story Mapping" }
+    ]
+  }
+];
+
+const nonItSectorData = [
+  {
+    category: "Manufacturing & Mechanical",
+    icon: Wrench,
+    roles: [
+      { name: "Mechanical Engineer", slug: "financial-analyst", desc: "CAD/CAM, SolidWorks, FEA Analysis, Mechanical Systems" },
+      { name: "Manufacturing Engineer", slug: "financial-analyst", desc: "Lean Manufacturing, Production Planning, Tooling" },
+      { name: "Production Engineer", slug: "financial-analyst", desc: "Plant Operations, Process Efficiency, Quality Standards" },
+      { name: "Process Engineer", slug: "financial-analyst", desc: "Flow Optimization, P&ID, Chemical/Process Systems" },
+      { name: "Industrial Engineer", slug: "financial-analyst", desc: "Ergonomics, Motion Studies, Capacity Planning" },
+      { name: "Maintenance Engineer", slug: "financial-analyst", desc: "Preventive Maintenance, TPM, Equipment Reliability" }
+    ]
+  },
+  {
+    category: "Automation & Controls",
+    icon: Cpu,
+    roles: [
+      { name: "Automation Engineer", slug: "financial-analyst", desc: "PLC Programming, SCADA Systems, HMI Development" },
+      { name: "Controls Engineer", slug: "financial-analyst", desc: "Control Architecture, Schematics, Motion Control" },
+      { name: "PLC Programmer", slug: "financial-analyst", desc: "Rockwell, Siemens S7, Ladder Logic, Structured Text" },
+      { name: "Instrumentation Engineer", slug: "financial-analyst", desc: "Transducers, Control Valves, Calibration, Process Loops" },
+      { name: "Robotics Engineer", slug: "financial-analyst", desc: "FANUC/KUKA Robotics, Kinematics, Robotic Cells" }
+    ]
+  },
+  {
+    category: "Supply Chain & Logistics",
+    icon: Truck,
+    roles: [
+      { name: "Supply Chain Analyst", slug: "financial-analyst", desc: "Inventory Analytics, Cost Reduction, Data Modeling" },
+      { name: "Procurement Specialist", slug: "financial-analyst", desc: "Vendor Sourcing, Negotiations, Contract Management" },
+      { name: "Logistics Coordinator", slug: "financial-analyst", desc: "Freight Forwarding, Customs, Fleet Operations" },
+      { name: "Warehouse Manager", slug: "financial-analyst", desc: "WMS Systems, Inventory Audits, Distribution Ops" },
+      { name: "Demand Planner", slug: "financial-analyst", desc: "Forecasting Models, S&OP Alignment, ERP Modules" },
+      { name: "Supply Chain Manager", slug: "financial-analyst", desc: "End-to-End Supply Chain Strategy & Optimization" }
+    ]
+  },
+  {
+    category: "Healthcare & Life Sciences",
+    icon: HeartPulse,
+    roles: [
+      { name: "Clinical Research Associate (CRA)", slug: "financial-analyst", desc: "Clinical Trial Monitoring, GCP Compliance, Site Mgmt" },
+      { name: "Clinical Research Coordinator", slug: "financial-analyst", desc: "Patient Recruitment, Trial Documentation, GCP" },
+      { name: "Laboratory Technician", slug: "financial-analyst", desc: "Sample Analysis, Assay Preparation, Equipment GLP" },
+      { name: "Quality Assurance Specialist", slug: "financial-analyst", desc: "GMP/FDA Compliance, CAPA Systems, Batch Reviews" },
+      { name: "Regulatory Affairs Specialist", slug: "financial-analyst", desc: "FDA Submissions (510k/NDA), Regulatory Strategy" },
+      { name: "Medical Laboratory Scientist", slug: "financial-analyst", desc: "Diagnostic Testing, Microbiology, LIMS Operations" }
+    ]
+  },
+  {
+    category: "Construction & Engineering",
+    icon: Building2,
+    roles: [
+      { name: "Civil Engineer", slug: "financial-analyst", desc: "Structural Analysis, Site Grading, Infrastructure" },
+      { name: "Project Engineer", slug: "financial-analyst", desc: "Submittals, RFIs, Subcontractor Coordination" },
+      { name: "Site Engineer", slug: "financial-analyst", desc: "On-Site Supervision, Quality Audits, Safety Enforcement" },
+      { name: "Structural Engineer", slug: "financial-analyst", desc: "Steel & Concrete Design, Seismic Calculation, Codes" },
+      { name: "Construction Manager", slug: "financial-analyst", desc: "Project Budgeting, Primavera/MS Project, Site Leadership" }
+    ]
+  },
+  {
+    category: "Finance & Accounting",
+    icon: TrendingUp,
+    roles: [
       { name: "Financial Data Analyst", slug: "financial-analyst", desc: "Financial Modeling, Forecasting, BI Dashboards, SQL" }
     ]
   }
@@ -55,37 +126,44 @@ const rolesData = [
 ---
 
 <Layout 
-  title="In-Demand IT & Leadership Roles Taxonomy | PlexEra"
-  description="Explore top technology and business roles placed by PlexEra. Full-Stack, Cloud, DevOps, AI, Cybersecurity, Product Management, and Finance."
+  title="IT & Non-IT Roles Taxonomy | PlexEra Talent Solutions"
+  description="Explore top technology and Non-IT industry roles placed by PlexEra across engineering, healthcare, supply chain, manufacturing, and business leadership."
 >
-  <section class="py-20 text-center max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-[#f8fafc]">
-    <span class="text-xs font-extrabold uppercase tracking-widest text-[#19A4A8]">DEMANDED ROLES HUB</span>
-    <h1 class="text-4xl sm:text-6xl font-extrabold text-[#041B3B] mt-2">Specialized Tech Talent Taxonomy</h1>
+  <!-- Header -->
+  <section class="py-16 text-center max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-[#f8fafc]">
+    <span class="text-xs font-extrabold uppercase tracking-widest text-[#0284c7]">CROSS-INDUSTRY TAXONOMY</span>
+    <h1 class="text-4xl sm:text-6xl font-extrabold text-[#041B3B] mt-2">Specialized IT & Non-IT Talent Hub</h1>
     <p class="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto mt-4 font-medium">
-      Explore dedicated placement pathways for engineers, cloud architects, data scientists, and enterprise managers.
+      Explore dedicated placement pathways across software, cloud, manufacturing, healthcare, supply chain, and engineering.
     </p>
   </section>
 
-  <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 mb-20">
-    {rolesData.map((cat) => {
+  <!-- IT SECTOR SECTION -->
+  <section id="it" class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    <div class="flex items-center gap-4 pb-4 border-b border-sky-100">
+      <span class="px-4 py-1.5 rounded-full bg-sky-100 text-[#0284c7] font-extrabold text-xs uppercase tracking-wider">IT SECTOR</span>
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-[#041B3B]">Technology & Digital Innovation Roles</h2>
+    </div>
+
+    {itSectorData.map((cat) => {
       const Icon = cat.icon;
       return (
         <div class="space-y-6">
           <div class="flex items-center gap-3">
-            <div class="p-3 rounded-2xl bg-[#20C5CA]/15 text-[#041B3B] border border-[#20C5CA]/30">
+            <div class="p-3 rounded-2xl bg-sky-100/60 text-[#0284c7] border border-sky-200">
               <Icon class="w-6 h-6" />
             </div>
-            <h2 class="text-2xl font-extrabold text-[#041B3B]">{cat.category}</h2>
+            <h3 class="text-2xl font-extrabold text-[#041B3B]">{cat.category}</h3>
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {cat.roles.map((role) => (
               <a 
                 href={`/roles/${role.slug}`}
-                class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-300 flex flex-col justify-between group"
+                class="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs hover:shadow-md hover:border-sky-300 transition-all duration-300 flex flex-col justify-between group"
               >
                 <div>
-                  <h3 class="font-bold text-lg text-[#041B3B] group-hover:text-[#0284c7] transition-colors">{role.name}</h3>
+                  <h4 class="font-bold text-lg text-[#041B3B] group-hover:text-[#0284c7] transition-colors">{role.name}</h4>
                   <p class="text-xs text-slate-600 mt-2 leading-relaxed">{role.desc}</p>
                 </div>
 
@@ -94,6 +172,47 @@ const rolesData = [
                   <ArrowRight class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>
               </a>
+            ))}
+          </div>
+        </div>
+      );
+    })}
+  </section>
+
+  <!-- NON-IT SECTOR SECTION -->
+  <section id="non-it" class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 mb-20">
+    <div class="flex items-center gap-4 pb-4 border-b border-amber-100">
+      <span class="px-4 py-1.5 rounded-full bg-amber-100 text-amber-700 font-extrabold text-xs uppercase tracking-wider">NON-IT SECTOR</span>
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-[#041B3B]">Core Engineering & Industry Roles</h2>
+    </div>
+
+    {nonItSectorData.map((cat) => {
+      const Icon = cat.icon;
+      return (
+        <div class="space-y-6">
+          <div class="flex items-center gap-3">
+            <div class="p-3 rounded-2xl bg-amber-100/60 text-amber-700 border border-amber-200">
+              <Icon class="w-6 h-6" />
+            </div>
+            <h3 class="text-2xl font-extrabold text-[#041B3B]">{cat.category}</h3>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {cat.roles.map((role) => (
+              <div 
+                onclick="document.getElementById('booking-modal')?.classList.remove('hidden')"
+                class="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs hover:shadow-md hover:border-amber-300 transition-all duration-300 flex flex-col justify-between group cursor-pointer"
+              >
+                <div>
+                  <h4 class="font-bold text-lg text-[#041B3B] group-hover:text-amber-700 transition-colors">{role.name}</h4>
+                  <p class="text-xs text-slate-600 mt-2 leading-relaxed">{role.desc}</p>
+                </div>
+
+                <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#041B3B] group-hover:text-amber-700">
+                  <span>Explore Role Placement</span>
+                  <ArrowRight class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </div>
             ))}
           </div>
         </div>
