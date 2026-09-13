@@ -1,5 +1,5 @@
 ---
-import { Star, Quote, CheckCircle2, User, Building } from 'lucide-astro';
+import { Star, Quote, CheckCircle2, User, Building, ChevronLeft, ChevronRight } from 'lucide-astro';
 
 const testimonials = [
   {
@@ -59,53 +59,323 @@ const testimonials = [
 ];
 ---
 
-<section class="py-20 bg-slate-50 border-y border-slate-200">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16">
-      <span class="text-xs font-extrabold uppercase tracking-widest text-[#19A4A8]">PROVEN IMPACT</span>
-      <h2 class="text-3xl sm:text-5xl font-extrabold text-[#041B3B] mt-2">Candidate & Client Success Stories</h2>
-      <p class="text-slate-600 max-w-2xl mx-auto mt-3 text-base">Real results from candidates elevating their careers and enterprise leaders building world-class teams.</p>
+<section class="py-20 bg-gradient-to-b from-slate-50 via-slate-100/40 to-slate-50 border-y border-slate-200 relative overflow-hidden">
+  <!-- Subtle ambient background glow -->
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[320px] bg-[#19A4A8]/10 blur-[130px] rounded-full pointer-events-none"></div>
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="text-center mb-12">
+      <span class="text-xs font-extrabold uppercase tracking-widest text-[#19A4A8] bg-[#19A4A8]/10 px-3.5 py-1.5 rounded-full border border-[#19A4A8]/20 shadow-xs">
+        PROVEN IMPACT
+      </span>
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-[#041B3B] mt-4 tracking-tight">Candidate & Client Success Stories</h2>
+      <p class="text-slate-600 max-w-2xl mx-auto mt-3 text-base sm:text-lg">Real results from candidates elevating their careers and enterprise leaders building world-class teams.</p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {testimonials.map((t) => {
-        const BadgeIcon = t.badgeIcon;
-        return (
-          <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-lg hover:border-slate-300 transition-all duration-300 flex flex-col justify-between group">
-            <div>
-              <!-- Header & Star Rating -->
-              <div class="flex items-center justify-between mb-6">
-                <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-[#20C5CA]/15 text-[#041B3B] border border-[#20C5CA]/30">
-                  <BadgeIcon class="w-3.5 h-3.5" />
-                  <span>{t.typeBadge}</span>
+    <!-- Carousel Container -->
+    <div id="testimonial-carousel" class="relative focus:outline-none select-none" tabindex="0" aria-label="Testimonial Slider">
+      <!-- Outer Card Frame with Glassmorphism & Shadow -->
+      <div class="relative overflow-hidden rounded-3xl bg-white/95 backdrop-blur-md border border-slate-200/90 shadow-xl shadow-slate-200/50">
+        
+        <!-- Animated Track Container -->
+        <div 
+          id="testimonial-track" 
+          class="flex transition-transform duration-600 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform cursor-grab active:cursor-grabbing"
+          style="transform: translate3d(0%, 0, 0);"
+        >
+          {testimonials.map((t, index) => {
+            const BadgeIcon = t.badgeIcon;
+            return (
+              <div 
+                data-slide-index={index}
+                class="testimonial-slide w-full shrink-0 p-6 sm:p-10 flex flex-col justify-between min-h-[360px] sm:min-h-[290px] md:min-h-[260px] transition-all duration-500"
+                aria-roledescription="slide"
+                aria-label={`${index + 1} of ${testimonials.length}`}
+              >
+                <div>
+                  <!-- Header Badge & Rating -->
+                  <div class="flex items-center justify-between mb-4 sm:mb-6">
+                    <div class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-[#20C5CA]/15 text-[#041B3B] border border-[#20C5CA]/30 shadow-xs">
+                      <BadgeIcon class="w-3.5 h-3.5 text-[#19A4A8]" />
+                      <span>{t.typeBadge}</span>
+                    </div>
+                    <div class="flex text-amber-400 gap-0.5">
+                      <Star class="w-4 h-4 fill-amber-400" />
+                      <Star class="w-4 h-4 fill-amber-400" />
+                      <Star class="w-4 h-4 fill-amber-400" />
+                      <Star class="w-4 h-4 fill-amber-400" />
+                      <Star class="w-4 h-4 fill-amber-400" />
+                    </div>
+                  </div>
+
+                  <!-- Quote Box -->
+                  <div class="relative">
+                    <Quote class="w-8 h-8 sm:w-10 sm:h-10 text-[#19A4A8]/20 absolute -top-2 -left-2 -z-0 pointer-events-none" />
+                    <p class="text-sm sm:text-base md:text-lg text-slate-700 leading-relaxed italic relative z-10 pl-4 sm:pl-6 border-l-2 border-[#19A4A8]/40">
+                      "{t.quote}"
+                    </p>
+                  </div>
                 </div>
-                <div class="flex text-amber-400">
-                  <Star class="w-4 h-4 fill-amber-400" />
-                  <Star class="w-4 h-4 fill-amber-400" />
-                  <Star class="w-4 h-4 fill-amber-400" />
-                  <Star class="w-4 h-4 fill-amber-400" />
-                  <Star class="w-4 h-4 fill-amber-400" />
+
+                <!-- Author & Verified Tag -->
+                <div class="mt-6 pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
+                  <div>
+                    <div class="font-extrabold text-base sm:text-lg text-[#041B3B]">{t.author}</div>
+                    <div class="text-xs sm:text-sm text-[#0284c7] font-semibold">{t.role}</div>
+                  </div>
+                  <div class="flex items-center gap-1.5 text-xs font-semibold text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200/60">
+                    <CheckCircle2 class="w-3.5 h-3.5" />
+                    <span>{t.tag}</span>
+                  </div>
                 </div>
               </div>
+            );
+          })}
+        </div>
 
-              <!-- Quote Icon & Text -->
-              <Quote class="w-8 h-8 text-[#041B3B]/20 mb-3" />
-              <p class="text-xs sm:text-sm text-slate-700 leading-relaxed italic">
-                "{t.quote}"
-              </p>
-            </div>
+        <!-- Sleek Auto-play Progress Bar -->
+        <div class="h-1 w-full bg-slate-100 relative overflow-hidden">
+          <div id="testimonial-progress-bar" class="h-full bg-gradient-to-r from-[#20C5CA] to-[#19A4A8] w-0 transition-all duration-100 linear"></div>
+        </div>
+      </div>
 
-            <div class="mt-8 pt-6 border-t border-slate-100">
-              <div class="font-extrabold text-base text-[#041B3B]">{t.author}</div>
-              <div class="text-xs text-[#0284c7] font-bold">{t.role}</div>
-              <div class="flex items-center gap-1 text-[11px] font-semibold text-emerald-600 mt-2">
-                <CheckCircle2 class="w-3.5 h-3.5" />
-                <span>{t.tag}</span>
-              </div>
-            </div>
+      <!-- Controls & Pagination Bar -->
+      <div class="flex items-center justify-between mt-6 px-2">
+        <!-- Pagination Dots -->
+        <div class="flex items-center gap-2" id="testimonial-dots">
+          {testimonials.map((_, index) => (
+            <button
+              data-dot-index={index}
+              aria-label={`Go to review ${index + 1}`}
+              aria-selected={index === 0 ? "true" : "false"}
+              class={`h-2.5 rounded-full transition-all duration-500 cursor-pointer ${
+                index === 0 ? 'w-8 bg-[#19A4A8]' : 'w-2.5 bg-slate-300 hover:bg-slate-400'
+              }`}
+            ></button>
+          ))}
+        </div>
+
+        <!-- Counter & Arrows -->
+        <div class="flex items-center gap-4">
+          <span id="testimonial-counter" class="text-xs font-extrabold text-slate-400 tracking-wider">
+            01 / {String(testimonials.length).padStart(2, '0')}
+          </span>
+
+          <div class="flex items-center gap-2">
+            <button
+              id="testimonial-prev-btn"
+              aria-label="Previous Review"
+              class="p-2.5 rounded-full bg-white hover:bg-slate-100 border border-slate-200 text-slate-600 hover:text-[#041B3B] transition-all shadow-xs hover:shadow hover:scale-105 active:scale-95 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#19A4A8]/40"
+            >
+              <ChevronLeft class="w-4 h-4" />
+            </button>
+            <button
+              id="testimonial-next-btn"
+              aria-label="Next Review"
+              class="p-2.5 rounded-full bg-white hover:bg-slate-100 border border-slate-200 text-slate-600 hover:text-[#041B3B] transition-all shadow-xs hover:shadow hover:scale-105 active:scale-95 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#19A4A8]/40"
+            >
+              <ChevronRight class="w-4 h-4" />
+            </button>
           </div>
-        );
-      })}
+        </div>
+      </div>
     </div>
   </div>
 </section>
+
+<script>
+  function initTestimonialSlider() {
+    const container = document.getElementById('testimonial-carousel');
+    if (!container) return;
+
+    const track = document.getElementById('testimonial-track') as HTMLElement;
+    const slides = container.querySelectorAll('.testimonial-slide');
+    const dots = container.querySelectorAll('[data-dot-index]');
+    const prevBtn = document.getElementById('testimonial-prev-btn');
+    const nextBtn = document.getElementById('testimonial-next-btn');
+    const counter = document.getElementById('testimonial-counter');
+    const progressBar = document.getElementById('testimonial-progress-bar');
+
+    if (!track || !slides.length) return;
+
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+    let autoPlayTimer: any = null;
+    let progressTimer: any = null;
+    const intervalTime = 6000;
+    const progressStep = 50;
+    let currentProgressMs = 0;
+
+    function updateProgressBar() {
+      if (!progressBar) return;
+      const percentage = Math.min((currentProgressMs / intervalTime) * 100, 100);
+      progressBar.style.width = `${percentage}%`;
+    }
+
+    function resetProgressBar() {
+      currentProgressMs = 0;
+      if (progressBar) {
+        progressBar.style.transition = 'none';
+        progressBar.style.width = '0%';
+        void progressBar.offsetWidth;
+        progressBar.style.transition = `width ${progressStep}ms linear`;
+      }
+    }
+
+    function updateCounter() {
+      if (counter) {
+        counter.textContent = `${String(currentIndex + 1).padStart(2, '0')} / ${String(totalSlides).padStart(2, '0')}`;
+      }
+    }
+
+    function updateSlidesVisualState() {
+      slides.forEach((slide, idx) => {
+        const el = slide as HTMLElement;
+        if (idx === currentIndex) {
+          el.style.opacity = '1';
+          el.style.transform = 'scale(1)';
+          el.setAttribute('aria-hidden', 'false');
+        } else {
+          el.style.opacity = '0.35';
+          el.style.transform = 'scale(0.97)';
+          el.setAttribute('aria-hidden', 'true');
+        }
+      });
+    }
+
+    function goToSlide(targetIndex: number) {
+      currentIndex = (targetIndex + totalSlides) % totalSlides;
+
+      track.style.transform = `translate3d(-${currentIndex * 100}%, 0, 0)`;
+
+      updateSlidesVisualState();
+
+      dots.forEach((dot, idx) => {
+        const isCurrent = idx === currentIndex;
+        dot.setAttribute('aria-selected', isCurrent ? 'true' : 'false');
+        if (isCurrent) {
+          dot.classList.remove('w-2.5', 'bg-slate-300', 'hover:bg-slate-400');
+          dot.classList.add('w-8', 'bg-[#19A4A8]');
+        } else {
+          dot.classList.remove('w-8', 'bg-[#19A4A8]');
+          dot.classList.add('w-2.5', 'bg-slate-300', 'hover:bg-slate-400');
+        }
+      });
+
+      updateCounter();
+      resetProgressBar();
+    }
+
+    function nextSlide() {
+      goToSlide(currentIndex + 1);
+    }
+
+    function prevSlide() {
+      goToSlide(currentIndex - 1);
+    }
+
+    function startAutoPlay() {
+      stopAutoPlay();
+      resetProgressBar();
+
+      progressTimer = setInterval(() => {
+        currentProgressMs += progressStep;
+        updateProgressBar();
+        if (currentProgressMs >= intervalTime) {
+          nextSlide();
+        }
+      }, progressStep);
+    }
+
+    function stopAutoPlay() {
+      if (progressTimer) {
+        clearInterval(progressTimer);
+        progressTimer = null;
+      }
+      if (autoPlayTimer) {
+        clearInterval(autoPlayTimer);
+        autoPlayTimer = null;
+      }
+    }
+
+    nextBtn?.addEventListener('click', () => {
+      nextSlide();
+      startAutoPlay();
+    });
+
+    prevBtn?.addEventListener('click', () => {
+      prevSlide();
+      startAutoPlay();
+    });
+
+    dots.forEach((dot) => {
+      dot.addEventListener('click', (e) => {
+        const targetIndex = parseInt((e.currentTarget as HTMLElement).getAttribute('data-dot-index') || '0', 10);
+        goToSlide(targetIndex);
+        startAutoPlay();
+      });
+    });
+
+    // Touch / Drag Pointer Support
+    let startX = 0;
+    let isDragging = false;
+
+    track.addEventListener('pointerdown', (e) => {
+      isDragging = true;
+      startX = e.clientX;
+      stopAutoPlay();
+      track.style.transition = 'none';
+    });
+
+    track.addEventListener('pointermove', (e) => {
+      if (!isDragging) return;
+      const diffX = e.clientX - startX;
+      const baseOffset = -currentIndex * track.offsetWidth;
+      track.style.transform = `translate3d(${baseOffset + diffX}px, 0, 0)`;
+    });
+
+    const endDrag = (e: PointerEvent) => {
+      if (!isDragging) return;
+      isDragging = false;
+      track.style.transition = 'transform 600ms cubic-bezier(0.22, 1, 0.36, 1)';
+      const diffX = e.clientX - startX;
+
+      if (diffX < -50) {
+        nextSlide();
+      } else if (diffX > 50) {
+        prevSlide();
+      } else {
+        goToSlide(currentIndex);
+      }
+      startAutoPlay();
+    };
+
+    track.addEventListener('pointerup', endDrag);
+    track.addEventListener('pointerleave', endDrag);
+
+    // Pause on interaction
+    container.addEventListener('mouseenter', stopAutoPlay);
+    container.addEventListener('mouseleave', startAutoPlay);
+    container.addEventListener('focusin', stopAutoPlay);
+    container.addEventListener('focusout', startAutoPlay);
+
+    // Keyboard controls
+    container.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        nextSlide();
+        startAutoPlay();
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        prevSlide();
+        startAutoPlay();
+      }
+    });
+
+    goToSlide(0);
+    startAutoPlay();
+  }
+
+  initTestimonialSlider();
+  document.addEventListener('astro:page-load', initTestimonialSlider);
+</script>

@@ -3,46 +3,78 @@ import { ChevronDown, HelpCircle } from 'lucide-astro';
 
 const faqs = [
   {
+    q: "Do you guarantee a job?",
+    a: "While final hiring decisions rest with employer interview panels, PlexEra delivers a proven 98% placement success rate through recruiter-tested ATS resume revamps, targeted application engines submitting 100+ matching roles per week, 1-on-1 mock interviews, and offer negotiation coaching."
+  },
+  {
+    q: "Who can apply?",
+    a: "Tech professionals across all experience levels—from ambitious junior candidates and career transitioners to senior software engineers, cloud architects, engineering managers, data engineers, and IT specialists looking to advance their compensation."
+  },
+  {
+    q: "Do you work with international candidates?",
+    a: "Yes! We support US Citizens, Permanent Residents (Green Card), OPT/STEM OPT candidates, H-1B visa holders, and international technology specialists seeking remote or US-aligned tech placements."
+  },
+  {
+    q: "What services do you provide?",
+    a: "We offer end-to-end career elevation and staffing solutions: ATS Resume & LinkedIn Revamps, Targeted Job Application Execution, 1-on-1 Executive Interview Coaching, Salary & Offer Negotiation, Enterprise IT Staffing, and First-Year Job Support."
+  },
+  {
+    q: "How does the application process work?",
+    a: "After an initial strategy consultation, our team conducts a comprehensive technical profile audit, optimizes your resume for ATS algorithms, launches targeted application campaigns across 100+ matching vacancies, and prepares you with mock interviews until offer acceptance."
+  },
+  {
+    q: "How do I submit my resume?",
+    a: "You can submit your resume directly by clicking 'Book Free Consult' or filling out the form on our Contact page. Our technical recruitment strategists will analyze your profile and contact you within 24 hours."
+  },
+  {
+    q: "How are fees structured?",
+    a: "We maintain 100% transparent, value-driven pricing structures with clear milestones and no hidden fees. Detailed program pricing for candidates is reviewed during your initial strategy call, while enterprise staffing operates on custom contract or direct-hire models."
+  },
+  {
+    q: "What happens after I enroll?",
+    a: "Upon enrollment, you are assigned a dedicated Career Advisor and Technical Lead. Within 48 hours, we complete your resume revamp, configure your targeted application strategy, and begin scheduling your 1-on-1 technical mock interview rounds."
+  },
+  {
     q: "How does PlexEra differ from traditional staffing or resume agencies?",
-    a: "We offer a complete 360-degree lifecycle. We don't just format resumes; we provide 1-on-1 executive interview coaching, target job applications, negotiate maximum compensation, and offer continuous post-hire technical job support throughout your first year."
+    a: "We provide a complete 360-degree career lifecycle. Unlike standalone resume writers or automated job boards, we handle everything: resume revamps, active application submissions, technical interview coaching, salary negotiation, and 12 months of post-hire job support."
   },
   {
     q: "Does PlexEra serve both candidates and enterprise employers?",
-    a: "Yes. We operate a dual-pathway model. For candidates, we provide career acceleration services. For employers, we offer direct hire, contract staffing, and RPO solutions tightly aligned with technical product roadmaps."
+    a: "Yes! We operate a dual-pathway engine. For job seekers, we accelerate placement and boost compensation. For employers, we deliver pre-vetted, roadmap-ready engineering talent via contract, direct hire, and RPO solutions."
   },
   {
     q: "What tech stacks and roles does PlexEra specialize in?",
-    a: "We specialize across modern software engineering (Full-Stack, React, Node, Python, Java), Cloud & DevOps (AWS, Azure, Kubernetes, CI/CD), Data & AI (ML, Data Engineering, Analytics), Cybersecurity, and high-impact Non-IT roles (Product Management, Finance, Healthcare Analytics)."
+    a: "We specialize across Full-Stack Engineering (React, Node, Python, Java, Go), Cloud Infrastructure (AWS, Azure, Kubernetes, DevOps), Data Science & AI (Machine Learning, Data Engineering), Cybersecurity, ServiceNow, Financial Analytics, and Engineering Leadership."
   },
   {
     q: "How does the First-Year Job Support safety net work?",
-    a: "Once placed, candidates receive access to our senior technical mentors for onboarding advice, architectural guidance, and troubleshooting support during their initial months in the new role to guarantee high performance and retention."
+    a: "Once placed in a new role, you gain ongoing access to our senior engineering mentors for architectural guidance, code review assistance, and onboarding advice during your first 12 months to guarantee high performance and retention."
   }
 ];
 ---
 
 <section class="py-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
   <div class="text-center mb-14">
-    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#20C5CA]/15 border border-[#20C5CA]/30 text-[#041B3B] text-xs font-bold uppercase tracking-wider mb-2">
+    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#20C5CA]/15 border border-[#20C5CA]/30 text-[#041B3B] text-xs font-bold uppercase tracking-wider mb-2 shadow-xs">
       <HelpCircle class="w-3.5 h-3.5 text-[#19A4A8]" />
       <span>Got Questions?</span>
     </div>
-    <h2 class="text-3xl sm:text-5xl font-extrabold text-[#041B3B] mt-1">Frequently Asked Questions</h2>
-    <p class="text-slate-600 text-sm sm:text-base mt-2">Everything you need to know about our recruitment & career acceleration process.</p>
+    <h2 class="text-3xl sm:text-5xl font-extrabold text-[#041B3B] mt-1 tracking-tight">Frequently Asked Questions</h2>
+    <p class="text-slate-600 text-sm sm:text-base mt-2 max-w-2xl mx-auto">Everything you need to know about our recruitment & career acceleration process.</p>
   </div>
 
-  <div class="space-y-4">
+  <div class="space-y-3.5">
     {faqs.map((faq, index) => (
-      <div class="bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden transition-colors">
+      <div class="bg-white rounded-2xl border border-slate-200/90 shadow-xs hover:border-[#20C5CA]/50 overflow-hidden transition-all">
         <button
           onclick={`toggleFaq(${index})`}
-          class="w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-base sm:text-lg text-[#041B3B] hover:text-[#0284c7] transition-colors cursor-pointer"
+          class="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 font-bold text-sm sm:text-base text-[#041B3B] hover:text-[#0284c7] transition-colors cursor-pointer focus:outline-none"
           aria-expanded="false"
         >
           <span>{faq.q}</span>
           <ChevronDown id={`faq-icon-${index}`} class="w-5 h-5 text-[#19A4A8] shrink-0 transition-transform duration-200" />
         </button>
-        <div id={`faq-ans-${index}`} class="hidden px-6 pb-6 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
+        <div id={`faq-ans-${index}`} class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3.5">
           {faq.a}
         </div>
       </div>
