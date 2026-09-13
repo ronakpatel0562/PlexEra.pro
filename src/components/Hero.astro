@@ -2,14 +2,24 @@
 import { ArrowRight, Sparkles, ShieldCheck, CheckCircle2, Award, Zap } from 'lucide-astro';
 ---
 
-<section class="relative pt-12 pb-16 md:pt-20 md:pb-24 overflow-hidden bg-gradient-to-b from-white via-slate-50 to-[#f8fafc]">
-  <!-- Subtle Ambient Glow Background Overlay -->
-  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none -z-10">
-    <div class="absolute top-10 left-1/4 w-[500px] h-[500px] bg-[#20C5CA]/10 rounded-full blur-[100px]"></div>
-    <div class="absolute top-40 right-1/4 w-[400px] h-[400px] bg-sky-400/10 rounded-full blur-[90px]"></div>
+<section class="relative pt-12 pb-16 md:pt-20 md:pb-24 overflow-hidden bg-gradient-to-b from-slate-50/80 via-white to-[#f8fafc]">
+  <!-- Square Lines Background Grid Overlay -->
+  <div class="absolute inset-0 bg-hero-grid pointer-events-none z-0"></div>
+  <div class="absolute inset-0 bg-hero-grid-accent pointer-events-none z-0"></div>
+
+  <!-- Atmospheric Brand Gradient Glow Orbs -->
+  <div class="absolute inset-0 pointer-events-none overflow-hidden z-0">
+    <!-- Left Teal Glow Blob -->
+    <div class="absolute -top-24 -left-32 w-[600px] h-[600px] bg-gradient-to-br from-[#20C5CA]/30 via-[#20C5CA]/15 to-transparent rounded-full blur-[110px] animate-pulse-glow"></div>
+    
+    <!-- Right Sky Blue & Soft Indigo Glow Blob -->
+    <div class="absolute -top-10 -right-32 w-[580px] h-[580px] bg-gradient-to-bl from-sky-400/25 via-indigo-400/15 to-transparent rounded-full blur-[105px] animate-pulse-glow" style="animation-delay: 3s;"></div>
+    
+    <!-- Center Radiant Highlight -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-gradient-to-b from-[#0284c7]/15 via-[#20C5CA]/10 to-transparent rounded-full blur-[120px]"></div>
   </div>
 
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
     
     <!-- Eyebrow Badge -->
     <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#20C5CA]/10 border border-[#20C5CA]/30 text-[#041B3B] text-xs sm:text-sm font-bold tracking-wide mb-8 shadow-xs">
