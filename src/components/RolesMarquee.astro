@@ -225,16 +225,16 @@ const allCategoriesData = [...itCategories, ...nonItCategories].reduce((acc, cat
 }, {} as Record<string, any>);
 ---
 
-<section class="py-20 bg-gradient-to-b from-white via-slate-50/50 to-white border-y border-slate-200 relative">
+<section class="py-10 sm:py-20 bg-gradient-to-b from-white via-slate-50/50 to-white dark:from-[#09090b] dark:via-[#09090b] dark:to-[#09090b] border-y border-slate-200 dark:border-white/8 relative">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
-    <!-- Section Header (Matches Image 2) -->
+    <!-- Section Header -->
     <div class="text-center max-w-3xl mx-auto mb-14">
-      <span class="text-xs font-extrabold uppercase tracking-widest text-[#0284c7]">YOUR CAREER. OUR EXPERTISE.</span>
-      <h2 class="text-3xl sm:text-5xl font-extrabold text-[#041B3B] mt-2 tracking-tight">
+      <span class="text-xs font-extrabold uppercase tracking-widest text-[#0284c7] dark:text-[#20C5CA]">YOUR CAREER. OUR EXPERTISE.</span>
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-[#041B3B] dark:text-white mt-2 tracking-tight">
         Explore Opportunities <span class="bg-gradient-to-r from-[#0284c7] via-[#19A4A8] to-[#20C5CA] bg-clip-text text-transparent">Across Industries</span>
       </h2>
-      <p class="text-slate-600 text-sm sm:text-base mt-3 font-medium leading-relaxed">
+      <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base mt-3 font-medium leading-relaxed">
         Whether you're in IT or Non-IT, we connect talented professionals with leading companies and meaningful opportunities.
       </p>
       
@@ -246,29 +246,57 @@ const allCategoriesData = [...itCategories, ...nonItCategories].reduce((acc, cat
       </div>
     </div>
 
+    <!-- Mobile Sector Tab Switcher (Visible only on mobile/tablet < lg to cut vertical scroll) -->
+    <div class="flex lg:hidden justify-center mb-6">
+      <div class="inline-flex p-1 bg-slate-200/70 dark:bg-white/8 backdrop-blur-md rounded-2xl border border-slate-300/80 dark:border-white/10 shadow-inner">
+        <button 
+          id="sector-tab-it"
+          type="button"
+          class="px-5 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 flex items-center gap-1.5 bg-[#0284c7] text-white shadow-md cursor-pointer"
+        >
+          <span>IT Sector (7)</span>
+        </button>
+        <button 
+          id="sector-tab-nonit"
+          type="button"
+          class="px-5 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 flex items-center gap-1.5 text-slate-600 dark:text-slate-300 hover:text-[#041B3B] dark:hover:text-white cursor-pointer"
+        >
+          <span>Non-IT Sector (9)</span>
+        </button>
+      </div>
+    </div>
+
     <!-- Main Split Grid Container (IT Sector vs Non-IT Sector) -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-stretch">
       
       <!-- ================= IT SECTOR BOX ================= -->
-      <div class="bg-gradient-to-b from-[#f0f7ff] via-[#f5f9ff] to-white rounded-3xl p-6 sm:p-8 border border-sky-200/80 shadow-sm relative flex flex-col justify-between hover:shadow-md transition-shadow">
+      <div id="roles-it-box" class="bg-gradient-to-b from-[#f0f7ff] via-[#f5f9ff] to-white
+                  dark:from-[#0d1520] dark:via-[#0f1825] dark:to-[#0d1520]
+                  rounded-3xl p-5 sm:p-8
+                  border border-sky-200/80 dark:border-sky-500/20
+                  shadow-sm dark:shadow-[0_4px_30px_-8px_rgba(2,132,199,0.15)]
+                  relative flex flex-col justify-between hover:shadow-md dark:hover:shadow-[0_8px_40px_-8px_rgba(2,132,199,0.25)] transition-shadow">
         
         <div>
           <!-- Header Banner -->
           <div class="flex items-start justify-between gap-4 mb-6">
             <div class="space-y-2">
-              <span class="inline-block px-3 py-1 rounded-full bg-sky-100/90 text-[#0284c7] font-extrabold text-[11px] uppercase tracking-wider border border-sky-200">
+              <span class="inline-block px-3 py-1 rounded-full
+                           bg-sky-100/90 text-[#0284c7] border border-sky-200
+                           dark:bg-sky-500/15 dark:text-sky-300 dark:border-sky-500/30
+                           font-extrabold text-[11px] uppercase tracking-wider">
                 IT SECTOR
               </span>
-              <h3 class="text-2xl sm:text-3xl font-extrabold text-[#041B3B] tracking-tight">
+              <h3 class="text-2xl sm:text-3xl font-extrabold text-[#041B3B] dark:text-white tracking-tight">
                 Build the Future with Technology
               </h3>
-              <p class="text-xs sm:text-sm text-slate-600 font-medium leading-relaxed">
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
                 From code to cloud, explore top IT roles that power innovation.
               </p>
             </div>
 
-            <!-- Laptop Graphic Illustration -->
-            <div class="hidden sm:flex shrink-0 w-20 h-20 rounded-2xl bg-gradient-to-br from-sky-500 to-[#041B3B] items-center justify-center text-white shadow-lg shadow-sky-500/20 relative group">
+            <!-- Laptop Icon -->
+            <div class="hidden sm:flex shrink-0 w-20 h-20 rounded-2xl bg-gradient-to-br from-sky-500 to-[#041B3B] dark:from-sky-600 dark:to-[#082854] items-center justify-center text-white shadow-lg shadow-sky-500/20 dark:shadow-sky-500/30 relative group">
               <div class="absolute -top-1 -right-1 w-3 h-3 bg-[#20C5CA] rounded-full animate-ping"></div>
               <div class="p-3 bg-white/15 backdrop-blur-xs rounded-xl">
                 <Code class="w-8 h-8 text-sky-200" />
@@ -284,17 +312,29 @@ const allCategoriesData = [...itCategories, ...nonItCategories].reduce((acc, cat
                 <button
                   type="button"
                   data-category-id={cat.id}
-                  class="category-btn bg-white hover:bg-sky-50/60 border border-slate-200/90 hover:border-sky-300 rounded-2xl p-3.5 flex items-center justify-between shadow-xs hover:shadow-md transition-all duration-200 group text-left w-full cursor-pointer"
+                  class="category-btn
+                         bg-white hover:bg-sky-50/60 border border-slate-200/90 hover:border-sky-300
+                         dark:bg-[#141b26] dark:hover:bg-[#1a2438] dark:border-sky-500/15 dark:hover:border-sky-400/40
+                         rounded-2xl p-3.5 flex items-center justify-between
+                         shadow-xs hover:shadow-md dark:shadow-none
+                         transition-all duration-200 group text-left w-full cursor-pointer"
                 >
                   <div class="flex items-center gap-3 pr-2">
-                    <div class="p-2 rounded-xl bg-sky-50 text-[#0284c7] border border-sky-100 group-hover:bg-[#0284c7] group-hover:text-white transition-colors shrink-0">
+                    <div class="p-2 rounded-xl
+                                bg-sky-50 text-[#0284c7] border border-sky-100
+                                dark:bg-sky-500/15 dark:text-sky-300 dark:border-sky-500/20
+                                group-hover:bg-[#0284c7] group-hover:text-white dark:group-hover:bg-sky-500 dark:group-hover:text-white dark:group-hover:border-sky-500
+                                transition-colors shrink-0">
                       <Icon class="w-4 h-4" />
                     </div>
-                    <span class="font-bold text-xs sm:text-sm text-[#041B3B] group-hover:text-[#0284c7] transition-colors leading-tight">
+                    <span class="font-bold text-xs sm:text-sm
+                                 text-[#041B3B] dark:text-slate-100
+                                 group-hover:text-[#0284c7] dark:group-hover:text-sky-300
+                                 transition-colors leading-tight">
                       {cat.name}
                     </span>
                   </div>
-                  <ArrowRight class="w-4 h-4 text-slate-400 group-hover:text-[#0284c7] group-hover:translate-x-1 transition-all shrink-0" />
+                  <ArrowRight class="w-4 h-4 text-slate-400 dark:text-slate-500 group-hover:text-[#0284c7] dark:group-hover:text-sky-400 group-hover:translate-x-1 transition-all shrink-0" />
                 </button>
               );
             })}
@@ -304,25 +344,33 @@ const allCategoriesData = [...itCategories, ...nonItCategories].reduce((acc, cat
       </div>
 
       <!-- ================= NON-IT SECTOR BOX ================= -->
-      <div class="bg-gradient-to-b from-[#fff8f0] via-[#fffbf7] to-white rounded-3xl p-6 sm:p-8 border border-amber-200/80 shadow-sm relative flex flex-col justify-between hover:shadow-md transition-shadow">
+      <div id="roles-nonit-box" class="bg-gradient-to-b from-[#fff8f0] via-[#fffbf7] to-white
+                  dark:from-[#1a1408] dark:via-[#1c1609] dark:to-[#1a1408]
+                  rounded-3xl p-5 sm:p-8
+                  border border-amber-200/80 dark:border-amber-500/20
+                  shadow-sm dark:shadow-[0_4px_30px_-8px_rgba(245,158,11,0.12)]
+                  relative hidden lg:flex flex-col justify-between hover:shadow-md dark:hover:shadow-[0_8px_40px_-8px_rgba(245,158,11,0.2)] transition-shadow">
         
         <div>
           <!-- Header Banner -->
           <div class="flex items-start justify-between gap-4 mb-6">
             <div class="space-y-2">
-              <span class="inline-block px-3 py-1 rounded-full bg-amber-100/90 text-amber-700 font-extrabold text-[11px] uppercase tracking-wider border border-amber-200">
+              <span class="inline-block px-3 py-1 rounded-full
+                           bg-amber-100/90 text-amber-700 border border-amber-200
+                           dark:bg-amber-500/15 dark:text-amber-300 dark:border-amber-500/30
+                           font-extrabold text-[11px] uppercase tracking-wider">
                 NON-IT SECTOR
               </span>
-              <h3 class="text-2xl sm:text-3xl font-extrabold text-[#041B3B] tracking-tight">
+              <h3 class="text-2xl sm:text-3xl font-extrabold text-[#041B3B] dark:text-white tracking-tight">
                 Powering Diverse Industries
               </h3>
-              <p class="text-xs sm:text-sm text-slate-600 font-medium leading-relaxed">
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
                 From manufacturing to healthcare, we help you find the right talent across every sector.
               </p>
             </div>
 
-            <!-- Factory / Industry Illustration -->
-            <div class="hidden sm:flex shrink-0 w-20 h-20 rounded-2xl bg-gradient-to-br from-amber-500 to-amber-900 items-center justify-center text-white shadow-lg shadow-amber-500/20 relative group">
+            <!-- Industry Icon -->
+            <div class="hidden sm:flex shrink-0 w-20 h-20 rounded-2xl bg-gradient-to-br from-amber-500 to-amber-900 dark:from-amber-600 dark:to-amber-950 items-center justify-center text-white shadow-lg shadow-amber-500/20 dark:shadow-amber-500/25 relative group">
               <div class="absolute -top-1 -right-1 w-3 h-3 bg-amber-300 rounded-full animate-ping"></div>
               <div class="p-3 bg-white/15 backdrop-blur-xs rounded-xl">
                 <Wrench class="w-8 h-8 text-amber-200" />
@@ -338,17 +386,29 @@ const allCategoriesData = [...itCategories, ...nonItCategories].reduce((acc, cat
                 <button
                   type="button"
                   data-category-id={cat.id}
-                  class="category-btn bg-white hover:bg-amber-50/60 border border-slate-200/90 hover:border-amber-300 rounded-2xl p-3.5 flex items-center justify-between shadow-xs hover:shadow-md transition-all duration-200 group text-left w-full cursor-pointer"
+                  class="category-btn
+                         bg-white hover:bg-amber-50/60 border border-slate-200/90 hover:border-amber-300
+                         dark:bg-[#201808] dark:hover:bg-[#281f0a] dark:border-amber-500/15 dark:hover:border-amber-400/40
+                         rounded-2xl p-3.5 flex items-center justify-between
+                         shadow-xs hover:shadow-md dark:shadow-none
+                         transition-all duration-200 group text-left w-full cursor-pointer"
                 >
                   <div class="flex items-center gap-3 pr-2">
-                    <div class="p-2 rounded-xl bg-amber-50 text-amber-600 border border-amber-100 group-hover:bg-amber-600 group-hover:text-white transition-colors shrink-0">
+                    <div class="p-2 rounded-xl
+                                bg-amber-50 text-amber-600 border border-amber-100
+                                dark:bg-amber-500/15 dark:text-amber-300 dark:border-amber-500/20
+                                group-hover:bg-amber-600 group-hover:text-white dark:group-hover:bg-amber-500 dark:group-hover:text-white dark:group-hover:border-amber-500
+                                transition-colors shrink-0">
                       <Icon class="w-4 h-4" />
                     </div>
-                    <span class="font-bold text-xs sm:text-sm text-[#041B3B] group-hover:text-amber-700 transition-colors leading-tight">
+                    <span class="font-bold text-xs sm:text-sm
+                                 text-[#041B3B] dark:text-slate-100
+                                 group-hover:text-amber-700 dark:group-hover:text-amber-300
+                                 transition-colors leading-tight">
                       {cat.name}
                     </span>
                   </div>
-                  <ArrowRight class="w-4 h-4 text-slate-400 group-hover:text-amber-600 group-hover:translate-x-1 transition-all shrink-0" />
+                  <ArrowRight class="w-4 h-4 text-slate-400 dark:text-slate-500 group-hover:text-amber-600 dark:group-hover:text-amber-400 group-hover:translate-x-1 transition-all shrink-0" />
                 </button>
               );
             })}
@@ -359,32 +419,37 @@ const allCategoriesData = [...itCategories, ...nonItCategories].reduce((acc, cat
 
     </div>
 
-    <!-- ================= BOTTOM CONVERSION BANNER (Matches Image 2 Bottom) ================= -->
-    <div class="bg-gradient-to-r from-emerald-50/90 via-teal-50/90 to-sky-50/90 border border-emerald-200/70 rounded-3xl p-6 sm:p-8 mt-10 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
+    <!-- ================= BOTTOM CONVERSION BANNER ================= -->
+    <div class="bg-gradient-to-r from-emerald-50/90 via-teal-50/90 to-sky-50/90
+                dark:from-[#0a1a14] dark:via-[#091814] dark:to-[#0a1520]
+                border border-emerald-200/70 dark:border-[#20C5CA]/20
+                rounded-3xl p-6 sm:p-8 mt-10
+                shadow-sm dark:shadow-[0_4px_30px_-8px_rgba(32,197,202,0.12)]
+                flex flex-col md:flex-row items-center justify-between gap-6">
       
       <div class="flex items-center gap-4 text-left">
-        <div class="p-4 rounded-2xl bg-white text-[#0284c7] shadow-md border border-emerald-100 shrink-0">
+        <div class="p-4 rounded-2xl bg-white dark:bg-[#0f2820] text-[#0284c7] shadow-md border border-emerald-100 dark:border-[#20C5CA]/20 shrink-0">
           <Handshake class="w-8 h-8 text-[#19A4A8]" />
         </div>
         <div>
-          <span class="text-[11px] font-extrabold uppercase tracking-widest text-[#19A4A8]">
+          <span class="text-[11px] font-extrabold uppercase tracking-widest text-[#19A4A8] dark:text-[#20C5CA]">
             LET'S BUILD GREAT TEAMS TOGETHER
           </span>
-          <h3 class="text-xl sm:text-2xl font-extrabold text-[#041B3B] mt-0.5">
+          <h3 class="text-xl sm:text-2xl font-extrabold text-[#041B3B] dark:text-white mt-0.5">
             Your Next Opportunity is Just a Click Away
           </h3>
-          <div class="flex flex-wrap items-center gap-x-6 gap-y-2 mt-2 text-xs font-bold text-slate-700">
-            <span class="flex items-center gap-1.5"><CheckCircle2 class="w-4 h-4 text-emerald-600" /> Trusted by Top Companies</span>
-            <span class="flex items-center gap-1.5"><CheckCircle2 class="w-4 h-4 text-emerald-600" /> Wide Range of Roles</span>
-            <span class="flex items-center gap-1.5"><CheckCircle2 class="w-4 h-4 text-emerald-600" /> Personalized Support</span>
-            <span class="flex items-center gap-1.5"><CheckCircle2 class="w-4 h-4 text-emerald-600" /> Long-Term Career Growth</span>
+          <div class="flex flex-wrap items-center gap-x-6 gap-y-2 mt-2 text-xs font-bold text-slate-700 dark:text-slate-300">
+            <span class="flex items-center gap-1.5"><CheckCircle2 class="w-4 h-4 text-emerald-600 dark:text-emerald-400" /> Trusted by Top Companies</span>
+            <span class="flex items-center gap-1.5"><CheckCircle2 class="w-4 h-4 text-emerald-600 dark:text-emerald-400" /> Wide Range of Roles</span>
+            <span class="flex items-center gap-1.5"><CheckCircle2 class="w-4 h-4 text-emerald-600 dark:text-emerald-400" /> Personalized Support</span>
+            <span class="flex items-center gap-1.5"><CheckCircle2 class="w-4 h-4 text-emerald-600 dark:text-emerald-400" /> Long-Term Career Growth</span>
           </div>
         </div>
       </div>
 
       <button 
         onclick="openBookingModal('candidate')"
-        class="w-full md:w-auto px-8 py-3.5 text-sm font-bold text-white bg-[#0284c7] hover:bg-[#0369a1] rounded-full shadow-lg shadow-sky-500/25 flex items-center justify-center gap-2 cursor-pointer transition-all hover:scale-105 shrink-0"
+        class="w-full md:w-auto px-8 py-3.5 text-sm font-bold text-white bg-[#0284c7] hover:bg-[#0369a1] dark:bg-[#0284c7] dark:hover:bg-[#0369a1] rounded-full shadow-lg shadow-sky-500/25 dark:shadow-sky-500/20 flex items-center justify-center gap-2 cursor-pointer transition-all hover:scale-105 shrink-0"
       >
         <span>Explore Jobs</span>
         <ArrowRight class="w-4 h-4" />
@@ -399,19 +464,27 @@ const allCategoriesData = [...itCategories, ...nonItCategories].reduce((acc, cat
   id="category-roles-modal" 
   class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 sm:p-6 bg-slate-900/60 backdrop-blur-sm overflow-y-auto"
 >
-  <div class="relative w-full max-w-3xl bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-2xl animate-fade-in my-auto max-h-[90vh] flex flex-col">
+  <div class="relative w-full max-w-3xl
+               bg-white dark:bg-[#141418]
+               rounded-3xl p-6 sm:p-8
+               border border-slate-200 dark:border-white/10
+               shadow-2xl dark:shadow-[0_25px_60px_-10px_rgba(0,0,0,0.8)]
+               animate-fade-in my-auto max-h-[90vh] flex flex-col">
     
     <!-- Modal Close Button -->
     <button 
       id="close-category-modal-btn"
-      class="absolute top-5 right-5 p-2 rounded-xl text-slate-400 hover:text-[#041B3B] hover:bg-slate-100 transition-colors z-10 cursor-pointer"
+      class="absolute top-5 right-5 p-2 rounded-xl
+             text-slate-400 hover:text-[#041B3B] hover:bg-slate-100
+             dark:text-slate-500 dark:hover:text-white dark:hover:bg-white/8
+             transition-colors z-10 cursor-pointer"
       aria-label="Close modal"
     >
       <X class="w-5 h-5" />
     </button>
 
     <!-- Modal Dynamic Header -->
-    <div class="mb-6 pb-4 border-b border-slate-100 pr-10 shrink-0">
+    <div class="mb-6 pb-4 border-b border-slate-100 dark:border-white/8 pr-10 shrink-0">
       <div class="flex items-center gap-3">
         <span 
           id="modal-sector-badge" 
@@ -419,16 +492,16 @@ const allCategoriesData = [...itCategories, ...nonItCategories].reduce((acc, cat
         >
           SECTOR
         </span>
-        <span class="text-xs font-bold text-slate-500">TAXONOMY PROFILE</span>
+        <span class="text-xs font-bold text-slate-500 dark:text-slate-400">TAXONOMY PROFILE</span>
       </div>
 
       <h3 
         id="modal-category-name" 
-        class="text-2xl sm:text-3xl font-extrabold text-[#041B3B] mt-2 flex items-center gap-3"
+        class="text-2xl sm:text-3xl font-extrabold text-[#041B3B] dark:text-white mt-2 flex items-center gap-3"
       >
         Category Name
       </h3>
-      <p class="text-xs sm:text-sm text-slate-600 mt-1 font-medium">
+      <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1 font-medium">
         Explore supported roles and specialized placement pathways we offer under this category.
       </p>
     </div>
@@ -442,14 +515,14 @@ const allCategoriesData = [...itCategories, ...nonItCategories].reduce((acc, cat
     </div>
 
     <!-- Modal Footer Actions -->
-    <div class="mt-6 pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-3 shrink-0">
-      <p class="text-xs font-semibold text-slate-500 text-center sm:text-left">
+    <div class="mt-6 pt-4 border-t border-slate-100 dark:border-white/8 flex flex-col sm:flex-row items-center justify-between gap-3 shrink-0">
+      <p class="text-xs font-semibold text-slate-500 dark:text-slate-400 text-center sm:text-left">
         Ready to hire or apply for roles in this category?
       </p>
       <div class="flex items-center gap-3 w-full sm:w-auto">
         <button 
           id="modal-apply-btn"
-          class="flex-1 sm:flex-initial px-5 py-2.5 rounded-xl bg-[#041B3B] hover:bg-[#082854] text-white font-bold text-xs shadow-md transition-all cursor-pointer"
+          class="flex-1 sm:flex-initial px-5 py-2.5 rounded-xl bg-[#041B3B] hover:bg-[#082854] dark:bg-[#0284c7] dark:hover:bg-[#0369a1] text-white font-bold text-xs shadow-md transition-all cursor-pointer"
         >
           Apply / Book Advisory Call →
         </button>
@@ -543,6 +616,32 @@ const allCategoriesData = [...itCategories, ...nonItCategories].reduce((acc, cat
         if (bookingModal) {
           bookingModal.classList.remove('hidden');
         }
+      });
+    }
+
+    // Mobile Sector Tabs Interactivity
+    const tabIt = document.getElementById('sector-tab-it');
+    const tabNonIt = document.getElementById('sector-tab-nonit');
+    const boxIt = document.getElementById('roles-it-box');
+    const boxNonIt = document.getElementById('roles-nonit-box');
+
+    if (tabIt && tabNonIt && boxIt && boxNonIt) {
+      tabIt.addEventListener('click', () => {
+        tabIt.className = 'px-5 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 flex items-center gap-1.5 bg-[#0284c7] text-white shadow-md cursor-pointer';
+        tabNonIt.className = 'px-5 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 flex items-center gap-1.5 text-slate-600 dark:text-slate-300 hover:text-[#041B3B] dark:hover:text-white cursor-pointer';
+        boxIt.classList.remove('hidden');
+        boxIt.classList.add('flex');
+        boxNonIt.classList.remove('flex');
+        boxNonIt.classList.add('hidden');
+      });
+
+      tabNonIt.addEventListener('click', () => {
+        tabNonIt.className = 'px-5 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 flex items-center gap-1.5 bg-amber-600 text-white shadow-md cursor-pointer';
+        tabIt.className = 'px-5 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 flex items-center gap-1.5 text-slate-600 dark:text-slate-300 hover:text-[#041B3B] dark:hover:text-white cursor-pointer';
+        boxNonIt.classList.remove('hidden');
+        boxNonIt.classList.add('flex');
+        boxIt.classList.remove('flex');
+        boxIt.classList.add('hidden');
       });
     }
   });

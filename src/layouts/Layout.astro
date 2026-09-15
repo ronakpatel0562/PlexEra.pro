@@ -5,6 +5,9 @@ import Footer from '../components/Footer.astro';
 import BookingModal from '../components/BookingModal.astro';
 import '../styles/global.css';
 
+// Master switch: Set to true when you want to enable Dark Mode and show the theme toggle
+const ENABLE_DARK_MODE = false;
+
 interface Props {
   title?: string;
   description?: string;
@@ -17,7 +20,7 @@ const {
   image = "/og-image.jpg"
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://plexera.com");
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://plexera.pro");
 ---
 
 <!DOCTYPE html>
@@ -50,6 +53,30 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://plexera.
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={new URL(image, Astro.url)} />
 
+    <!-- Anti-FOUC Theme Script -->
+    <script is:inline define:vars={{ ENABLE_DARK_MODE }}>
+      (function() {
+        if (!ENABLE_DARK_MODE) {
+          document.documentElement.classList.remove('dark');
+          localStorage.removeItem('theme');
+          return;
+        }
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+
+      window.toggleTheme = function() {
+        const isDark = document.documentElement.classList.toggle('dark');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        window.dispatchEvent(new CustomEvent('theme-changed', { detail: { isDark } }));
+      };
+    </script>
+
     <!-- Fonts: Outfit & Work Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -57,7 +84,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://plexera.
   </head>
   <body class="bg-[#f8fafc] text-slate-800 antialiased selection:bg-[#20C5CA] selection:text-[#041B3B] flex flex-col min-h-screen">
     <AnnouncementBar />
-    <Navbar />
+    <Navbar showThemeToggle={ENABLE_DARK_MODE} />
     <main class="flex-grow">
       <slot />
     </main>

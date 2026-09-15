@@ -29,37 +29,38 @@ const steps = [
 ];
 ---
 
-<section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-  <div class="text-center mb-16">
+<section class="py-10 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="text-center mb-8 sm:mb-16">
     <span class="text-xs font-extrabold uppercase tracking-widest text-[#19A4A8]">OUR PROVEN METHODOLOGY</span>
-    <h2 class="text-3xl sm:text-5xl font-extrabold text-[#041B3B] mt-2">The PlexEra Pathway: From Potential to Placement</h2>
-    <p class="text-slate-600 max-w-2xl mx-auto mt-3 text-base">A disciplined 4-step framework engineered to remove friction and guarantee peak performance.</p>
+    <h2 class="text-2xl sm:text-5xl font-extrabold text-[#041B3B] dark:text-white mt-2">The PlexEra Pathway: From Potential to Placement</h2>
+    <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mt-2 sm:mt-3 text-sm sm:text-base">A disciplined 4-step framework engineered to remove friction and guarantee peak performance.</p>
   </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+  <div class="grid grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-6 relative">
     {steps.map((step) => {
       const Icon = step.icon;
       return (
-        <div class="bg-white rounded-3xl p-7 border border-slate-200 shadow-sm hover:shadow-lg hover:border-slate-300 transition-all duration-300 relative overflow-hidden flex flex-col justify-between group">
+        <div class="bg-white dark:bg-[#121215] rounded-2xl sm:rounded-3xl p-4 sm:p-7 border border-slate-200 dark:border-white/8 shadow-sm hover:shadow-lg hover:border-slate-300 dark:hover:border-[#20C5CA]/40 transition-all duration-300 relative overflow-hidden flex flex-col justify-between group">
           <div>
-            <div class="flex items-center justify-between mb-6">
-              <span class="font-mono text-3xl font-extrabold text-[#041B3B]/30 group-hover:text-[#041B3B] transition-colors">
+            <div class="flex items-center justify-between mb-3 sm:mb-6">
+              <span class="font-mono text-xl sm:text-3xl font-extrabold text-[#041B3B]/30 dark:text-white/20 group-hover:text-[#041B3B] dark:group-hover:text-white/60 transition-colors">
                 {step.num}
               </span>
-              <div class="p-3 rounded-2xl bg-[#20C5CA]/15 text-[#041B3B] border border-[#20C5CA]/30 group-hover:bg-[#20C5CA] transition-colors">
-                <Icon class="w-5 h-5" />
+              <div class="p-2 sm:p-3 rounded-xl sm:rounded-2xl bg-[#20C5CA]/15 text-[#041B3B] dark:text-[#20C5CA] border border-[#20C5CA]/30 group-hover:bg-[#20C5CA] group-hover:text-[#041B3B] transition-colors">
+                <Icon class="w-4 h-4 sm:w-5 sm:h-5" />
               </div>
             </div>
 
-            <h3 class="text-lg font-bold text-[#041B3B] mb-2">{step.title}</h3>
-            <p class="text-xs text-slate-600 leading-relaxed">{step.description}</p>
+            <h3 class="text-sm sm:text-lg font-bold text-[#041B3B] dark:text-white mb-1 sm:mb-2">{step.title}</h3>
+            <p class="text-[11px] sm:text-xs text-slate-600 dark:text-slate-400 leading-relaxed line-clamp-3 sm:line-clamp-none">{step.description}</p>
           </div>
 
-          <div class="mt-6 pt-4 border-t border-slate-100 flex items-center gap-1.5 text-[11px] font-bold text-slate-400 group-hover:text-[#0284c7]">
-            <span>Phase {step.num} Execution</span>
+          <div class="mt-3 sm:mt-6 pt-2.5 sm:pt-4 border-t border-slate-100 dark:border-white/8 flex items-center gap-1.5 text-[10px] sm:text-[11px] font-bold text-slate-400 dark:text-slate-500 group-hover:text-[#0284c7] dark:group-hover:text-[#20C5CA]">
+            <span>Phase {step.num}</span>
           </div>
         </div>
       );
     })}
   </div>
 </section>
+

@@ -23,7 +23,7 @@ import {
 } from 'lucide-astro';
 ---
 
-<section class="relative pt-8 pb-12 md:pt-14 md:pb-16 overflow-hidden bg-gradient-to-b from-slate-50 via-white to-[#f8fafc] border-b border-slate-200/60">
+<section class="relative pt-8 pb-12 md:pt-14 md:pb-16 overflow-hidden bg-gradient-to-b from-slate-50 via-white to-[#f8fafc] dark:from-[#09090b] dark:via-[#09090b] dark:to-[#09090b] border-b border-slate-200/60 dark:border-white/8">
   <!-- Square Grid & Dot Background (Masked Cutout behind Text Column) -->
   <div class="absolute inset-0 bg-hero-grid opacity-85 pointer-events-none z-0"></div>
   <div class="absolute inset-0 bg-hero-grid-accent opacity-60 pointer-events-none z-0"></div>
@@ -52,19 +52,19 @@ import {
       <div class="lg:col-span-7 text-left space-y-6">
         
         <!-- Live Status Pill Badge -->
-        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-gradient-to-r from-[#20C5CA]/15 via-sky-500/10 to-[#041B3B]/10 border border-[#20C5CA]/40 text-[#041B3B] text-xs sm:text-sm font-bold tracking-wide shadow-xs hover:border-[#20C5CA] transition-all cursor-default">
-          <span class="relative flex h-2.5 w-2.5">
+        <div class="inline-flex items-center gap-2 sm:gap-2.5 px-3 sm:px-4 py-1.5 rounded-full bg-gradient-to-r from-[#20C5CA]/15 via-sky-500/10 to-[#041B3B]/10 border border-[#20C5CA]/40 text-[#041B3B] dark:text-[#20C5CA] text-xs sm:text-sm font-bold tracking-wide shadow-xs hover:border-[#20C5CA] transition-all cursor-default">
+          <span class="relative flex h-2 w-2 sm:h-2.5 sm:w-2.5 shrink-0">
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 sm:h-2.5 sm:w-2.5 bg-emerald-500"></span>
           </span>
-          <span class="text-[#041B3B] font-semibold">NEXT-GEN IT & TECH TALENT ELEVATION PLATFORM</span>
+          <span class="text-[#041B3B] dark:text-[#20C5CA] font-semibold text-[11px] sm:text-xs md:text-sm">NEXT-GEN TECH TALENT PLATFORM</span>
           <span class="hidden sm:inline-block px-2 py-0.5 rounded-full bg-[#20C5CA] text-[#041B3B] text-[10px] font-extrabold uppercase">Live Match 2.0</span>
         </div>
 
         <!-- Headline (H1) -->
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#041B3B] leading-[1.08]">
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#041B3B] dark:text-white leading-[1.1]">
           Where High-Impact Talent & Dream Careers <br class="hidden sm:block"/>
-          <span class="relative inline-block bg-gradient-to-r from-[#041B3B] via-[#0284c7] to-[#20C5CA] bg-clip-text text-transparent animate-text-gradient font-black">
+          <span class="relative inline-block bg-gradient-to-r from-[#041B3B] via-[#0284c7] to-[#20C5CA] dark:from-[#20C5CA] dark:via-sky-300 dark:to-[#20C5CA] bg-clip-text text-transparent animate-text-gradient font-black">
             Align Seamlessly.
             <span class="absolute bottom-1 left-0 w-full h-3 bg-[#20C5CA]/25 -z-10 rounded-xs transform -rotate-1"></span>
           </span>
@@ -72,7 +72,7 @@ import {
 
         <!-- Audience Interactive Toggle Pills -->
         <div class="pt-1">
-          <div class="inline-flex p-1 bg-slate-200/70 backdrop-blur-md rounded-2xl border border-slate-300/80 shadow-inner">
+          <div class="inline-flex p-1 bg-slate-200/70 dark:bg-white/8 backdrop-blur-md rounded-2xl border border-slate-300/80 dark:border-white/10 shadow-inner">
             <button 
               id="hero-toggle-candidate"
               class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-300 flex items-center gap-2 bg-[#041B3B] text-white shadow-md cursor-pointer"
@@ -215,8 +215,8 @@ import {
       </div>
 
 
-      <!-- RIGHT COLUMN: Interactive 3D Glass Dashboard Card (5 cols on lg) -->
-      <div class="lg:col-span-5 relative mt-6 lg:mt-0">
+      <!-- RIGHT COLUMN: Interactive 3D Glass Dashboard Card (5 cols on lg, hidden on mobile for clean UX) -->
+      <div class="hidden lg:block lg:col-span-5 relative mt-6 lg:mt-0">
         
         <!-- Background Ambient Ring Glow behind card -->
         <div class="absolute -inset-4 bg-gradient-to-r from-[#20C5CA]/30 via-sky-400/20 to-[#041B3B]/20 rounded-3xl blur-2xl opacity-70 -z-10 animate-pulse-glow"></div>
@@ -309,7 +309,7 @@ import {
                   </div>
                   <div>
                     <div class="text-xs font-bold text-[#041B3B]">Senior Lead Architect</div>
-                    <div class="text-[11px] font-medium text-slate-500">$140k - $175k · Remote USA/India</div>
+                    <div class="text-[11px] font-medium text-slate-500">$140k - $175k · Remote USA</div>
                   </div>
                 </div>
                 <span class="px-2.5 py-1 rounded-lg bg-[#20C5CA]/15 text-[#041B3B] text-[11px] font-bold">99% Match</span>
@@ -422,91 +422,91 @@ import {
     <!-- DYNAMIC INTEGRATED HERO STATS DASHBOARD BAR -->
     
     <!-- CANDIDATE HERO STATS BAR -->
-    <div id="hero-stats-candidate" class="mt-12 lg:mt-16 pt-8 border-t border-slate-200/80 transition-all duration-300 block">
-      <div class="bg-white/85 backdrop-blur-xl rounded-2xl p-5 sm:p-7 border border-slate-200/90 shadow-xl shadow-slate-900/5 hover:border-[#20C5CA]/40 transition-all">
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 divide-y sm:divide-y-0 sm:divide-x divide-slate-200/70">
+    <div id="hero-stats-candidate" class="mt-8 lg:mt-16 pt-6 sm:pt-8 border-t border-slate-200/80 dark:border-white/10 transition-all duration-300 block">
+      <div class="bg-white/85 dark:bg-[#121215] backdrop-blur-xl rounded-2xl p-4 sm:p-7 border border-slate-200/90 dark:border-white/10 shadow-xl shadow-slate-900/5 dark:shadow-black/60 hover:border-[#20C5CA]/40 dark:hover:border-[#20C5CA]/40 transition-all">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 sm:divide-x divide-slate-200/70 dark:divide-white/10">
           
           <!-- Stat 1 -->
-          <div class="flex items-center gap-3.5 p-2 justify-center sm:justify-start">
-            <div class="p-3 rounded-2xl bg-gradient-to-tr from-[#041B3B] to-[#082854] text-[#20C5CA] border border-[#20C5CA]/30 shadow-md shrink-0">
+          <div class="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-2 sm:gap-3.5 p-3 sm:p-2 bg-slate-50/80 dark:bg-white/4 sm:bg-transparent rounded-2xl sm:rounded-none border sm:border-0 border-slate-200/60 dark:border-white/5">
+            <div class="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-gradient-to-tr from-[#041B3B] to-[#082854] text-[#20C5CA] border border-[#20C5CA]/30 shadow-md shrink-0">
               <Users class="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
             <div>
               <div 
-                class="counter-value text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#041B3B] tracking-tight font-heading"
+                class="counter-value text-xl sm:text-3xl lg:text-4xl font-extrabold text-[#041B3B] dark:text-white tracking-tight font-heading"
                 data-target="550"
                 data-suffix="+"
               >
                 0+
               </div>
-              <div class="text-xs sm:text-sm font-bold text-slate-700">Tech Professionals Placed</div>
-              <div class="text-[11px] font-semibold text-emerald-600 flex items-center gap-1 mt-0.5">
-                <CheckCircle2 class="w-3 h-3 text-emerald-500" />
-                <span>Verified Career Elevation</span>
+              <div class="text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-200 leading-tight mt-0.5">Tech Placements</div>
+              <div class="text-[10px] sm:text-[11px] font-semibold text-emerald-600 dark:text-emerald-400 flex items-center justify-center sm:justify-start gap-1 mt-0.5">
+                <CheckCircle2 class="w-3 h-3 text-emerald-500 shrink-0" />
+                <span>Verified Roles</span>
               </div>
             </div>
           </div>
 
           <!-- Stat 2 -->
-          <div class="flex items-center gap-3.5 p-2 pt-4 sm:pt-2 justify-center sm:justify-start sm:pl-6">
-            <div class="p-3 rounded-2xl bg-gradient-to-tr from-[#20C5CA] to-sky-500 text-[#041B3B] border border-white/40 shadow-md shrink-0">
+          <div class="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-2 sm:gap-3.5 p-3 sm:p-2 bg-slate-50/80 dark:bg-white/4 sm:bg-transparent rounded-2xl sm:rounded-none border sm:border-0 border-slate-200/60 dark:border-white/5 sm:pl-6">
+            <div class="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-gradient-to-tr from-[#20C5CA] to-sky-500 text-[#041B3B] border border-white/40 shadow-md shrink-0">
               <TrendingUp class="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
             <div>
               <div 
-                class="counter-value text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#041B3B] tracking-tight font-heading"
+                class="counter-value text-xl sm:text-3xl lg:text-4xl font-extrabold text-[#041B3B] dark:text-white tracking-tight font-heading"
                 data-target="95"
                 data-suffix="%"
               >
                 0%
               </div>
-              <div class="text-xs sm:text-sm font-bold text-slate-700">Interview Success Rate</div>
-              <div class="text-[11px] font-semibold text-[#19A4A8] flex items-center gap-1 mt-0.5">
-                <Sparkles class="w-3 h-3 text-[#19A4A8]" />
-                <span>1-on-1 Coaching Boost</span>
+              <div class="text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-200 leading-tight mt-0.5">Interview Success</div>
+              <div class="text-[10px] sm:text-[11px] font-semibold text-[#19A4A8] dark:text-[#20C5CA] flex items-center justify-center sm:justify-start gap-1 mt-0.5">
+                <Sparkles class="w-3 h-3 text-[#19A4A8] shrink-0" />
+                <span>1-on-1 Coaching</span>
               </div>
             </div>
           </div>
 
           <!-- Stat 3 -->
-          <div class="flex items-center gap-3.5 p-2 pt-4 lg:pt-2 justify-center sm:justify-start lg:pl-6">
-            <div class="p-3 rounded-2xl bg-gradient-to-tr from-sky-500 to-indigo-600 text-white border border-white/20 shadow-md shrink-0">
+          <div class="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-2 sm:gap-3.5 p-3 sm:p-2 bg-slate-50/80 dark:bg-white/4 sm:bg-transparent rounded-2xl sm:rounded-none border sm:border-0 border-slate-200/60 dark:border-white/5 lg:pl-6">
+            <div class="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-gradient-to-tr from-sky-500 to-indigo-600 text-white border border-white/20 shadow-md shrink-0">
               <TrendingUp class="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
             <div>
               <div 
-                class="counter-value text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#041B3B] tracking-tight font-heading"
+                class="counter-value text-xl sm:text-3xl lg:text-4xl font-extrabold text-[#041B3B] dark:text-white tracking-tight font-heading"
                 data-target="35"
                 data-suffix="%"
-                data-[#prefix]="+"
+                data-prefix="+"
               >
                 +0%
               </div>
-              <div class="text-xs sm:text-sm font-bold text-slate-700">Average Salary Hike</div>
-              <div class="text-[11px] font-semibold text-sky-600 flex items-center gap-1 mt-0.5">
-                <ArrowUpRight class="w-3 h-3 text-sky-500" />
-                <span>High Impact Compensation</span>
+              <div class="text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-200 leading-tight mt-0.5">Avg Salary Hike</div>
+              <div class="text-[10px] sm:text-[11px] font-semibold text-sky-600 dark:text-sky-400 flex items-center justify-center sm:justify-start gap-1 mt-0.5">
+                <ArrowUpRight class="w-3 h-3 text-sky-500 shrink-0" />
+                <span>High Impact Offer</span>
               </div>
             </div>
           </div>
 
           <!-- Stat 4 -->
-          <div class="flex items-center gap-3.5 p-2 pt-4 lg:pt-2 justify-center sm:justify-start lg:pl-6">
-            <div class="p-3 rounded-2xl bg-gradient-to-tr from-emerald-500 to-teal-600 text-white border border-white/20 shadow-md shrink-0">
+          <div class="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-2 sm:gap-3.5 p-3 sm:p-2 bg-slate-50/80 dark:bg-white/4 sm:bg-transparent rounded-2xl sm:rounded-none border sm:border-0 border-slate-200/60 dark:border-white/5 lg:pl-6">
+            <div class="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-gradient-to-tr from-emerald-500 to-teal-600 text-white border border-white/20 shadow-md shrink-0">
               <Target class="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
             <div>
               <div 
-                class="counter-value text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#041B3B] tracking-tight font-heading"
+                class="counter-value text-xl sm:text-3xl lg:text-4xl font-extrabold text-[#041B3B] dark:text-white tracking-tight font-heading"
                 data-target="98"
                 data-suffix="%"
               >
                 0%
               </div>
-              <div class="text-xs sm:text-sm font-bold text-slate-700 whitespace-nowrap">ATS Resume Match Rate</div>
-              <div class="text-[11px] font-semibold text-teal-600 flex items-center gap-1 mt-0.5 whitespace-nowrap">
-                <CheckCircle2 class="w-3 h-3 text-teal-500" />
-                <span>Bypass Recruiter Filters</span>
+              <div class="text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-200 leading-tight mt-0.5">ATS Match Rate</div>
+              <div class="text-[10px] sm:text-[11px] font-semibold text-teal-600 dark:text-teal-400 flex items-center justify-center sm:justify-start gap-1 mt-0.5">
+                <CheckCircle2 class="w-3 h-3 text-teal-500 shrink-0" />
+                <span>Filter Bypass</span>
               </div>
             </div>
           </div>
@@ -516,90 +516,90 @@ import {
     </div>
 
     <!-- EMPLOYER HERO STATS BAR (Hidden initially) -->
-    <div id="hero-stats-employer" class="mt-12 lg:mt-16 pt-8 border-t border-slate-200/80 transition-all duration-300 hidden">
-      <div class="bg-white/85 backdrop-blur-xl rounded-2xl p-5 sm:p-7 border border-slate-200/90 shadow-xl shadow-slate-900/5 hover:border-[#20C5CA]/40 transition-all">
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 divide-y sm:divide-y-0 sm:divide-x divide-slate-200/70">
+    <div id="hero-stats-employer" class="mt-8 lg:mt-16 pt-6 sm:pt-8 border-t border-slate-200/80 dark:border-white/10 transition-all duration-300 hidden">
+      <div class="bg-white/85 dark:bg-[#121215] backdrop-blur-xl rounded-2xl p-4 sm:p-7 border border-slate-200/90 dark:border-white/10 shadow-xl shadow-slate-900/5 dark:shadow-black/60 hover:border-[#20C5CA]/40 dark:hover:border-[#20C5CA]/40 transition-all">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 sm:divide-x divide-slate-200/70 dark:divide-white/10">
           
           <!-- Stat 1 -->
-          <div class="flex items-center gap-3.5 p-2 justify-center sm:justify-start">
-            <div class="p-3 rounded-2xl bg-gradient-to-tr from-[#20C5CA] to-sky-500 text-[#041B3B] border border-white/40 shadow-md shrink-0">
+          <div class="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-2 sm:gap-3.5 p-3 sm:p-2 bg-slate-50/80 dark:bg-white/4 sm:bg-transparent rounded-2xl sm:rounded-none border sm:border-0 border-slate-200/60 dark:border-white/5">
+            <div class="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-gradient-to-tr from-[#20C5CA] to-sky-500 text-[#041B3B] border border-white/40 shadow-md shrink-0">
               <Clock class="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
             <div>
               <div 
-                class="counter-value text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#041B3B] tracking-tight font-heading"
+                class="counter-value text-xl sm:text-3xl lg:text-4xl font-extrabold text-[#041B3B] dark:text-white tracking-tight font-heading"
                 data-target="48"
                 data-suffix="h"
               >
                 0h
               </div>
-              <div class="text-xs sm:text-sm font-bold text-slate-700 whitespace-nowrap">Time-to-Match SLA</div>
-              <div class="text-[11px] font-semibold text-emerald-600 flex items-center gap-1 mt-0.5 whitespace-nowrap">
-                <Zap class="w-3 h-3 text-emerald-500" />
+              <div class="text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-200 leading-tight mt-0.5">Time-to-Match</div>
+              <div class="text-[10px] sm:text-[11px] font-semibold text-emerald-600 dark:text-emerald-400 flex items-center justify-center sm:justify-start gap-1 mt-0.5">
+                <Zap class="w-3 h-3 text-emerald-500 shrink-0" />
                 <span>Instant Sourcing SLA</span>
               </div>
             </div>
           </div>
 
           <!-- Stat 2 -->
-          <div class="flex items-center gap-3.5 p-2 pt-4 sm:pt-2 justify-center sm:justify-start sm:pl-6">
-            <div class="p-3 rounded-2xl bg-gradient-to-tr from-[#041B3B] to-[#082854] text-[#20C5CA] border border-[#20C5CA]/30 shadow-md shrink-0">
+          <div class="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-2 sm:gap-3.5 p-3 sm:p-2 bg-slate-50/80 dark:bg-white/4 sm:bg-transparent rounded-2xl sm:rounded-none border sm:border-0 border-slate-200/60 dark:border-white/5 sm:pl-6">
+            <div class="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-gradient-to-tr from-[#041B3B] to-[#082854] text-[#20C5CA] border border-[#20C5CA]/30 shadow-md shrink-0">
               <Building2 class="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
             <div>
               <div 
-                class="counter-value text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#041B3B] tracking-tight font-heading"
+                class="counter-value text-xl sm:text-3xl lg:text-4xl font-extrabold text-[#041B3B] dark:text-white tracking-tight font-heading"
                 data-target="100"
                 data-suffix="+"
               >
                 0+
               </div>
-              <div class="text-xs sm:text-sm font-bold text-slate-700 whitespace-nowrap">Enterprise Tech Clients</div>
-              <div class="text-[11px] font-semibold text-[#19A4A8] flex items-center gap-1 mt-0.5 whitespace-nowrap">
-                <ShieldCheck class="w-3 h-3 text-[#19A4A8]" />
+              <div class="text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-200 leading-tight mt-0.5">Enterprise Clients</div>
+              <div class="text-[10px] sm:text-[11px] font-semibold text-[#19A4A8] dark:text-[#20C5CA] flex items-center justify-center sm:justify-start gap-1 mt-0.5">
+                <ShieldCheck class="w-3 h-3 text-[#19A4A8] shrink-0" />
                 <span>Fortune 500 & Scale-Ups</span>
               </div>
             </div>
           </div>
 
           <!-- Stat 3 -->
-          <div class="flex items-center gap-3.5 p-2 pt-4 lg:pt-2 justify-center sm:justify-start lg:pl-6">
-            <div class="p-3 rounded-2xl bg-gradient-to-tr from-sky-500 to-indigo-600 text-white border border-white/20 shadow-md shrink-0">
+          <div class="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-2 sm:gap-3.5 p-3 sm:p-2 bg-slate-50/80 dark:bg-white/4 sm:bg-transparent rounded-2xl sm:rounded-none border sm:border-0 border-slate-200/60 dark:border-white/5 lg:pl-6">
+            <div class="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-gradient-to-tr from-sky-500 to-indigo-600 text-white border border-white/20 shadow-md shrink-0">
               <UserCheck class="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
             <div>
               <div 
-                class="counter-value text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#041B3B] tracking-tight font-heading"
+                class="counter-value text-xl sm:text-3xl lg:text-4xl font-extrabold text-[#041B3B] dark:text-white tracking-tight font-heading"
                 data-target="99"
                 data-suffix="%"
               >
                 0%
               </div>
-              <div class="text-xs sm:text-sm font-bold text-slate-700 whitespace-nowrap">Placement Retention Rate</div>
-              <div class="text-[11px] font-semibold text-sky-600 flex items-center gap-1 mt-0.5 whitespace-nowrap">
-                <BadgeCheck class="w-3 h-3 text-sky-500" />
-                <span>Top 2% Pre-Vetted Talent</span>
+              <div class="text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-200 leading-tight mt-0.5">Retention Rate</div>
+              <div class="text-[10px] sm:text-[11px] font-semibold text-sky-600 dark:text-sky-400 flex items-center justify-center sm:justify-start gap-1 mt-0.5">
+                <BadgeCheck class="w-3 h-3 text-sky-500 shrink-0" />
+                <span>Top 2% Vetted Talent</span>
               </div>
             </div>
           </div>
 
           <!-- Stat 4 -->
-          <div class="flex items-center gap-3.5 p-2 pt-4 lg:pt-2 justify-center sm:justify-start lg:pl-6">
-            <div class="p-3 rounded-2xl bg-gradient-to-tr from-emerald-500 to-teal-600 text-white border border-white/20 shadow-md shrink-0">
+          <div class="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-2 sm:gap-3.5 p-3 sm:p-2 bg-slate-50/80 dark:bg-white/4 sm:bg-transparent rounded-2xl sm:rounded-none border sm:border-0 border-slate-200/60 dark:border-white/5 lg:pl-6">
+            <div class="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-gradient-to-tr from-emerald-500 to-teal-600 text-white border border-white/20 shadow-md shrink-0">
               <TrendingUp class="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
             <div>
               <div 
-                class="counter-value text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#041B3B] tracking-tight font-heading"
+                class="counter-value text-xl sm:text-3xl lg:text-4xl font-extrabold text-[#041B3B] dark:text-white tracking-tight font-heading"
                 data-target="60"
                 data-suffix="%"
               >
                 0%
               </div>
-              <div class="text-xs sm:text-sm font-bold text-slate-700 whitespace-nowrap">Hiring Cost & Time Saved</div>
-              <div class="text-[11px] font-semibold text-teal-600 flex items-center gap-1 mt-0.5 whitespace-nowrap">
-                <CheckCircle2 class="w-3 h-3 text-teal-500" />
-                <span>Zero-Friction Recruitment</span>
+              <div class="text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-200 leading-tight mt-0.5">Cost & Time Saved</div>
+              <div class="text-[10px] sm:text-[11px] font-semibold text-teal-600 dark:text-teal-400 flex items-center justify-center sm:justify-start gap-1 mt-0.5">
+                <CheckCircle2 class="w-3 h-3 text-teal-500 shrink-0" />
+                <span>Zero-Friction Hiring</span>
               </div>
             </div>
           </div>

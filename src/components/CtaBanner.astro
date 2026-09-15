@@ -2,38 +2,38 @@
 import { ArrowRight, Sparkles, Building2 } from 'lucide-astro';
 ---
 
-<section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-10">
-  <div class="relative rounded-3xl p-8 sm:p-12 md:p-16 overflow-hidden bg-[#041B3B] text-white shadow-2xl text-center border border-[#20C5CA]/30">
+<section class="py-8 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-4 sm:my-10">
+  <div class="relative rounded-3xl p-6 sm:p-12 md:p-16 overflow-hidden bg-[#041B3B] text-white shadow-2xl text-center border border-[#20C5CA]/30">
     
     <!-- Ambient Halo Glow -->
     <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-96 h-96 bg-[#20C5CA]/15 rounded-full blur-[100px] pointer-events-none"></div>
 
-    <div class="relative z-10 max-w-3xl mx-auto space-y-6">
-      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#20C5CA]/15 border border-[#20C5CA]/30 text-[#20C5CA] text-xs font-bold uppercase tracking-wider">
-        <Sparkles class="w-4 h-4" />
+    <div class="relative z-10 max-w-3xl mx-auto space-y-4 sm:space-y-6">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#20C5CA]/15 border border-[#20C5CA]/30 text-[#20C5CA] text-[11px] sm:text-xs font-bold uppercase tracking-wider">
+        <Sparkles class="w-3.5 h-3.5 sm:w-4 sm:h-4" />
         <span>START YOUR ELEVATION</span>
       </div>
 
-      <h2 class="text-3xl sm:text-5xl font-extrabold text-white leading-tight">
+      <h2 class="text-2xl sm:text-5xl font-extrabold text-white leading-tight">
         Ready to Step Into the Place Where Your <span class="text-[#20C5CA]">Potential Belongs?</span>
       </h2>
 
-      <p class="text-slate-200 text-base sm:text-lg leading-relaxed">
+      <p class="text-slate-200 text-xs sm:text-lg leading-relaxed">
         Whether you are aiming for your next career breakthrough or scaling a high-capacity tech team, PlexEra is your dedicated strategic partner.
       </p>
 
-      <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+      <div class="pt-2 sm:pt-4 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
         <button 
           onclick="openBookingModal('auto')"
-          class="w-full sm:w-auto px-6 py-4 text-sm sm:text-base font-bold neon-button rounded-2xl flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer"
+          class="w-full sm:w-auto px-6 py-3.5 sm:py-4 text-xs sm:text-base font-bold neon-button rounded-2xl flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer"
         >
           <span>Book Free Advisory Session</span>
-          <ArrowRight class="w-5 h-5 shrink-0" />
+          <ArrowRight class="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
         </button>
 
         <a 
           href="/employers"
-          class="w-full sm:w-auto px-6 py-4 text-sm sm:text-base font-bold text-slate-100 hover:text-white bg-white/10 hover:bg-white/15 rounded-2xl border border-white/20 flex items-center justify-center gap-2 transition-colors whitespace-nowrap cursor-pointer"
+          class="w-full sm:w-auto px-6 py-3.5 sm:py-4 text-xs sm:text-base font-bold text-slate-100 hover:text-white bg-white/10 hover:bg-white/15 rounded-2xl border border-white/20 flex items-center justify-center gap-2 transition-colors whitespace-nowrap cursor-pointer"
         >
           <Building2 class="w-4 h-4 text-[#20C5CA] shrink-0" />
           <span>Explore Employer Solutions</span>

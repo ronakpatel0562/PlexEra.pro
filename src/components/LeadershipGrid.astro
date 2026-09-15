@@ -3,39 +3,32 @@ import { Linkedin, Mail, ShieldCheck } from 'lucide-astro';
 
 const leaders = [
   {
-    name: "Vikram R. Patel",
-    title: "Founder & CEO",
+    name: "Ayush Patel",
+    title: "Co-Founder & Managing Partner",
     specialty: "Strategy, Executive Sourcing & Global Operations",
-    bio: "Ex-Engineering Director with 15+ years scaling cloud platforms and executive recruitment across US and APAC tech markets.",
-    initials: "VP"
+    bio: "Experienced tech strategist with extensive expertise scaling high-performance engineering teams and enterprise talent solutions across global markets.",
+    initials: "AP"
   },
   {
-    name: "Sarah L. Jenkins",
-    title: "Managing Director — Talent Sourcing",
-    specialty: "Technical Screening & Partner Relations",
-    bio: "Former Lead Tech Recruiter at Amazon. Specializes in principal engineer vetting and enterprise staff augmentation.",
-    initials: "SJ"
-  },
-  {
-    name: "Rohan Deshmukh",
-    title: "Head of Career Advisory",
-    specialty: "Candidate Acceleration & Negotiation Lead",
-    bio: "Career Strategist with over 800+ executive placements. Pioneer of PlexEra's First-Year Technical Mentorship model.",
-    initials: "RD"
+    name: "Pujan Patel",
+    title: "Co-Founder & Managing Partner",
+    specialty: "Technical Screening & Talent Solutions",
+    bio: "Specialist in technical talent alignment, engineering career acceleration, and client partnership architectures.",
+    initials: "PP"
   }
 ];
 ---
 
-<section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-  <div class="text-center mb-16">
+<section class="py-10 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="text-center mb-8 sm:mb-16">
     <span class="text-xs font-extrabold uppercase tracking-widest text-[#19A4A8]">EXECUTIVE LEADERSHIP</span>
-    <h2 class="text-3xl sm:text-5xl font-extrabold text-[#041B3B] mt-2">Guided by Industry Veterans</h2>
-    <p class="text-slate-600 max-w-2xl mx-auto mt-3 text-base">Real experts dedicated to transparent, ethical, and high-performance talent alignment.</p>
+    <h2 class="text-2xl sm:text-5xl font-extrabold text-[#041B3B] dark:text-white mt-2">Guided by Industry Veterans</h2>
+    <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mt-2 sm:mt-3 text-sm sm:text-base">Real experts dedicated to transparent, ethical, and high-performance talent alignment.</p>
   </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-8 max-w-4xl mx-auto">
     {leaders.map((leader) => (
-      <div class="bg-white rounded-3xl p-7 border border-slate-200 shadow-sm hover:shadow-lg hover:border-slate-300 transition-all duration-300 flex flex-col justify-between group">
+      <div class="bg-white dark:bg-[#121215] rounded-3xl p-5 sm:p-7 border border-slate-200 dark:border-white/8 shadow-sm hover:shadow-lg hover:border-slate-300 dark:hover:border-[#20C5CA]/40 transition-all duration-300 flex flex-col justify-between group">
         <div>
           <!-- Avatar Placeholder with Initials & Badge -->
           <div class="flex items-center gap-4 mb-6">
@@ -43,28 +36,28 @@ const leaders = [
               <span class="text-[#20C5CA]">{leader.initials}</span>
             </div>
             <div>
-              <h3 class="font-extrabold text-lg text-[#041B3B] group-hover:text-[#0284c7] transition-colors">{leader.name}</h3>
+              <h3 class="font-extrabold text-lg text-[#041B3B] dark:text-white group-hover:text-[#0284c7] dark:group-hover:text-[#20C5CA] transition-colors">{leader.name}</h3>
               <span class="text-xs font-bold text-[#19A4A8] block">{leader.title}</span>
             </div>
           </div>
 
-          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-[11px] font-semibold text-slate-700 mb-4">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 dark:bg-white/8 border border-slate-200 dark:border-white/10 text-[11px] font-semibold text-slate-700 dark:text-slate-300 mb-4">
             <ShieldCheck class="w-3.5 h-3.5 text-[#19A4A8]" />
             <span>{leader.specialty}</span>
           </div>
 
-          <p class="text-xs text-slate-600 leading-relaxed">
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
             {leader.bio}
           </p>
         </div>
 
-        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
-          <span class="text-[11px] font-semibold text-slate-400">Verified Leader</span>
+        <div class="mt-6 pt-4 border-t border-slate-100 dark:border-white/8 flex items-center justify-between">
+          <span class="text-[11px] font-semibold text-slate-400 dark:text-slate-500">Verified Leader</span>
           <div class="flex items-center gap-2">
-            <a href="https://linkedin.com" target="_blank" rel="noopener" class="p-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-600 hover:text-[#041B3B] transition-colors" aria-label="LinkedIn Profile">
+            <a href="https://linkedin.com" target="_blank" rel="noopener" class="p-1.5 rounded-lg bg-slate-100 dark:bg-white/8 hover:bg-slate-200 dark:hover:bg-white/15 text-slate-600 dark:text-slate-300 hover:text-[#041B3B] dark:hover:text-white transition-colors" aria-label="LinkedIn Profile">
               <Linkedin class="w-4 h-4" />
             </a>
-            <a href="mailto:contact@plexera.com" class="p-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-600 hover:text-[#041B3B] transition-colors" aria-label="Email Leader">
+            <a href="mailto:contact@plexera.pro" class="p-1.5 rounded-lg bg-slate-100 dark:bg-white/8 hover:bg-slate-200 dark:hover:bg-white/15 text-slate-600 dark:text-slate-300 hover:text-[#041B3B] dark:hover:text-white transition-colors" aria-label="Email Leader">
               <Mail class="w-4 h-4" />
             </a>
           </div>
@@ -73,3 +66,4 @@ const leaders = [
     ))}
   </div>
 </section>
+

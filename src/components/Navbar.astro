@@ -1,8 +1,14 @@
 ---
-import { ChevronDown, Sparkles, User, Briefcase, ChevronRight, Menu, X } from 'lucide-astro';
+import { ChevronDown, Sparkles, User, Briefcase, ChevronRight, Menu, X, Sun, Moon } from 'lucide-astro';
+
+interface Props {
+  showThemeToggle?: boolean;
+}
+
+const { showThemeToggle = false } = Astro.props;
 ---
 
-<header class="sticky top-0 z-40 w-full bg-white/90 backdrop-blur-md border-b border-slate-200/80 shadow-xs transition-all duration-300">
+<header class="sticky top-0 z-40 w-full bg-white/90 dark:bg-[#09090b]/90 backdrop-blur-md border-b border-slate-200/80 dark:border-white/10 shadow-xs transition-colors duration-300">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-20">
       
@@ -11,44 +17,44 @@ import { ChevronDown, Sparkles, User, Briefcase, ChevronRight, Menu, X } from 'l
         <img 
           src="/logos/logo-full.png" 
           alt="PlexEra - Where Potential Belongs" 
-          class="h-10 sm:h-11 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]" 
+          class="h-10 sm:h-11 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02] dark:brightness-110" 
         />
       </a>
 
       <!-- Desktop Navigation Links -->
       <nav class="hidden lg:flex items-center gap-1 xl:gap-2">
-        <a href="/" class="px-3 py-2 text-sm font-semibold text-slate-700 hover:text-[#041B3B] rounded-xl hover:bg-slate-100/80 transition-colors">
+        <a href="/" class="px-3 py-2 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-[#041B3B] dark:hover:text-white rounded-xl hover:bg-slate-100/80 dark:hover:bg-slate-800/60 transition-colors">
           Home
         </a>
 
         <!-- Candidates Dropdown -->
         <div class="relative group">
-          <a href="/candidates" class="px-3 py-2 text-sm font-semibold text-slate-700 hover:text-[#041B3B] rounded-xl hover:bg-slate-100/80 transition-colors inline-flex items-center gap-1">
+          <a href="/candidates" class="px-3 py-2 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-[#041B3B] dark:hover:text-white rounded-xl hover:bg-slate-100/80 dark:hover:bg-slate-800/60 transition-colors inline-flex items-center gap-1">
             <span>For Candidates</span>
-            <ChevronDown class="w-4 h-4 text-slate-400 group-hover:rotate-180 transition-transform duration-200" />
+            <ChevronDown class="w-4 h-4 text-slate-400 dark:text-slate-500 group-hover:rotate-180 transition-transform duration-200" />
           </a>
           <!-- Dropdown Card -->
-          <div class="absolute left-0 top-full mt-2 w-72 bg-white rounded-2xl p-3 shadow-xl border border-slate-200/90 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-            <div class="text-[11px] font-bold text-slate-400 px-3 py-1.5 uppercase tracking-wider">Candidate Services</div>
-            <a href="/candidates#ats-revamp" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-slate-50 transition-colors group/item">
-              <div class="p-2 rounded-lg bg-[#20C5CA]/15 text-[#041B3B] mt-0.5 group-hover/item:bg-[#20C5CA] transition-colors"><Sparkles class="w-4 h-4" /></div>
+          <div class="absolute left-0 top-full mt-2 w-72 bg-white dark:bg-[#121215] rounded-2xl p-3 shadow-xl border border-slate-200/90 dark:border-white/10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+            <div class="text-[11px] font-bold text-slate-400 dark:text-slate-400 px-3 py-1.5 uppercase tracking-wider">Candidate Services</div>
+            <a href="/candidates#ats-revamp" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-colors group/item">
+              <div class="p-2 rounded-lg bg-[#20C5CA]/15 text-[#041B3B] dark:text-[#20C5CA] mt-0.5 group-hover/item:bg-[#20C5CA] group-hover/item:text-[#041B3B] transition-colors"><Sparkles class="w-4 h-4" /></div>
               <div>
-                <div class="text-sm font-semibold text-[#041B3B]">ATS Resume Revamp</div>
-                <div class="text-xs text-slate-500">Pass recruiter filters with 98% efficiency</div>
+                <div class="text-sm font-semibold text-[#041B3B] dark:text-slate-100">ATS Resume Revamp</div>
+                <div class="text-xs text-slate-500 dark:text-slate-400">Pass recruiter filters with 98% efficiency</div>
               </div>
             </a>
-            <a href="/candidates#mock-labs" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-slate-50 transition-colors group/item">
-              <div class="p-2 rounded-lg bg-[#041B3B]/10 text-[#041B3B] mt-0.5 group-hover/item:bg-[#041B3B] group-hover/item:text-white transition-colors"><User class="w-4 h-4" /></div>
+            <a href="/candidates#mock-labs" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-colors group/item">
+              <div class="p-2 rounded-lg bg-[#041B3B]/10 text-[#041B3B] dark:bg-slate-700 dark:text-slate-200 mt-0.5 group-hover/item:bg-[#041B3B] group-hover/item:text-white transition-colors"><User class="w-4 h-4" /></div>
               <div>
-                <div class="text-sm font-semibold text-[#041B3B]">1-on-1 Mock Coaching</div>
-                <div class="text-xs text-slate-500">Practice with Google & AWS tech leads</div>
+                <div class="text-sm font-semibold text-[#041B3B] dark:text-slate-100">1-on-1 Mock Coaching</div>
+                <div class="text-xs text-slate-500 dark:text-slate-400">Practice with Google & AWS tech leads</div>
               </div>
             </a>
-            <a href="/candidates#year-1" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-slate-50 transition-colors group/item">
-              <div class="p-2 rounded-lg bg-sky-500/10 text-sky-700 mt-0.5 group-hover/item:bg-sky-500 group-hover/item:text-white transition-colors"><Briefcase class="w-4 h-4" /></div>
+            <a href="/candidates#year-1" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-colors group/item">
+              <div class="p-2 rounded-lg bg-sky-500/10 text-sky-700 dark:text-sky-400 mt-0.5 group-hover/item:bg-sky-500 group-hover/item:text-white transition-colors"><Briefcase class="w-4 h-4" /></div>
               <div>
-                <div class="text-sm font-semibold text-[#041B3B]">Year-1 Job Support</div>
-                <div class="text-xs text-slate-500">Post-hire architectural & onboarding help</div>
+                <div class="text-sm font-semibold text-[#041B3B] dark:text-slate-100">Year-1 Job Support</div>
+                <div class="text-xs text-slate-500 dark:text-slate-400">Post-hire architectural & onboarding help</div>
               </div>
             </a>
           </div>
@@ -56,40 +62,53 @@ import { ChevronDown, Sparkles, User, Briefcase, ChevronRight, Menu, X } from 'l
 
         <!-- Employers Dropdown -->
         <div class="relative group">
-          <a href="/employers" class="px-3 py-2 text-sm font-semibold text-slate-700 hover:text-[#041B3B] rounded-xl hover:bg-slate-100/80 transition-colors inline-flex items-center gap-1">
+          <a href="/employers" class="px-3 py-2 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-[#041B3B] dark:hover:text-white rounded-xl hover:bg-slate-100/80 dark:hover:bg-slate-800/60 transition-colors inline-flex items-center gap-1">
             <span>For Employers</span>
-            <ChevronDown class="w-4 h-4 text-slate-400 group-hover:rotate-180 transition-transform duration-200" />
+            <ChevronDown class="w-4 h-4 text-slate-400 dark:text-slate-500 group-hover:rotate-180 transition-transform duration-200" />
           </a>
-          <div class="absolute left-0 top-full mt-2 w-80 bg-white rounded-2xl p-3 shadow-xl border border-slate-200/90 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-            <div class="text-[11px] font-bold text-slate-400 px-3 py-1.5 uppercase tracking-wider">Enterprise Solutions</div>
-            <a href="/employers#contract-staffing" class="p-2.5 rounded-xl hover:bg-slate-50 transition-colors block">
-              <div class="text-sm font-semibold text-[#041B3B]">Contract & Augmentation</div>
-              <div class="text-xs text-slate-500">Pre-screened tech specialists in 48 hours</div>
+          <div class="absolute left-0 top-full mt-2 w-80 bg-white dark:bg-[#121215] rounded-2xl p-3 shadow-xl border border-slate-200/90 dark:border-white/10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+            <div class="text-[11px] font-bold text-slate-400 dark:text-slate-400 px-3 py-1.5 uppercase tracking-wider">Enterprise Solutions</div>
+            <a href="/employers#contract-staffing" class="p-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-colors block">
+              <div class="text-sm font-semibold text-[#041B3B] dark:text-slate-100">Contract & Augmentation</div>
+              <div class="text-xs text-slate-500 dark:text-slate-400">Pre-screened tech specialists in 48 hours</div>
             </a>
-            <a href="/employers#direct-hire" class="p-2.5 rounded-xl hover:bg-slate-50 transition-colors block">
-              <div class="text-sm font-semibold text-[#041B3B]">Direct Hire & Executive Search</div>
-              <div class="text-xs text-slate-500">Principal engineers & engineering managers</div>
+            <a href="/employers#direct-hire" class="p-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-colors block">
+              <div class="text-sm font-semibold text-[#041B3B] dark:text-slate-100">Direct Hire & Executive Search</div>
+              <div class="text-xs text-slate-500 dark:text-slate-400">Principal engineers & engineering managers</div>
             </a>
-            <a href="/employers#rpo" class="p-2.5 rounded-xl hover:bg-slate-50 transition-colors block">
-              <div class="text-sm font-semibold text-[#041B3B]">Recruitment Process Outsourcing (RPO)</div>
-              <div class="text-xs text-slate-500">Complete end-to-end sourcing pipeline</div>
+            <a href="/employers#rpo" class="p-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-colors block">
+              <div class="text-sm font-semibold text-[#041B3B] dark:text-slate-100">Recruitment Process Outsourcing (RPO)</div>
+              <div class="text-xs text-slate-500 dark:text-slate-400">Complete end-to-end sourcing pipeline</div>
             </a>
           </div>
         </div>
 
-        <a href="/roles" class="px-3 py-2 text-sm font-semibold text-slate-700 hover:text-[#041B3B] rounded-xl hover:bg-slate-100/80 transition-colors">
+        <a href="/roles" class="px-3 py-2 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-[#041B3B] dark:hover:text-white rounded-xl hover:bg-slate-100/80 dark:hover:bg-slate-800/60 transition-colors">
           Demanded Roles
         </a>
-        <a href="/about" class="px-3 py-2 text-sm font-semibold text-slate-700 hover:text-[#041B3B] rounded-xl hover:bg-slate-100/80 transition-colors">
+        <a href="/about" class="px-3 py-2 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-[#041B3B] dark:hover:text-white rounded-xl hover:bg-slate-100/80 dark:hover:bg-slate-800/60 transition-colors">
           About Us
         </a>
-        <a href="/contact" class="px-3 py-2 text-sm font-semibold text-slate-700 hover:text-[#041B3B] rounded-xl hover:bg-slate-100/80 transition-colors">
+        <a href="/contact" class="px-3 py-2 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-[#041B3B] dark:hover:text-white rounded-xl hover:bg-slate-100/80 dark:hover:bg-slate-800/60 transition-colors">
           Contact
         </a>
       </nav>
 
       <!-- Header CTAs -->
       <div class="hidden sm:flex items-center gap-3">
+        <!-- Theme Toggle Button (Controlled via showThemeToggle prop) -->
+        {showThemeToggle && (
+          <button 
+            onclick="window.toggleTheme && window.toggleTheme()"
+            aria-label="Toggle Dark Mode"
+            title="Toggle Dark Mode"
+            class="p-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:text-[#041B3B] dark:hover:text-white bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 transition-colors cursor-pointer"
+          >
+            <Sun class="w-4 h-4 hidden dark:block text-amber-400" />
+            <Moon class="w-4 h-4 block dark:hidden text-slate-700" />
+          </button>
+        )}
+
         <button 
           onclick="openBookingModal('auto')"
           class="px-5 py-2.5 text-xs font-bold neon-button rounded-xl flex items-center gap-1.5 cursor-pointer"
@@ -99,28 +118,43 @@ import { ChevronDown, Sparkles, User, Briefcase, ChevronRight, Menu, X } from 'l
         </button>
       </div>
 
-      <!-- Mobile Menu Button -->
-      <button 
-        id="mobile-menu-btn"
-        aria-label="Toggle mobile menu"
-        class="lg:hidden p-2.5 rounded-xl text-slate-700 hover:text-[#041B3B] hover:bg-slate-100 border border-slate-200"
-      >
-        <Menu id="menu-icon-open" class="w-6 h-6" />
-        <X id="menu-icon-close" class="w-6 h-6 hidden" />
-      </button>
+      <!-- Mobile Menu & Theme Toggle -->
+      <div class="flex items-center gap-2 lg:hidden">
+        <!-- Mobile Theme Toggle Button -->
+        {showThemeToggle && (
+          <button 
+            onclick="window.toggleTheme && window.toggleTheme()"
+            aria-label="Toggle Dark Mode"
+            title="Toggle Dark Mode"
+            class="p-2.5 rounded-xl text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 cursor-pointer"
+          >
+            <Sun class="w-5 h-5 hidden dark:block text-amber-400" />
+            <Moon class="w-5 h-5 block dark:hidden text-slate-700" />
+          </button>
+        )}
+
+        <button 
+          id="mobile-menu-btn"
+          aria-label="Toggle mobile menu"
+          class="p-2.5 rounded-xl text-slate-700 dark:text-slate-200 hover:text-[#041B3B] dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700"
+        >
+          <Menu id="menu-icon-open" class="w-6 h-6" />
+          <X id="menu-icon-close" class="w-6 h-6 hidden" />
+        </button>
+      </div>
 
     </div>
   </div>
 
   <!-- Mobile Drawer -->
-  <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 bg-white px-4 py-6 space-y-3 shadow-lg">
-    <a href="/" class="block px-3 py-2 text-base font-semibold text-[#041B3B] hover:bg-slate-100 rounded-lg">Home</a>
-    <a href="/candidates" class="block px-3 py-2 text-base font-semibold text-slate-700 hover:text-[#041B3B] hover:bg-slate-100 rounded-lg">For Candidates</a>
-    <a href="/employers" class="block px-3 py-2 text-base font-semibold text-slate-700 hover:text-[#041B3B] hover:bg-slate-100 rounded-lg">For Employers</a>
-    <a href="/roles" class="block px-3 py-2 text-base font-semibold text-slate-700 hover:text-[#041B3B] hover:bg-slate-100 rounded-lg">Demanded Roles</a>
-    <a href="/about" class="block px-3 py-2 text-base font-semibold text-slate-700 hover:text-[#041B3B] hover:bg-slate-100 rounded-lg">About Us</a>
-    <a href="/contact" class="block px-3 py-2 text-base font-semibold text-slate-700 hover:text-[#041B3B] hover:bg-slate-100 rounded-lg">Contact</a>
-    <div class="pt-4 border-t border-slate-200 flex flex-col gap-3">
+  <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 dark:border-white/10 bg-white dark:bg-[#09090b] px-4 py-6 space-y-3 shadow-lg">
+    <a href="/" class="block px-3 py-2 text-base font-semibold text-[#041B3B] dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">Home</a>
+    <a href="/candidates" class="block px-3 py-2 text-base font-semibold text-slate-700 dark:text-slate-300 hover:text-[#041B3B] dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">For Candidates</a>
+    <a href="/employers" class="block px-3 py-2 text-base font-semibold text-slate-700 dark:text-slate-300 hover:text-[#041B3B] dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">For Employers</a>
+    <a href="/roles" class="block px-3 py-2 text-base font-semibold text-slate-700 dark:text-slate-300 hover:text-[#041B3B] dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">Demanded Roles</a>
+    <a href="/about" class="block px-3 py-2 text-base font-semibold text-slate-700 dark:text-slate-300 hover:text-[#041B3B] dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">About Us</a>
+    <a href="/contact" class="block px-3 py-2 text-base font-semibold text-slate-700 dark:text-slate-300 hover:text-[#041B3B] dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">Contact</a>
+    <div class="pt-4 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-3">
       <button 
         onclick="openBookingModal('auto'); document.getElementById('mobile-menu').classList.add('hidden')"
         class="w-full text-center px-5 py-3 text-sm font-bold neon-button rounded-xl"

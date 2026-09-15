@@ -25,29 +25,30 @@ const clients = [
 ];
 ---
 
-<section class="py-12 bg-slate-100/70 border-y border-slate-200 overflow-hidden select-none">
+<section class="py-12 bg-slate-100/70 dark:bg-[#09090b] border-y border-slate-200 dark:border-white/8 overflow-hidden select-none">
   <div class="max-w-7xl mx-auto px-4 mb-6 text-center">
-    <span class="text-xs font-bold uppercase tracking-widest text-slate-500">
+    <span class="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">
       TRUSTED BY ENGINEERING LEADERS & OUR CANDIDATES ARE PLACED AT
     </span>
   </div>
 
   <div class="relative w-full flex overflow-x-hidden">
     <!-- Gradient Fade Edges -->
-    <div class="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-slate-100/90 to-transparent z-10 pointer-events-none"></div>
-    <div class="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-slate-100/90 to-transparent z-10 pointer-events-none"></div>
+    <div class="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-slate-100/90 dark:from-[#09090b] to-transparent z-10 pointer-events-none"></div>
+    <div class="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-slate-100/90 dark:from-[#09090b] to-transparent z-10 pointer-events-none"></div>
 
     <div class="animate-marquee flex items-center shrink-0">
       <!-- First Loop Track -->
       <div class="flex items-center gap-6 sm:gap-8 pr-6 sm:pr-8 shrink-0">
         {clients.map((client) => (
-          <div class="flex items-center gap-3.5 px-4 py-2.5 rounded-2xl bg-white border border-slate-200/90 shadow-xs shrink-0 hover:border-[#20C5CA] transition-colors">
-            <div class="w-9 h-9 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 p-1.5">
+          <div class="flex items-center gap-3.5 px-4 py-2.5 rounded-2xl bg-white dark:bg-[#121215] border border-slate-200/90 dark:border-white/8 shadow-xs shrink-0 hover:border-[#20C5CA] dark:hover:border-[#20C5CA]/60 transition-colors">
+            <!-- White background only for company logo container -->
+            <div class="client-logo-box w-10 h-10 rounded-xl bg-white border border-slate-200/80 shadow-xs flex items-center justify-center shrink-0 p-1.5">
               <img src={client.logo} alt={client.name} class="w-full h-full object-contain" />
             </div>
             <div class="flex flex-col">
-              <span class="font-bold text-sm text-[#041B3B]">{client.name}</span>
-              <span class="text-[10px] text-slate-500 font-semibold">{client.category}</span>
+              <span class="font-bold text-sm text-[#041B3B] dark:text-white">{client.name}</span>
+              <span class="text-[10px] text-slate-500 dark:text-slate-400 font-semibold">{client.category}</span>
             </div>
           </div>
         ))}
@@ -56,13 +57,14 @@ const clients = [
       <!-- Second Loop Track (Identical Copy for Infinite Scroll) -->
       <div class="flex items-center gap-6 sm:gap-8 pr-6 sm:pr-8 shrink-0">
         {clients.map((client) => (
-          <div class="flex items-center gap-3.5 px-4 py-2.5 rounded-2xl bg-white border border-slate-200/90 shadow-xs shrink-0 hover:border-[#20C5CA] transition-colors">
-            <div class="w-9 h-9 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 p-1.5">
+          <div class="flex items-center gap-3.5 px-4 py-2.5 rounded-2xl bg-white dark:bg-[#121215] border border-slate-200/90 dark:border-white/8 shadow-xs shrink-0 hover:border-[#20C5CA] dark:hover:border-[#20C5CA]/60 transition-colors">
+            <!-- White background only for company logo container -->
+            <div class="client-logo-box w-10 h-10 rounded-xl bg-white border border-slate-200/80 shadow-xs flex items-center justify-center shrink-0 p-1.5">
               <img src={client.logo} alt={client.name} class="w-full h-full object-contain" />
             </div>
             <div class="flex flex-col">
-              <span class="font-bold text-sm text-[#041B3B]">{client.name}</span>
-              <span class="text-[10px] text-slate-500 font-semibold">{client.category}</span>
+              <span class="font-bold text-sm text-[#041B3B] dark:text-white">{client.name}</span>
+              <span class="text-[10px] text-slate-500 dark:text-slate-400 font-semibold">{client.category}</span>
             </div>
           </div>
         ))}
@@ -70,6 +72,3 @@ const clients = [
     </div>
   </div>
 </section>
-
-
-

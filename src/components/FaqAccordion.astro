@@ -53,34 +53,47 @@ const faqs = [
 ];
 ---
 
-<section class="py-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-  <div class="text-center mb-14">
-    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#20C5CA]/15 border border-[#20C5CA]/30 text-[#041B3B] text-xs font-bold uppercase tracking-wider mb-2 shadow-xs">
+<section class="py-10 sm:py-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="text-center mb-8 sm:mb-14">
+    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#20C5CA]/15 border border-[#20C5CA]/30 text-[#041B3B] dark:text-[#20C5CA] text-xs font-bold uppercase tracking-wider mb-2 shadow-xs">
       <HelpCircle class="w-3.5 h-3.5 text-[#19A4A8]" />
       <span>Got Questions?</span>
     </div>
-    <h2 class="text-3xl sm:text-5xl font-extrabold text-[#041B3B] mt-1 tracking-tight">Frequently Asked Questions</h2>
-    <p class="text-slate-600 text-sm sm:text-base mt-2 max-w-2xl mx-auto">Everything you need to know about our recruitment & career acceleration process.</p>
+    <h2 class="text-2xl sm:text-5xl font-extrabold text-[#041B3B] dark:text-white mt-1 tracking-tight">Frequently Asked Questions</h2>
+    <p class="text-slate-600 dark:text-slate-400 text-xs sm:text-base mt-2 max-w-2xl mx-auto">Everything you need to know about our recruitment & career acceleration process.</p>
   </div>
 
-  <div class="space-y-3.5">
+  <div class="space-y-3 sm:space-y-3.5">
     {faqs.map((faq, index) => (
-      <div class="bg-white rounded-2xl border border-slate-200/90 shadow-xs hover:border-[#20C5CA]/50 overflow-hidden transition-all">
+      <div class={`bg-white dark:bg-[#121215] rounded-2xl border border-slate-200/90 dark:border-white/8 shadow-xs hover:border-[#20C5CA]/50 dark:hover:border-[#20C5CA]/40 overflow-hidden transition-all ${index >= 5 ? 'hidden sm:block faq-extra-item' : ''}`}>
         <button
           onclick={`toggleFaq(${index})`}
-          class="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 font-bold text-sm sm:text-base text-[#041B3B] hover:text-[#0284c7] transition-colors cursor-pointer focus:outline-none"
+          class="w-full p-4 sm:p-6 text-left flex items-center justify-between gap-4 font-bold text-xs sm:text-base text-[#041B3B] dark:text-slate-100 hover:text-[#0284c7] dark:hover:text-[#20C5CA] transition-colors cursor-pointer focus:outline-none"
           aria-expanded="false"
         >
           <span>{faq.q}</span>
-          <ChevronDown id={`faq-icon-${index}`} class="w-5 h-5 text-[#19A4A8] shrink-0 transition-transform duration-200" />
+          <ChevronDown id={`faq-icon-${index}`} class="w-4 h-4 sm:w-5 sm:h-5 text-[#19A4A8] shrink-0 transition-transform duration-200" />
         </button>
-        <div id={`faq-ans-${index}`} class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3.5">
+        <div id={`faq-ans-${index}`} class="hidden px-4 sm:px-6 pb-4 sm:pb-6 text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-100 dark:border-white/8 pt-3 sm:pt-3.5">
           {faq.a}
         </div>
       </div>
     ))}
   </div>
+
+  <!-- Mobile Show More Questions Button -->
+  <div class="mt-6 text-center sm:hidden" id="faq-load-more-container">
+    <button
+      id="faq-show-more-btn"
+      onclick="showMoreFaqs()"
+      type="button"
+      class="w-full py-3 rounded-xl bg-slate-100 dark:bg-white/8 text-xs font-bold text-[#041B3B] dark:text-slate-200 border border-slate-200 dark:border-white/10 hover:bg-slate-200 transition-colors cursor-pointer"
+    >
+      View All 12 Questions ↓
+    </button>
+  </div>
 </section>
+
 
 <script is:inline>
   function toggleFaq(index) {
@@ -91,5 +104,11 @@ const faqs = [
       ans.classList.toggle('hidden');
       icon.style.transform = isHidden ? 'rotate(180deg)' : 'rotate(0deg)';
     }
+  }
+
+  function showMoreFaqs() {
+    document.querySelectorAll('.faq-extra-item').forEach(el => el.classList.remove('hidden'));
+    const btnContainer = document.getElementById('faq-load-more-container');
+    if (btnContainer) btnContainer.classList.add('hidden');
   }
 </script>

@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 @layer base {
   :root {
@@ -16,6 +17,12 @@
     font-family: var(--font-body);
     background-color: #f8fafc;
     color: #0f172a;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .dark html {
+    background-color: #030C1B;
+    color: #f8fafc;
   }
 
   body {
@@ -26,6 +33,15 @@
       radial-gradient(circle at 50% 0%, rgba(32, 197, 202, 0.08), transparent 45%),
       radial-gradient(circle at 100% 30%, rgba(4, 27, 59, 0.03), transparent 35%),
       radial-gradient(circle at 0% 70%, rgba(32, 197, 202, 0.05), transparent 40%);
+    transition: background-color 0.3s ease;
+  }
+
+  .dark body {
+    background-color: #030C1B;
+    background-image: 
+      radial-gradient(circle at 50% 0%, rgba(32, 197, 202, 0.12), transparent 45%),
+      radial-gradient(circle at 100% 30%, rgba(4, 27, 59, 0.4), transparent 35%),
+      radial-gradient(circle at 0% 70%, rgba(32, 197, 202, 0.08), transparent 40%);
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -33,14 +49,23 @@
     letter-spacing: -0.02em;
     color: #041B3B;
   }
+
+  .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+    color: #f8fafc;
+  }
 }
 
-/* Light Theme Executive Utilities */
+/* Theme Executive Utilities */
 .glass-panel {
   background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.dark .glass-panel {
+  background: rgba(7, 25, 49, 0.85);
+  border-color: rgba(32, 197, 202, 0.2);
 }
 
 .glass-panel-hover {
@@ -54,11 +79,23 @@
   box-shadow: 0 12px 30px -8px rgba(4, 27, 59, 0.08);
 }
 
+.dark .glass-panel-hover:hover {
+  background: #071931;
+  border-color: rgba(32, 197, 202, 0.5);
+  box-shadow: 0 12px 30px -8px rgba(0, 0, 0, 0.5);
+}
+
 .glass-card {
   background: #ffffff;
   backdrop-filter: blur(12px);
   border: 1px solid #e2e8f0;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.02);
+}
+
+.dark .glass-card {
+  background: #071931;
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .gradient-text {
@@ -218,7 +255,16 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
-/* Light Theme Scrollbar */
+.dark .glass-card-glow {
+  background: rgba(7, 25, 49, 0.92);
+  border: 1px solid rgba(32, 197, 202, 0.3);
+  box-shadow: 
+    0 20px 40px -15px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(32, 197, 202, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Light & Dark Theme Scrollbars */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -227,13 +273,26 @@
   background: #f1f5f9;
 }
 
+.dark ::-webkit-scrollbar-track {
+  background: #040d1a;
+}
+
 ::-webkit-scrollbar-thumb {
   background: #cbd5e1;
   border-radius: 4px;
 }
 
+.dark ::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+
 ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #334155;
 }
 
 /* Infinite Smooth Marquee Animations (Slower & Silky Smooth) */
@@ -264,5 +323,172 @@
   width: max-content;
   animation: marqueeReverse 80s linear infinite;
 }
+
+/* ==========================================================================
+   PURE DARK MODE ENHANCEMENTS & COMPATIBILITY LAYER (AuraPTE Style)
+   ========================================================================== */
+.dark {
+  color-scheme: dark;
+}
+
+/* Base Body & Section Canvas in Dark Mode (Pitch Dark #09090b canvas) */
+.dark html,
+.dark body {
+  background-color: #09090b !important;
+  color: #fafafa !important;
+}
+
+.dark body {
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(32, 197, 202, 0.1), transparent 45%),
+    radial-gradient(circle at 100% 30%, rgba(24, 24, 27, 0.5), transparent 35%),
+    radial-gradient(circle at 0% 70%, rgba(32, 197, 202, 0.05), transparent 40%) !important;
+}
+
+/* Universal Heading & Title Color Fix in Dark Mode */
+.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6,
+.dark .text-\[\#041B3B\],
+.dark .gradient-text {
+  color: #ffffff !important;
+}
+
+/* Universal Text Contrast Fixes in Dark Mode (AuraPTE Zinc Spectrum) */
+.dark .text-slate-900,
+.dark .text-slate-800,
+.dark .text-slate-700 {
+  color: #f4f4f5 !important;
+}
+
+.dark .text-slate-600,
+.dark .text-slate-500 {
+  color: #a1a1aa !important;
+}
+
+.dark .text-slate-400 {
+  color: #71717a !important;
+}
+
+/* Card & Section Container Background Overrides in Dark Mode (#121215 Card Base) */
+.dark .bg-white,
+.dark .bg-white\/95,
+.dark .bg-white\/90,
+.dark .bg-white\/85,
+.dark .bg-\[\#f8fafc\],
+.dark .bg-slate-50,
+.dark .bg-slate-100,
+.dark div[class*="from-white"],
+.dark section[class*="from-white"] {
+  background-color: #121215 !important;
+  background-image: none !important;
+}
+
+/* Company logo containers must remain pure white even in dark mode */
+.dark .client-logo-box {
+  background-color: #ffffff !important;
+}
+
+/* Hero & section gradient backgrounds — force dark canvas */
+.dark section[class*="from-slate-50"],
+.dark section[class*="from-slate-100"],
+.dark section[class*="via-white"],
+.dark section[class*="bg-gradient"] {
+  background-color: #09090b !important;
+  background-image: none !important;
+}
+
+.dark .bg-slate-50\/90,
+.dark .bg-slate-50\/60,
+.dark .bg-slate-100\/60,
+.dark .bg-slate-100\/80,
+.dark .bg-slate-200\/50,
+.dark .bg-slate-200\/80 {
+  background-color: #18181b !important;
+}
+
+/* Border Overrides in Dark Mode (Subtle Hairline Borders) */
+.dark .border-slate-200,
+.dark .border-slate-100,
+.dark .border-slate-300,
+.dark .border-slate-800,
+.dark .border-slate-700,
+.dark .border-slate-200\/80,
+.dark .border-slate-200\/90,
+.dark .border-slate-200\/60,
+.dark .border-sky-100,
+.dark .border-amber-100 {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Header & Mobile Menu Dark Overrides */
+.dark header {
+  background-color: rgba(9, 9, 11, 0.85) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.dark #mobile-menu {
+  background-color: #09090b !important;
+}
+
+/* Role Cards, Interactive Containers & Hover States in Dark Mode */
+.dark a[class*="bg-white"],
+.dark div[class*="role-card-item"] {
+  background-color: #121215 !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.dark a[class*="bg-white"]:hover,
+.dark div[class*="role-card-item"]:hover {
+  background-color: #1a1a1e !important;
+  border-color: rgba(32, 197, 202, 0.4) !important;
+}
+
+/* Modal Dark Overrides */
+.dark #booking-modal > div {
+  background-color: #121215 !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8) !important;
+}
+
+.dark #booking-modal input,
+.dark #booking-modal select,
+.dark #booking-modal textarea {
+  background-color: #18181b !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+.dark #booking-modal select option {
+  background-color: #18181b !important;
+  color: #ffffff !important;
+}
+
+/* Glass panel and card dark refinements */
+.dark .glass-panel {
+  background: rgba(18, 18, 21, 0.88) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.dark .glass-panel-hover:hover {
+  background: #18181b !important;
+  border-color: rgba(32, 197, 202, 0.4) !important;
+  box-shadow: 0 12px 30px -8px rgba(0, 0, 0, 0.7) !important;
+}
+
+.dark .glass-card {
+  background: #121215 !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+.dark .glass-card-glow {
+  background: rgba(18, 18, 21, 0.92) !important;
+  border: 1px solid rgba(32, 197, 202, 0.25) !important;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(32, 197, 202, 0.2) !important;
+}
+
+.dark .bg-dot-grid {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px) !important;
+}
+
 
 

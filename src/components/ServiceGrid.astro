@@ -41,38 +41,38 @@ const services = [
 ];
 ---
 
-<section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-  <div class="text-center mb-16">
+<section class="py-10 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="text-center mb-8 sm:mb-16">
     <span class="text-xs font-extrabold uppercase tracking-widest text-[#19A4A8]">END-TO-END CAPABILITIES</span>
-    <h2 class="text-3xl sm:text-5xl font-extrabold text-[#041B3B] mt-2">Integrated Talent & Career Solutions Built for Impact</h2>
-    <p class="text-slate-600 max-w-2xl mx-auto mt-3 text-base">Every solution is designed to optimize potential, reduce friction, and deliver tangible career and business results.</p>
+    <h2 class="text-2xl sm:text-5xl font-extrabold text-[#041B3B] dark:text-white mt-2">Integrated Talent & Career Solutions Built for Impact</h2>
+    <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mt-2 sm:mt-3 text-sm sm:text-base">Every solution is designed to optimize potential, reduce friction, and deliver tangible career and business results.</p>
   </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
     {services.map((service) => {
       const IconComponent = service.icon;
       return (
-        <div class="bg-white rounded-3xl p-7 border border-slate-200 shadow-sm hover:shadow-lg hover:border-slate-300 transition-all duration-300 flex flex-col justify-between group">
+        <div class="bg-white dark:bg-[#121215] rounded-3xl p-5 sm:p-7 border border-slate-200 dark:border-white/8 shadow-sm hover:shadow-lg hover:border-slate-300 dark:hover:border-[#20C5CA]/40 transition-all duration-300 flex flex-col justify-between group">
           <div>
-            <div class="flex items-center justify-between mb-6">
-              <div class="p-3.5 rounded-2xl bg-[#20C5CA]/15 text-[#041B3B] border border-[#20C5CA]/30 group-hover:bg-[#20C5CA] transition-colors">
-                <IconComponent class="w-6 h-6" />
+            <div class="flex items-center justify-between mb-4 sm:mb-6">
+              <div class="p-2.5 sm:p-3.5 rounded-2xl bg-[#20C5CA]/15 text-[#041B3B] dark:text-[#20C5CA] border border-[#20C5CA]/30 group-hover:bg-[#20C5CA] group-hover:text-[#041B3B] transition-colors">
+                <IconComponent class="w-5 h-5 sm:w-6 sm:h-6" />
               </div>
-              <span class="text-[11px] font-bold text-slate-600 uppercase tracking-wider px-2.5 py-1 rounded-full bg-slate-100 border border-slate-200">
+              <span class="text-[10px] sm:text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider px-2.5 py-1 rounded-full bg-slate-100 dark:bg-white/8 border border-slate-200 dark:border-white/10">
                 {service.badge}
               </span>
             </div>
 
-            <h3 class="text-xl font-bold text-[#041B3B] group-hover:text-[#0284c7] transition-colors">
+            <h3 class="text-lg sm:text-xl font-bold text-[#041B3B] dark:text-white group-hover:text-[#0284c7] dark:group-hover:text-[#20C5CA] transition-colors">
               {service.title}
             </h3>
 
-            <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-2 sm:mt-3 leading-relaxed">
               {service.description}
             </p>
           </div>
 
-          <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#041B3B] group-hover:text-[#0284c7]">
+          <div class="mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-slate-100 dark:border-white/8 flex items-center justify-between text-xs font-bold text-[#041B3B] dark:text-slate-300 group-hover:text-[#0284c7] dark:group-hover:text-[#20C5CA]">
             <span>Explore Capability</span>
             <span class="group-hover:translate-x-1 transition-transform">→</span>
           </div>
@@ -81,3 +81,4 @@ const services = [
     })}
   </div>
 </section>
+

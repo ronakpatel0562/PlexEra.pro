@@ -59,44 +59,58 @@ const testimonials = [
 ];
 ---
 
-<section class="py-20 bg-gradient-to-b from-slate-50 via-slate-100/40 to-slate-50 border-y border-slate-200 relative overflow-hidden">
-  <!-- Subtle ambient background glow -->
-  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[320px] bg-[#19A4A8]/10 blur-[130px] rounded-full pointer-events-none"></div>
+<section class="py-10 sm:py-20 bg-gradient-to-b from-slate-50 via-slate-100/40 to-slate-50 dark:from-[#09090b] dark:via-[#0a0a0e] dark:to-[#09090b] border-y border-slate-200 dark:border-transparent relative overflow-hidden">
+
+  <!-- Light mode: subtle ambient glow | Dark mode: vivid teal halo + deep radial -->
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[360px] bg-[#19A4A8]/8 dark:bg-[#20C5CA]/12 blur-[120px] rounded-full pointer-events-none"></div>
+  <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#20C5CA]/30 dark:via-[#20C5CA]/60 to-transparent pointer-events-none"></div>
+  <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#20C5CA]/30 dark:via-[#20C5CA]/60 to-transparent pointer-events-none"></div>
 
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <div class="text-center mb-12">
-      <span class="text-xs font-extrabold uppercase tracking-widest text-[#19A4A8] bg-[#19A4A8]/10 px-3.5 py-1.5 rounded-full border border-[#19A4A8]/20 shadow-xs">
+    <div class="text-center mb-8 sm:mb-12">
+      <span class="text-xs font-extrabold uppercase tracking-widest text-[#19A4A8] bg-[#19A4A8]/10 dark:bg-[#20C5CA]/10 px-3.5 py-1.5 rounded-full border border-[#19A4A8]/20 dark:border-[#20C5CA]/25 shadow-xs">
         PROVEN IMPACT
       </span>
-      <h2 class="text-3xl sm:text-5xl font-extrabold text-[#041B3B] mt-4 tracking-tight">Candidate & Client Success Stories</h2>
-      <p class="text-slate-600 max-w-2xl mx-auto mt-3 text-base sm:text-lg">Real results from candidates elevating their careers and enterprise leaders building world-class teams.</p>
+      <h2 class="text-2xl sm:text-5xl font-extrabold text-[#041B3B] dark:text-white mt-3 sm:mt-4 tracking-tight">Candidate & Client Success Stories</h2>
+      <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mt-2 sm:mt-3 text-sm sm:text-lg">Real results from candidates elevating their careers and enterprise leaders building world-class teams.</p>
     </div>
 
     <!-- Carousel Container -->
     <div id="testimonial-carousel" class="relative focus:outline-none select-none" tabindex="0" aria-label="Testimonial Slider">
-      <!-- Outer Card Frame with Glassmorphism & Shadow -->
-      <div class="relative overflow-hidden rounded-3xl bg-white/95 backdrop-blur-md border border-slate-200/90 shadow-xl shadow-slate-200/50">
-        
+
+  <!-- Dark mode: outer teal glow ring behind card -->
+      <div class="hidden dark:block absolute -inset-[1px] rounded-[1.6rem] bg-gradient-to-b from-[#20C5CA]/25 via-transparent to-[#20C5CA]/10 pointer-events-none z-0"></div>
+
+      <!-- Main Card Frame -->
+      <div class="relative z-10 overflow-hidden rounded-3xl
+                  bg-white/95 backdrop-blur-md border border-slate-200/90 shadow-xl shadow-slate-200/50
+                  dark:bg-[#141418] dark:backdrop-blur-xl dark:border dark:border-[#20C5CA]/25 dark:shadow-[0_8px_40px_-8px_rgba(0,0,0,0.9),inset_0_1px_0_rgba(255,255,255,0.05)]">
+
+        <!-- Dark mode: top shimmer accent bar -->
+        <div class="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#20C5CA]/60 to-transparent opacity-0 dark:opacity-100 pointer-events-none"></div>
+
         <!-- Animated Track Container -->
-        <div 
-          id="testimonial-track" 
+        <div
+          id="testimonial-track"
           class="flex transition-transform duration-600 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform cursor-grab active:cursor-grabbing"
           style="transform: translate3d(0%, 0, 0);"
         >
           {testimonials.map((t, index) => {
             const BadgeIcon = t.badgeIcon;
             return (
-              <div 
+              <div
                 data-slide-index={index}
-                class="testimonial-slide w-full shrink-0 p-6 sm:p-10 flex flex-col justify-between min-h-[360px] sm:min-h-[290px] md:min-h-[260px] transition-all duration-500"
+                class="testimonial-slide w-full shrink-0 p-6 sm:p-10 flex flex-col justify-between min-h-[360px] sm:min-h-[300px] md:min-h-[270px] transition-all duration-500"
                 aria-roledescription="slide"
                 aria-label={`${index + 1} of ${testimonials.length}`}
               >
                 <div>
                   <!-- Header Badge & Rating -->
-                  <div class="flex items-center justify-between mb-4 sm:mb-6">
-                    <div class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-[#20C5CA]/15 text-[#041B3B] border border-[#20C5CA]/30 shadow-xs">
-                      <BadgeIcon class="w-3.5 h-3.5 text-[#19A4A8]" />
+                  <div class="flex items-center justify-between mb-5 sm:mb-7">
+                    <div class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold
+                                bg-[#20C5CA]/10 text-[#041B3B] border border-[#20C5CA]/25 shadow-xs
+                                dark:bg-[#20C5CA]/15 dark:text-[#a5f3f5] dark:border-[#20C5CA]/35">
+                      <BadgeIcon class="w-3.5 h-3.5 text-[#19A4A8] dark:text-[#20C5CA]" />
                       <span>{t.typeBadge}</span>
                     </div>
                     <div class="flex text-amber-400 gap-0.5">
@@ -110,20 +124,28 @@ const testimonials = [
 
                   <!-- Quote Box -->
                   <div class="relative">
-                    <Quote class="w-8 h-8 sm:w-10 sm:h-10 text-[#19A4A8]/20 absolute -top-2 -left-2 -z-0 pointer-events-none" />
-                    <p class="text-sm sm:text-base md:text-lg text-slate-700 leading-relaxed italic relative z-10 pl-4 sm:pl-6 border-l-2 border-[#19A4A8]/40">
+                    <Quote class="w-9 h-9 sm:w-12 sm:h-12 text-[#19A4A8]/15 dark:text-[#20C5CA]/15 absolute -top-3 -left-2 -z-0 pointer-events-none" />
+                    <p class="text-sm sm:text-base md:text-lg
+                               text-slate-700 dark:text-slate-100
+                               leading-relaxed italic relative z-10
+                               pl-5 sm:pl-7
+                               border-l-[3px] border-[#19A4A8]/50 dark:border-[#20C5CA]/70">
                       "{t.quote}"
                     </p>
                   </div>
                 </div>
 
                 <!-- Author & Verified Tag -->
-                <div class="mt-6 pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
+                <div class="mt-7 pt-5 border-t border-slate-100 dark:border-white/8 flex flex-wrap items-center justify-between gap-3">
                   <div>
-                    <div class="font-extrabold text-base sm:text-lg text-[#041B3B]">{t.author}</div>
-                    <div class="text-xs sm:text-sm text-[#0284c7] font-semibold">{t.role}</div>
+                    <div class="font-extrabold text-base sm:text-lg text-[#041B3B] dark:text-white">{t.author}</div>
+                    <div class="text-xs sm:text-sm text-[#0284c7] dark:text-[#20C5CA] font-semibold">{t.role}</div>
                   </div>
-                  <div class="flex items-center gap-1.5 text-xs font-semibold text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200/60">
+                  <div class="flex items-center gap-1.5 text-xs font-semibold
+                               text-emerald-600 dark:text-emerald-300
+                               bg-emerald-50 dark:bg-emerald-500/10
+                               px-3 py-1 rounded-full
+                               border border-emerald-200/60 dark:border-emerald-500/25">
                     <CheckCircle2 class="w-3.5 h-3.5" />
                     <span>{t.tag}</span>
                   </div>
@@ -133,9 +155,9 @@ const testimonials = [
           })}
         </div>
 
-        <!-- Sleek Auto-play Progress Bar -->
-        <div class="h-1 w-full bg-slate-100 relative overflow-hidden">
-          <div id="testimonial-progress-bar" class="h-full bg-gradient-to-r from-[#20C5CA] to-[#19A4A8] w-0 transition-all duration-100 linear"></div>
+        <!-- Progress Bar -->
+        <div class="h-0.5 w-full bg-slate-100 dark:bg-white/6 relative overflow-hidden">
+          <div id="testimonial-progress-bar" class="h-full bg-gradient-to-r from-[#20C5CA] to-[#19A4A8] w-0 transition-all duration-100 linear shadow-[0_0_8px_rgba(32,197,202,0.5)]"></div>
         </div>
       </div>
 
@@ -148,8 +170,8 @@ const testimonials = [
               data-dot-index={index}
               aria-label={`Go to review ${index + 1}`}
               aria-selected={index === 0 ? "true" : "false"}
-              class={`h-2.5 rounded-full transition-all duration-500 cursor-pointer ${
-                index === 0 ? 'w-8 bg-[#19A4A8]' : 'w-2.5 bg-slate-300 hover:bg-slate-400'
+              class={`h-2 rounded-full transition-all duration-500 cursor-pointer ${
+                index === 0 ? 'w-8 bg-[#19A4A8] dark:bg-[#20C5CA] dark:shadow-[0_0_8px_rgba(32,197,202,0.5)]' : 'w-2 bg-slate-300 dark:bg-zinc-600 hover:bg-slate-400 dark:hover:bg-zinc-500'
               }`}
             ></button>
           ))}
@@ -157,7 +179,7 @@ const testimonials = [
 
         <!-- Counter & Arrows -->
         <div class="flex items-center gap-4">
-          <span id="testimonial-counter" class="text-xs font-extrabold text-slate-400 tracking-wider">
+          <span id="testimonial-counter" class="text-xs font-extrabold text-slate-400 dark:text-zinc-500 tracking-widest tabular-nums">
             01 / {String(testimonials.length).padStart(2, '0')}
           </span>
 
@@ -165,14 +187,20 @@ const testimonials = [
             <button
               id="testimonial-prev-btn"
               aria-label="Previous Review"
-              class="p-2.5 rounded-full bg-white hover:bg-slate-100 border border-slate-200 text-slate-600 hover:text-[#041B3B] transition-all shadow-xs hover:shadow hover:scale-105 active:scale-95 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#19A4A8]/40"
+              class="p-2.5 rounded-full
+                     bg-white hover:bg-slate-100 border border-slate-200 text-slate-600 hover:text-[#041B3B]
+                     dark:bg-zinc-800/80 dark:hover:bg-zinc-700 dark:border-zinc-700 dark:text-zinc-300 dark:hover:text-white dark:hover:border-[#20C5CA]/50
+                     transition-all shadow-xs hover:shadow hover:scale-105 active:scale-95 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#19A4A8]/40"
             >
               <ChevronLeft class="w-4 h-4" />
             </button>
             <button
               id="testimonial-next-btn"
               aria-label="Next Review"
-              class="p-2.5 rounded-full bg-white hover:bg-slate-100 border border-slate-200 text-slate-600 hover:text-[#041B3B] transition-all shadow-xs hover:shadow hover:scale-105 active:scale-95 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#19A4A8]/40"
+              class="p-2.5 rounded-full
+                     bg-white hover:bg-slate-100 border border-slate-200 text-slate-600 hover:text-[#041B3B]
+                     dark:bg-zinc-800/80 dark:hover:bg-zinc-700 dark:border-zinc-700 dark:text-zinc-300 dark:hover:text-white dark:hover:border-[#20C5CA]/50
+                     transition-all shadow-xs hover:shadow hover:scale-105 active:scale-95 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#19A4A8]/40"
             >
               <ChevronRight class="w-4 h-4" />
             </button>
@@ -182,6 +210,8 @@ const testimonials = [
     </div>
   </div>
 </section>
+
+
 
 <script>
   function initTestimonialSlider() {
