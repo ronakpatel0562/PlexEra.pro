@@ -4,6 +4,7 @@ import { Sparkles, ArrowRight, CheckCircle2, Code, Building2 } from 'lucide-astr
 
 export function getStaticPaths() {
   return [
+    // IT Sector Roles
     {
       params: { slug: 'full-stack-developer' },
       props: {
@@ -13,6 +14,39 @@ export function getStaticPaths() {
         skills: ["React / Next.js", "Node.js / Express", "Python / Django", "TypeScript", "PostgreSQL & MongoDB", "REST & GraphQL APIs"],
         summary: "PlexEra connects principal Full-Stack developers with high-scale tech enterprises. Whether you excel in frontend UI craft or backend system architecture, we engineer your ideal career match.",
         marketDemand: "High Demand (48h Turnaround for Enterprise Placement)"
+      }
+    },
+    {
+      params: { slug: 'frontend-developer' },
+      props: {
+        title: "Frontend Engineer",
+        category: "Software Engineering",
+        salaryRange: "$115k – $170k / yr",
+        skills: ["React / Vue / Angular", "TypeScript", "Tailwind CSS & Modern UI/UX", "Web Vitals & Performance", "State Management (Redux/Zustand)", "Single Page Apps & SSR"],
+        summary: "PlexEra places top-tier Frontend Engineers into product teams building rich, responsive web apps with state-of-the-art UI performance and accessibility.",
+        marketDemand: "High Demand Category"
+      }
+    },
+    {
+      params: { slug: 'backend-developer' },
+      props: {
+        title: "Backend Architect",
+        category: "Software Engineering",
+        salaryRange: "$130k – $190k / yr",
+        skills: ["Node.js / Go / Java", "Microservices Architecture", "Distributed Systems", "GraphQL & RESTful APIs", "Redis & Caching Strategies", "Database Optimization"],
+        summary: "Build high-throughput, low-latency enterprise backends. PlexEra matches senior backend architects with scale-ups and Fortune 500 engineering organizations.",
+        marketDemand: "Critical Enterprise Demand"
+      }
+    },
+    {
+      params: { slug: 'mobile-developer' },
+      props: {
+        title: "Mobile App Developer",
+        category: "Software Engineering",
+        salaryRange: "$120k – $175k / yr",
+        skills: ["React Native / Flutter", "Swift & iOS Native", "Kotlin & Android Native", "Mobile CI/CD & App Store Delivery", "Offline Synchronization", "Push Notifications"],
+        summary: "Deliver seamless mobile experiences. PlexEra connects elite mobile app developers with leading consumer and enterprise mobile product teams.",
+        marketDemand: "High Demand Category"
       }
     },
     {
@@ -27,6 +61,17 @@ export function getStaticPaths() {
       }
     },
     {
+      params: { slug: 'sre-engineer' },
+      props: {
+        title: "Site Reliability Engineer (SRE)",
+        category: "Cloud & DevOps",
+        salaryRange: "$140k – $200k / yr",
+        skills: ["Distributed Systems Tracing", "SLO / SLA Management", "Incident Response & Postmortems", "Python & Go Scripting", "Prometheus & Grafana", "Chaos Engineering"],
+        summary: "Ensure 99.99%+ availability for enterprise applications. PlexEra pairs battle-tested Site Reliability Engineers with high-traffic global platforms.",
+        marketDemand: "High Reliability Priority"
+      }
+    },
+    {
       params: { slug: 'data-scientist' },
       props: {
         title: "Data Scientist & AI/ML Specialist",
@@ -35,6 +80,17 @@ export function getStaticPaths() {
         skills: ["PyTorch / TensorFlow", "Generative AI & LLM Fine-tuning", "Vector Databases (Pinecone/Qdrant)", "Python & SQL", "MLOps Pipelines"],
         summary: "Step into cutting-edge AI and Data Science roles. We align machine learning experts with enterprises scaling intelligent automation and predictive models.",
         marketDemand: "Exponential Growth Category"
+      }
+    },
+    {
+      params: { slug: 'data-engineer' },
+      props: {
+        title: "Data Engineer",
+        category: "Data & Artificial Intelligence",
+        salaryRange: "$130k – $185k / yr",
+        skills: ["Snowflake & Databricks", "Apache Spark & Hadoop", "dbt & Airflow", "Data Warehousing & ETL", "Python, Scala & SQL", "Kafka Streaming"],
+        summary: "Architect robust data pipelines and enterprise data warehouses. PlexEra connects data engineers with data-driven tech scale-ups and financial institutions.",
+        marketDemand: "High Enterprise Demand"
       }
     },
     {
@@ -49,6 +105,28 @@ export function getStaticPaths() {
       }
     },
     {
+      params: { slug: 'qa-automation-lead' },
+      props: {
+        title: "QA Automation Lead",
+        category: "Automation & QA",
+        salaryRange: "$110k – $160k / yr",
+        skills: ["Playwright & Cypress", "Selenium WebDriver", "API Automation (Postman)", "CI/CD Pipeline Integration", "Test Strategy & Frameworks"],
+        summary: "Drive zero-defect release velocity. PlexEra matches QA Automation leads with enterprise teams seeking robust end-to-end automated testing pipelines.",
+        marketDemand: "Steady Demand"
+      }
+    },
+    {
+      params: { slug: 'sdet-engineer' },
+      props: {
+        title: "SDET Engineer",
+        category: "Automation & QA",
+        salaryRange: "$120k – $170k / yr",
+        skills: ["Java & Python Test Automation", "Custom Test Framework Design", "Performance & Load Testing", "Docker & CI/CD", "Code Coverage & Static Analysis"],
+        summary: "Combine software development rigor with quality engineering. PlexEra places SDET engineers into tier-1 software engineering organizations.",
+        marketDemand: "High Quality Engineering Demand"
+      }
+    },
+    {
       params: { slug: 'product-manager' },
       props: {
         title: "Technical Product Manager",
@@ -60,17 +138,6 @@ export function getStaticPaths() {
       }
     },
     {
-      params: { slug: 'financial-analyst' },
-      props: {
-        title: "Financial Data Analyst",
-        category: "Non-IT & Financial Technology",
-        salaryRange: "$105k – $155k / yr",
-        skills: ["Financial Modeling & Forecasting", "SQL & Power BI / Tableau", "Python for Analytics", "Corporate Budgeting", "Risk Analysis"],
-        summary: "Turn raw financial metrics into strategic enterprise growth. We match data-driven financial analysts with fintech scale-ups and Fortune 500 firms.",
-        marketDemand: "Steady Enterprise Demand"
-      }
-    },
-    {
       params: { slug: 'servicenow-developer' },
       props: {
         title: "ServiceNow & Enterprise Platform Lead",
@@ -79,6 +146,327 @@ export function getStaticPaths() {
         skills: ["ServiceNow ITSM & ITOM", "Workflow Scripting (JavaScript)", "Integration Hub & APIs", "SecOps & Service Portal", "Platform Architecture"],
         summary: "Master enterprise workflow transformation. PlexEra connects certified ServiceNow developers with enterprise clients modernizing digital workflows.",
         marketDemand: "Niche Specialized Platform Demand"
+      }
+    },
+
+    // Non-IT Sector Roles
+    {
+      params: { slug: 'financial-analyst' },
+      props: {
+        title: "Financial Data Analyst",
+        category: "Finance & Accounting",
+        salaryRange: "$105k – $155k / yr",
+        skills: ["Financial Modeling & Forecasting", "SQL & Power BI / Tableau", "Python for Analytics", "Corporate Budgeting", "Risk Analysis"],
+        summary: "Turn raw financial metrics into strategic enterprise growth. We match data-driven financial analysts with fintech scale-ups and Fortune 500 firms.",
+        marketDemand: "Steady Enterprise Demand"
+      }
+    },
+    {
+      params: { slug: 'mechanical-engineer' },
+      props: {
+        title: "Mechanical Engineer",
+        category: "Manufacturing & Mechanical",
+        salaryRange: "$100k – $150k / yr",
+        skills: ["CAD/CAM & SolidWorks", "FEA & Thermal Analysis", "Prototyping & DFM", "Mechanical Systems Integration", "GD&T Standards"],
+        summary: "PlexEra connects skilled mechanical design engineers with advanced manufacturing plants and hardware innovation labs.",
+        marketDemand: "High Industrial Demand"
+      }
+    },
+    {
+      params: { slug: 'manufacturing-engineer' },
+      props: {
+        title: "Manufacturing Engineer",
+        category: "Manufacturing & Mechanical",
+        salaryRange: "$105k – $155k / yr",
+        skills: ["Lean Manufacturing & Six Sigma", "Production Tooling", "Process Optimization", "Plant Layout & Workflow", "Quality Control Systems"],
+        summary: "Optimize production throughput and operational quality. PlexEra pairs manufacturing engineers with tier-1 industrial facilities.",
+        marketDemand: "High Manufacturing Demand"
+      }
+    },
+    {
+      params: { slug: 'production-engineer' },
+      props: {
+        title: "Production Engineer",
+        category: "Manufacturing & Mechanical",
+        salaryRange: "$100k – $145k / yr",
+        skills: ["Plant Operations", "Process Efficiency", "Equipment Maintenance", "Safety Standards", "Resource Allocation"],
+        summary: "PlexEra places production engineers to ensure seamless daily manufacturing operations and peak facility output.",
+        marketDemand: "Steady Industrial Demand"
+      }
+    },
+    {
+      params: { slug: 'process-engineer' },
+      props: {
+        title: "Process Engineer",
+        category: "Manufacturing & Mechanical",
+        salaryRange: "$105k – $150k / yr",
+        skills: ["Flow Optimization", "P&ID Schematics", "Chemical/Process Systems", "Yield Enhancement", "Root Cause Analysis"],
+        summary: "Optimize complex chemical and material production flows. PlexEra matches process engineers with modern processing and manufacturing plants.",
+        marketDemand: "High Process Industry Demand"
+      }
+    },
+    {
+      params: { slug: 'industrial-engineer' },
+      props: {
+        title: "Industrial Engineer",
+        category: "Manufacturing & Mechanical",
+        salaryRange: "$100k – $148k / yr",
+        skills: ["Ergonomics & Time Studies", "Capacity Planning", "Supply Chain Integration", "Facilities Layout", "Cost Reduction Modeling"],
+        summary: "Streamline operations and eliminate wasteful processes. PlexEra pairs industrial engineers with top-tier logistics and manufacturing leaders.",
+        marketDemand: "Steady Demand"
+      }
+    },
+    {
+      params: { slug: 'maintenance-engineer' },
+      props: {
+        title: "Maintenance Engineer",
+        category: "Manufacturing & Mechanical",
+        salaryRange: "$95k – $140k / yr",
+        skills: ["Preventive Maintenance (PM)", "Total Productive Maintenance (TPM)", "Equipment Reliability", "Vibration Analysis", "Spare Parts Mgmt"],
+        summary: "Ensure zero unplanned downtime. PlexEra places maintenance engineering specialists to maintain mission-critical industrial machinery.",
+        marketDemand: "High Reliability Demand"
+      }
+    },
+    {
+      params: { slug: 'automation-engineer' },
+      props: {
+        title: "Automation Engineer",
+        category: "Automation & Controls",
+        salaryRange: "$115k – $165k / yr",
+        skills: ["PLC Programming (Rockwell/Siemens)", "SCADA & HMI Systems", "Industrial Robotics", "Control System Schematics", "Factory Automation Protocols"],
+        summary: "PlexEra places automation experts to digitize modern industrial plants with automated control systems and smart robotics.",
+        marketDemand: "High Automation Demand"
+      }
+    },
+    {
+      params: { slug: 'controls-engineer' },
+      props: {
+        title: "Controls Engineer",
+        category: "Automation & Controls",
+        salaryRange: "$110k – $160k / yr",
+        skills: ["Control Architecture", "Electrical Schematics", "Motion Control Systems", "PLC/HMI Integration", "Commissioning & Testing"],
+        summary: "Design and implement smart control loops. PlexEra connects controls engineers with state-of-the-art automated manufacturing plants.",
+        marketDemand: "High Controls Demand"
+      }
+    },
+    {
+      params: { slug: 'plc-programmer' },
+      props: {
+        title: "PLC Programmer",
+        category: "Automation & Controls",
+        salaryRange: "$105k – $155k / yr",
+        skills: ["Rockwell Automation & Allen-Bradley", "Siemens S7 & TIA Portal", "Ladder Logic & Structured Text", "HMI Programming", "Troubleshooting"],
+        summary: "PlexEra pairs specialist PLC Programmers with automation integrators and smart factory installations nationwide.",
+        marketDemand: "Critical Industrial Demand"
+      }
+    },
+    {
+      params: { slug: 'instrumentation-engineer' },
+      props: {
+        title: "Instrumentation Engineer",
+        category: "Automation & Controls",
+        salaryRange: "$105k – $150k / yr",
+        skills: ["Transducers & Sensors", "Control Valves & Actuators", "Calibration & Testing", "Process Control Loops", "Safety Instrumented Systems"],
+        summary: "Ensure precision measurement and process control. PlexEra matches instrumentation engineers with heavy industrial facilities.",
+        marketDemand: "Steady Demand"
+      }
+    },
+    {
+      params: { slug: 'robotics-engineer' },
+      props: {
+        title: "Robotics Engineer",
+        category: "Automation & Controls",
+        salaryRange: "$120k – $170k / yr",
+        skills: ["FANUC / KUKA / ABB Robotics", "Kinematics & Path Planning", "Robotic Cell Design", "Vision Systems", "Safety PLC Integration"],
+        summary: "PlexEra connects advanced robotics engineers with automotive, aerospace, and high-tech manufacturing plants.",
+        marketDemand: "High Growth Category"
+      }
+    },
+    {
+      params: { slug: 'supply-chain-analyst' },
+      props: {
+        title: "Supply Chain Analyst",
+        category: "Supply Chain & Logistics",
+        salaryRange: "$95k – $145k / yr",
+        skills: ["Inventory Analytics & Modeling", "ERP Modules (SAP/Oracle)", "Freight & Vendor Sourcing", "Demand Forecasting", "Logistics Optimization"],
+        summary: "Streamline global supply chains. PlexEra connects supply chain analysts with enterprise logistics networks and e-commerce leaders.",
+        marketDemand: "High Supply Chain Demand"
+      }
+    },
+    {
+      params: { slug: 'procurement-specialist' },
+      props: {
+        title: "Procurement Specialist",
+        category: "Supply Chain & Logistics",
+        salaryRange: "$95k – $140k / yr",
+        skills: ["Vendor Sourcing & Audits", "Contract Negotiations", "Supplier Relationship Mgmt", "Cost Breakdown Analysis", "Global Sourcing Strategy"],
+        summary: "Optimize vendor relationships and procurement costs. PlexEra connects procurement specialists with global enterprise supply chains.",
+        marketDemand: "Steady Enterprise Demand"
+      }
+    },
+    {
+      params: { slug: 'logistics-coordinator' },
+      props: {
+        title: "Logistics Coordinator",
+        category: "Supply Chain & Logistics",
+        salaryRange: "$85k – $130k / yr",
+        skills: ["Freight Forwarding", "Customs Compliance", "Fleet & Carrier Operations", "Shipment Tracking", "WMS & TMS Management"],
+        summary: "Manage complex freight movements seamlessly. PlexEra matches logistics coordinators with international shipping and distribution hubs.",
+        marketDemand: "Steady Operations Demand"
+      }
+    },
+    {
+      params: { slug: 'warehouse-manager' },
+      props: {
+        title: "Warehouse Manager",
+        category: "Supply Chain & Logistics",
+        salaryRange: "$95k – $145k / yr",
+        skills: ["WMS Systems (Manhattan/HighJump)", "Inventory Audits & Cycle Counts", "Distribution Operations", "OSHA Compliance", "Team Leadership"],
+        summary: "Oversee high-volume fulfillment and warehouse safety. PlexEra pairs experienced warehouse managers with top logistics operators.",
+        marketDemand: "High Demand"
+      }
+    },
+    {
+      params: { slug: 'demand-planner' },
+      props: {
+        title: "Demand Planner",
+        category: "Supply Chain & Logistics",
+        salaryRange: "$100k – $150k / yr",
+        skills: ["Statistical Forecasting Models", "S&OP Process Alignment", "SAP IBP & ERP Modules", "Inventory Balancing", "Market Trend Analysis"],
+        summary: "Align inventory strategy with market demand. PlexEra connects demand planners with global consumer goods and retail leaders.",
+        marketDemand: "High Analytics Demand"
+      }
+    },
+    {
+      params: { slug: 'supply-chain-manager' },
+      props: {
+        title: "Supply Chain Manager",
+        category: "Supply Chain & Logistics",
+        salaryRange: "$125k – $180k / yr",
+        skills: ["End-to-End Supply Chain Strategy", "Network Optimization", "Supplier Risk Mgmt", "Executive S&OP Reporting", "Logistics Transformation"],
+        summary: "Lead enterprise-wide supply chain operations. PlexEra aligns principal Supply Chain Managers with multinational organizations.",
+        marketDemand: "Executive Leadership Demand"
+      }
+    },
+    {
+      params: { slug: 'clinical-research-associate' },
+      props: {
+        title: "Clinical Research Associate (CRA)",
+        category: "Healthcare & Life Sciences",
+        salaryRange: "$110k – $160k / yr",
+        skills: ["Clinical Trial Monitoring", "GCP & FDA Compliance", "Patient Recruitment Protocols", "Site Audit Management", "Electronic Data Capture (EDC)"],
+        summary: "Advance life sciences and medical breakthroughs. PlexEra aligns CRA specialists with top pharmaceutical firms and clinical research institutions.",
+        marketDemand: "High Life Sciences Demand"
+      }
+    },
+    {
+      params: { slug: 'clinical-research-coordinator' },
+      props: {
+        title: "Clinical Research Coordinator",
+        category: "Healthcare & Life Sciences",
+        salaryRange: "$90k – $135k / yr",
+        skills: ["Patient Recruitment & Screening", "Trial Documentation & IRB", "GCP Guidelines", "Sample Handling", "Data Collection"],
+        summary: "Manage daily clinical trial execution at research sites. PlexEra pairs dedicated study coordinators with leading medical centers.",
+        marketDemand: "Steady Demand"
+      }
+    },
+    {
+      params: { slug: 'laboratory-technician' },
+      props: {
+        title: "Laboratory Technician",
+        category: "Healthcare & Life Sciences",
+        salaryRange: "$80k – $120k / yr",
+        skills: ["Sample Preparation & Analysis", "Assay Execution", "Equipment Calibration & GLP", "LIMS Systems", "Biosafety Protocols"],
+        summary: "Execute precise diagnostic tests and research assays. PlexEra connects lab technicians with accredited clinical and biotech laboratories.",
+        marketDemand: "Steady Demand"
+      }
+    },
+    {
+      params: { slug: 'qa-specialist' },
+      props: {
+        title: "Quality Assurance Specialist",
+        category: "Healthcare & Life Sciences",
+        salaryRange: "$100k – $145k / yr",
+        skills: ["GMP / FDA Compliance", "CAPA & Deviation Management", "Batch Record Reviews", "Quality Auditing", "ISO 13485 Standards"],
+        summary: "Ensure strict adherence to pharmaceutical and medical device standards. PlexEra places QA specialists in top regulated facilities.",
+        marketDemand: "High Compliance Priority"
+      }
+    },
+    {
+      params: { slug: 'regulatory-affairs-specialist' },
+      props: {
+        title: "Regulatory Affairs Specialist",
+        category: "Healthcare & Life Sciences",
+        salaryRange: "$115k – $165k / yr",
+        skills: ["FDA Submissions (510k / IND / NDA)", "CE Mark & Global Regulatory", "Labeling & Advertising Review", "Agency Communications"],
+        summary: "Navigate complex global healthcare regulations. PlexEra pairs regulatory experts with pioneering pharma and medtech companies.",
+        marketDemand: "High Regulatory Demand"
+      }
+    },
+    {
+      params: { slug: 'medical-lab-scientist' },
+      props: {
+        title: "Medical Laboratory Scientist",
+        category: "Healthcare & Life Sciences",
+        salaryRange: "$95k – $140k / yr",
+        skills: ["Diagnostic Pathology & Hematology", "Microbiology Testing", "LIMS & Lab Automation", "Quality Assurance", "CLIA / CAP Compliance"],
+        summary: "Perform critical clinical diagnostics. PlexEra places certified Medical Lab Scientists into hospital systems and reference laboratories.",
+        marketDemand: "High Healthcare Demand"
+      }
+    },
+    {
+      params: { slug: 'civil-engineer' },
+      props: {
+        title: "Civil Engineer",
+        category: "Construction & Engineering",
+        salaryRange: "$105k – $155k / yr",
+        skills: ["Structural Analysis", "AutoCAD & Civil 3D", "Site Grading & Hydrology", "Infrastructure Design", "Building Codes & Permitting"],
+        summary: "Design and build tomorrow's infrastructure. PlexEra pairs experienced civil engineers with premier commercial construction and municipal engineering projects.",
+        marketDemand: "High Infrastructure Demand"
+      }
+    },
+    {
+      params: { slug: 'project-engineer' },
+      props: {
+        title: "Project Engineer",
+        category: "Construction & Engineering",
+        salaryRange: "$100k – $150k / yr",
+        skills: ["Submittals & RFIs Management", "Subcontractor Coordination", "Primavera P6 & MS Project", "Cost Estimating & Budgeting", "Jobsite Quality Assurance"],
+        summary: "Keep complex construction and engineering projects on schedule and within budget. PlexEra connects project engineers with leading GC and EPC firms.",
+        marketDemand: "High Demand"
+      }
+    },
+    {
+      params: { slug: 'site-engineer' },
+      props: {
+        title: "Site Engineer",
+        category: "Construction & Engineering",
+        salaryRange: "$95k – $145k / yr",
+        skills: ["On-Site Construction Supervision", "Quality Audits & Inspections", "OSHA Safety Enforcement", "Field Surveying & Layout", "Daily Operations Reporting"],
+        summary: "Drive high-standard execution on construction jobsites. PlexEra places Site Engineers with top general contractors across industrial and commercial infrastructure.",
+        marketDemand: "Steady Demand"
+      }
+    },
+    {
+      params: { slug: 'structural-engineer' },
+      props: {
+        title: "Structural Engineer",
+        category: "Construction & Engineering",
+        salaryRange: "$110k – $165k / yr",
+        skills: ["Steel & Concrete Design", "Seismic Calculations & Modeling", "ETABS & RAM Structural System", "Building Code Compliance", "Foundation & Retaining Walls"],
+        summary: "Engineer safe, resilient structures. PlexEra aligns structural engineers with leading engineering consultancies and architectural firms.",
+        marketDemand: "High Engineering Demand"
+      }
+    },
+    {
+      params: { slug: 'construction-manager' },
+      props: {
+        title: "Construction Manager",
+        category: "Construction & Engineering",
+        salaryRange: "$120k – $175k / yr",
+        skills: ["Project Budgeting & Procurement", "Primavera / MS Project Scheduling", "Jobsite Leadership & Safety", "Stakeholder & Vendor Relations", "Risk Mitigation"],
+        summary: "Lead multi-million-dollar capital construction projects. PlexEra connects senior Construction Managers with top-tier development and construction enterprises.",
+        marketDemand: "High Executive Leadership Demand"
       }
     }
   ];
@@ -122,14 +510,17 @@ const { title, category, salaryRange, skills, summary, marketDemand } = Astro.pr
 
       <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
         <button 
-          onclick="document.getElementById('booking-modal').classList.remove('hidden')"
+          data-role-title={title}
+          id="btn-apply-role"
+          onclick={`window.openBookingModal && window.openBookingModal('candidate', { role: ${JSON.stringify(title)} })`}
           class="w-full sm:w-auto px-8 py-4 text-base font-bold text-white bg-[#041B3B] hover:bg-[#082854] rounded-2xl flex items-center justify-center gap-2 shadow-lg shadow-[#041B3B]/15 cursor-pointer transition-all hover:scale-[1.01]"
         >
           <span>Apply as a Candidate for this Role</span>
           <ArrowRight class="w-5 h-5" />
         </button>
         <button 
-          onclick="document.getElementById('booking-modal').classList.remove('hidden')"
+          id="btn-hire-role"
+          onclick="window.openBookingModal && window.openBookingModal('employer')"
           class="w-full sm:w-auto px-8 py-4 text-base font-bold neon-button rounded-2xl flex items-center justify-center gap-2 cursor-pointer"
         >
           <Building2 class="w-4 h-4 text-[#041B3B]" />
@@ -156,4 +547,41 @@ const { title, category, salaryRange, skills, summary, marketDemand } = Astro.pr
       </div>
     </div>
   </section>
+
+  <script>
+    function initRolePageEvents() {
+      const applyBtn = document.getElementById('btn-apply-role');
+      const hireBtn = document.getElementById('btn-hire-role');
+
+      if (applyBtn) {
+        applyBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const roleTitle = applyBtn.getAttribute('data-role-title') || '';
+          if (typeof window.openBookingModal === 'function') {
+            window.openBookingModal('candidate', { role: roleTitle });
+          } else {
+            document.getElementById('booking-modal')?.classList.remove('hidden');
+          }
+        });
+      }
+
+      if (hireBtn) {
+        hireBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          if (typeof window.openBookingModal === 'function') {
+            window.openBookingModal('employer');
+          } else {
+            document.getElementById('booking-modal')?.classList.remove('hidden');
+          }
+        });
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initRolePageEvents);
+    } else {
+      initRolePageEvents();
+    }
+  </script>
 </Layout>
+

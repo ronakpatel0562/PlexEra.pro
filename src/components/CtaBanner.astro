@@ -24,19 +24,19 @@ import { ArrowRight, Sparkles, Building2 } from 'lucide-astro';
 
       <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
         <button 
-          onclick="document.getElementById('booking-modal').classList.remove('hidden')"
-          class="w-full sm:w-auto px-8 py-4 text-base font-bold neon-button rounded-2xl flex items-center justify-center gap-2"
+          onclick="openBookingModal('auto')"
+          class="w-full sm:w-auto px-6 py-4 text-sm sm:text-base font-bold neon-button rounded-2xl flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer"
         >
-          <span>Schedule Your Free Advisory Session Now</span>
-          <ArrowRight class="w-5 h-5" />
+          <span>Book Free Advisory Session</span>
+          <ArrowRight class="w-5 h-5 shrink-0" />
         </button>
 
         <a 
           href="/employers"
-          class="w-full sm:w-auto px-6 py-4 text-sm font-bold text-slate-100 hover:text-white bg-white/10 hover:bg-white/15 rounded-2xl border border-white/20 flex items-center justify-center gap-2 transition-colors"
+          class="w-full sm:w-auto px-6 py-4 text-sm sm:text-base font-bold text-slate-100 hover:text-white bg-white/10 hover:bg-white/15 rounded-2xl border border-white/20 flex items-center justify-center gap-2 transition-colors whitespace-nowrap cursor-pointer"
         >
-          <Building2 class="w-4 h-4 text-[#20C5CA]" />
-          <span>Explore Enterprise Employer Solutions</span>
+          <Building2 class="w-4 h-4 text-[#20C5CA] shrink-0" />
+          <span>Explore Employer Solutions</span>
         </a>
       </div>
     </div>

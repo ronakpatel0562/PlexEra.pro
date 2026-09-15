@@ -108,48 +108,114 @@
   border: 1px solid rgba(32, 197, 202, 0.3);
 }
 
-/* Hero Square Grid Background & Gradient Glows */
+/* Hero Square Grid Background (Text Cutout Mask: Faint behind text, Full on outer edges) */
 .bg-hero-grid {
   background-size: 44px 44px;
   background-image: 
-    linear-gradient(to right, rgba(4, 27, 59, 0.07) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(4, 27, 59, 0.07) 1px, transparent 1px);
-  mask-image: radial-gradient(ellipse 90% 80% at 50% 25%, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 100%);
-  -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 25%, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 100%);
+    linear-gradient(to right, rgba(4, 27, 59, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(4, 27, 59, 0.08) 1px, transparent 1px);
+  mask-image: radial-gradient(ellipse 75% 65% at 30% 35%, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.25) 45%, rgba(0, 0, 0, 0.95) 90%);
+  -webkit-mask-image: radial-gradient(ellipse 75% 65% at 30% 35%, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.25) 45%, rgba(0, 0, 0, 0.95) 90%);
 }
 
 .bg-hero-grid-accent {
   background-size: 176px 176px;
   background-image: 
-    linear-gradient(to right, rgba(32, 197, 202, 0.15) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(32, 197, 202, 0.15) 1px, transparent 1px);
-  mask-image: radial-gradient(ellipse 80% 70% at 50% 25%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 90%);
-  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 25%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 90%);
+    linear-gradient(to right, rgba(32, 197, 202, 0.16) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(32, 197, 202, 0.16) 1px, transparent 1px);
+  mask-image: radial-gradient(ellipse 75% 65% at 30% 35%, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.3) 45%, rgba(0, 0, 0, 1) 90%);
+  -webkit-mask-image: radial-gradient(ellipse 75% 65% at 30% 35%, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.3) 45%, rgba(0, 0, 0, 1) 90%);
 }
 
-/* Custom Animations */
-@keyframes pulseGlow {
-  0%, 100% { opacity: 0.6; transform: scale(1); }
-  50% { opacity: 0.9; transform: scale(1.05); }
+/* Custom Animations & Hero Glass Polish */
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(0.5deg); }
 }
 
-.animate-pulse-glow {
-  animation: pulseGlow 8s infinite ease-in-out;
+@keyframes floatReverse {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(10px) rotate(-0.5deg); }
 }
 
-@keyframes marquee {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-50%); }
+@keyframes textGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-.animate-marquee {
-  display: flex;
-  width: max-content;
-  animation: marquee 35s linear infinite;
+@keyframes auroraFlow {
+  0% {
+    transform: translate(0px, 0px) scale(1) rotate(0deg);
+    opacity: 0.65;
+  }
+  33% {
+    transform: translate(45px, -60px) scale(1.15) rotate(120deg);
+    opacity: 0.85;
+  }
+  66% {
+    transform: translate(-35px, 35px) scale(0.9) rotate(240deg);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1) rotate(360deg);
+    opacity: 0.65;
+  }
 }
 
-.animate-marquee:hover {
-  animation-play-state: paused;
+@keyframes gridScan {
+  0% { transform: translateY(-100%); opacity: 0; }
+  50% { opacity: 0.5; }
+  100% { transform: translateY(100%); opacity: 0; }
+}
+
+.animate-aurora-1 {
+  animation: auroraFlow 16s ease-in-out infinite alternate;
+}
+
+.animate-aurora-2 {
+  animation: auroraFlow 22s ease-in-out infinite reverse;
+}
+
+.animate-aurora-3 {
+  animation: auroraFlow 14s ease-in-out infinite alternate-reverse;
+}
+
+.animate-grid-scan {
+  animation: gridScan 10s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: floatReverse 7s ease-in-out infinite 1s;
+}
+
+.animate-text-gradient {
+  background-size: 200% 200%;
+  animation: textGradient 6s ease infinite;
+}
+
+.animate-radar-sweep {
+  animation: radarSweep 4s linear infinite;
+}
+
+.bg-dot-grid {
+  background-image: radial-gradient(rgba(4, 27, 59, 0.12) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.glass-card-glow {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 
+    0 20px 40px -15px rgba(4, 27, 59, 0.08),
+    0 0 0 1px rgba(32, 197, 202, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 /* Light Theme Scrollbar */
@@ -169,3 +235,34 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
 }
+
+/* Infinite Smooth Marquee Animations (Slower & Silky Smooth) */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marqueeReverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 65s linear infinite;
+}
+
+.animate-marquee-slow {
+  display: flex;
+  width: max-content;
+  animation: marquee 80s linear infinite;
+}
+
+.animate-marquee-reverse {
+  display: flex;
+  width: max-content;
+  animation: marqueeReverse 80s linear infinite;
+}
+
+

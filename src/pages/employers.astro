@@ -60,7 +60,7 @@ const vettingSteps = [
 
       <div class="mt-8">
         <button 
-          onclick="document.getElementById('booking-modal').classList.remove('hidden')"
+          onclick="openBookingModal('employer')"
           class="px-8 py-4 text-base font-bold neon-button rounded-2xl inline-flex items-center gap-2 shadow-md cursor-pointer transition-all"
         >
           <span>Request Technical Talent Strategy Call</span>
@@ -97,7 +97,7 @@ const vettingSteps = [
 
           <div class="mt-8 pt-6 border-t border-slate-100">
             <button 
-              onclick="document.getElementById('booking-modal').classList.remove('hidden')"
+              onclick="openBookingModal('employer')"
               class="w-full py-3 rounded-xl bg-[#041B3B] hover:bg-[#082854] text-white font-bold text-xs shadow-xs transition-colors cursor-pointer"
             >
               Select Engagement Model →

@@ -1,79 +1,173 @@
 ---
-import { Users, TrendingUp, Zap, Building2 } from "lucide-astro";
+import { Users, TrendingUp, Zap, Building2, Sparkles, CheckCircle2, ShieldCheck, ArrowUpRight } from "lucide-astro";
 ---
 
-<section
-  class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 mb-20 relative z-20"
->
-  <div
-    class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-xl"
-  >
-    <div
-      class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 divide-y lg:divide-y-0 lg:divide-x divide-slate-100"
-    >
-      <!-- Stat 1 -->
-      <div class="flex flex-col items-center text-center p-4">
-        <div
-          class="p-3 rounded-2xl bg-[#041B3B]/10 text-[#041B3B] mb-3 border border-[#041B3B]/15"
-        >
-          <Users class="w-6 h-6" />
-        </div>
-        <span
-          class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#041B3B] tracking-tight"
-          >550+</span
-        >
-        <span class="text-xs sm:text-sm font-semibold text-slate-600 mt-1"
-          >Tech Professionals Placed</span
-        >
-      </div>
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 sm:-mt-12 mb-20 relative z-30">
+  
+  <!-- Outer Glow Backdrop Container -->
+  <div class="relative group">
+    <!-- Ambient Animated Gradient Glow Aura behind card -->
+    <div class="absolute -inset-1 bg-gradient-to-r from-[#20C5CA]/40 via-sky-400/30 to-[#041B3B]/30 rounded-[2.2rem] blur-xl opacity-70 group-hover:opacity-100 transition-opacity duration-700 animate-pulse-glow"></div>
 
-      <!-- Stat 2 -->
-      <div class="flex flex-col items-center text-center p-4 pt-6 lg:pt-4">
-        <div
-          class="p-3 rounded-2xl bg-[#20C5CA]/15 text-[#041B3B] mb-3 border border-[#20C5CA]/30"
-        >
-          <TrendingUp class="w-6 h-6" />
-        </div>
-        <span
-          class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#041B3B] tracking-tight"
-          >95%</span
-        >
-        <span class="text-xs sm:text-sm font-semibold text-slate-600 mt-1"
-          >Interview Success Rate</span
-        >
-      </div>
+    <!-- MAIN GLASS METRIC CARD CONTAINER -->
+    <div class="relative bg-white/95 backdrop-blur-2xl rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-2xl shadow-slate-900/10 overflow-hidden">
+      
+      <!-- Top Subtle Shimmer Border Accent Line -->
+      <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#20C5CA] via-sky-400 to-transparent opacity-80"></div>
 
-      <!-- Stat 3 -->
-      <div class="flex flex-col items-center text-center p-4 pt-6 lg:pt-4">
-        <div
-          class="p-3 rounded-2xl bg-sky-500/10 text-sky-700 mb-3 border border-sky-500/20"
-        >
-          <Zap class="w-6 h-6" />
-        </div>
-        <span
-          class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#041B3B] tracking-tight"
-          >98%</span
-        >
-        <span class="text-xs sm:text-sm font-semibold text-slate-600 mt-1"
-          >Job Search Efficiency Boost</span
-        >
-      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 divide-y sm:divide-y-0 sm:divide-x divide-slate-100/90">
+        
+        <!-- STAT 1: Tech Professionals Placed -->
+        <div class="stat-card group/item relative flex flex-col items-center text-center p-5 rounded-2xl transition-all duration-300 hover:bg-slate-50/80 cursor-default">
+          <div class="p-3.5 rounded-2xl bg-gradient-to-tr from-[#041B3B] to-[#082854] text-[#20C5CA] mb-4 shadow-lg shadow-[#041B3B]/15 group-hover/item:scale-110 group-hover/item:rotate-3 transition-transform duration-300 border border-[#20C5CA]/30">
+            <Users class="w-6 h-6" />
+          </div>
+          
+          <div class="flex items-baseline justify-center gap-0.5">
+            <span 
+              class="counter-value text-4xl sm:text-5xl font-extrabold text-[#041B3B] tracking-tight font-heading" 
+              data-target="550"
+              data-suffix="+"
+            >
+              0+
+            </span>
+          </div>
 
-      <!-- Stat 4 -->
-      <div class="flex flex-col items-center text-center p-4 pt-6 lg:pt-4">
-        <div
-          class="p-3 rounded-2xl bg-emerald-500/10 text-emerald-700 mb-3 border border-emerald-500/20"
-        >
-          <Building2 class="w-6 h-6" />
+          <span class="text-xs sm:text-sm font-bold text-slate-800 mt-1">Tech Professionals Placed</span>
+          
+          <!-- Sub-badge -->
+          <div class="mt-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#041B3B]/5 border border-[#041B3B]/10 text-[11px] font-semibold text-[#041B3B]">
+            <CheckCircle2 class="w-3 h-3 text-[#19A4A8]" />
+            <span>Verified Career Elevation</span>
+          </div>
         </div>
-        <span
-          class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#041B3B] tracking-tight"
-          >100+</span
-        >
-        <span class="text-xs sm:text-sm font-semibold text-slate-600 mt-1"
-          >Partnered MNCs & Scale-Ups</span
-        >
+
+        <!-- STAT 2: Interview Success Rate -->
+        <div class="stat-card group/item relative flex flex-col items-center text-center p-5 pt-7 sm:pt-5 rounded-2xl transition-all duration-300 hover:bg-slate-50/80 cursor-default">
+          <div class="p-3.5 rounded-2xl bg-gradient-to-tr from-[#20C5CA] to-sky-500 text-[#041B3B] mb-4 shadow-lg shadow-[#20C5CA]/20 group-hover/item:scale-110 group-hover/item:-rotate-3 transition-transform duration-300 border border-white/40">
+            <TrendingUp class="w-6 h-6" />
+          </div>
+          
+          <div class="flex items-baseline justify-center gap-0.5">
+            <span 
+              class="counter-value text-4xl sm:text-5xl font-extrabold text-[#041B3B] tracking-tight font-heading" 
+              data-target="95"
+              data-suffix="%"
+            >
+              0%
+            </span>
+          </div>
+
+          <span class="text-xs sm:text-sm font-bold text-slate-800 mt-1">Interview Success Rate</span>
+
+          <!-- Sub-badge -->
+          <div class="mt-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-[11px] font-semibold text-emerald-700">
+            <Sparkles class="w-3 h-3 text-emerald-600" />
+            <span>1-on-1 Coaching Boost</span>
+          </div>
+        </div>
+
+        <!-- STAT 3: Job Search Efficiency Boost -->
+        <div class="stat-card group/item relative flex flex-col items-center text-center p-5 pt-7 lg:pt-5 rounded-2xl transition-all duration-300 hover:bg-slate-50/80 cursor-default">
+          <div class="p-3.5 rounded-2xl bg-gradient-to-tr from-sky-500 to-indigo-600 text-white mb-4 shadow-lg shadow-sky-500/20 group-hover/item:scale-110 group-hover/item:rotate-3 transition-transform duration-300 border border-white/20">
+            <Zap class="w-6 h-6" />
+          </div>
+          
+          <div class="flex items-baseline justify-center gap-0.5">
+            <span 
+              class="counter-value text-4xl sm:text-5xl font-extrabold text-[#041B3B] tracking-tight font-heading" 
+              data-target="98"
+              data-suffix="%"
+            >
+              0%
+            </span>
+          </div>
+
+          <span class="text-xs sm:text-sm font-bold text-slate-800 mt-1">ATS Optimization Boost</span>
+
+          <!-- Sub-badge -->
+          <div class="mt-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-sky-50 border border-sky-200 text-[11px] font-semibold text-sky-700">
+            <ArrowUpRight class="w-3 h-3 text-sky-600" />
+            <span>3x Fast Track Placement</span>
+          </div>
+        </div>
+
+        <!-- STAT 4: Partnered MNCs & Scale-Ups -->
+        <div class="stat-card group/item relative flex flex-col items-center text-center p-5 pt-7 lg:pt-5 rounded-2xl transition-all duration-300 hover:bg-slate-50/80 cursor-default">
+          <div class="p-3.5 rounded-2xl bg-gradient-to-tr from-emerald-500 to-teal-600 text-white mb-4 shadow-lg shadow-emerald-500/20 group-hover/item:scale-110 group-hover/item:-rotate-3 transition-transform duration-300 border border-white/20">
+            <Building2 class="w-6 h-6" />
+          </div>
+          
+          <div class="flex items-baseline justify-center gap-0.5">
+            <span 
+              class="counter-value text-4xl sm:text-5xl font-extrabold text-[#041B3B] tracking-tight font-heading" 
+              data-target="100"
+              data-suffix="+"
+            >
+              0+
+            </span>
+          </div>
+
+          <span class="text-xs sm:text-sm font-bold text-slate-800 mt-1">Partnered MNCs & Scale-Ups</span>
+
+          <!-- Sub-badge -->
+          <div class="mt-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-teal-50 border border-teal-200 text-[11px] font-semibold text-teal-700">
+            <ShieldCheck class="w-3 h-3 text-teal-600" />
+            <span>Top Tier Enterprise Clients</span>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
 </section>
+
+<!-- Smooth Client-Side Count Up Animation Script -->
+<script>
+  function animateMetricCounters() {
+    const counters = document.querySelectorAll<HTMLElement>('.counter-value');
+    if (!counters.length) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target as HTMLElement;
+          const target = parseInt(el.getAttribute('data-target') || '0', 10);
+          const suffix = el.getAttribute('data-suffix') || '';
+          
+          let start = 0;
+          const duration = 1600; // ms
+          const startTime = performance.now();
+
+          function step(currentTime: number) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            
+            // EaseOutExpo curve for silky smooth slowing at end
+            const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+            const currentVal = Math.floor(easeProgress * target);
+
+            el.textContent = `${currentVal}${suffix}`;
+
+            if (progress < 1) {
+              requestAnimationFrame(step);
+            } else {
+              el.textContent = `${target}${suffix}`;
+            }
+          }
+
+          requestAnimationFrame(step);
+          observer.unobserve(el);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    counters.forEach(counter => observer.observe(counter));
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', animateMetricCounters);
+  } else {
+    animateMetricCounters();
+  }
+</script>

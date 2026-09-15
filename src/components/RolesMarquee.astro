@@ -383,7 +383,7 @@ const allCategoriesData = [...itCategories, ...nonItCategories].reduce((acc, cat
       </div>
 
       <button 
-        onclick="document.getElementById('booking-modal').classList.remove('hidden')"
+        onclick="openBookingModal('candidate')"
         class="w-full md:w-auto px-8 py-3.5 text-sm font-bold text-white bg-[#0284c7] hover:bg-[#0369a1] rounded-full shadow-lg shadow-sky-500/25 flex items-center justify-center gap-2 cursor-pointer transition-all hover:scale-105 shrink-0"
       >
         <span>Explore Jobs</span>

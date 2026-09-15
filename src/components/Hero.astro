@@ -1,81 +1,797 @@
 ---
-import { ArrowRight, Sparkles, ShieldCheck, CheckCircle2, Award, Zap } from 'lucide-astro';
+import { 
+  ArrowRight, 
+  Sparkles, 
+  ShieldCheck, 
+  CheckCircle2, 
+  Award, 
+  Zap, 
+  TrendingUp, 
+  Users, 
+  Target, 
+  Briefcase, 
+  Building2, 
+  Star, 
+  BadgeCheck, 
+  ChevronRight, 
+  Check,
+  ArrowUpRight,
+  Clock,
+  DollarSign,
+  UserCheck,
+  Layers
+} from 'lucide-astro';
 ---
 
-<section class="relative pt-12 pb-16 md:pt-20 md:pb-24 overflow-hidden bg-gradient-to-b from-slate-50/80 via-white to-[#f8fafc]">
-  <!-- Square Lines Background Grid Overlay -->
-  <div class="absolute inset-0 bg-hero-grid pointer-events-none z-0"></div>
-  <div class="absolute inset-0 bg-hero-grid-accent pointer-events-none z-0"></div>
+<section class="relative pt-8 pb-12 md:pt-14 md:pb-16 overflow-hidden bg-gradient-to-b from-slate-50 via-white to-[#f8fafc] border-b border-slate-200/60">
+  <!-- Square Grid & Dot Background (Masked Cutout behind Text Column) -->
+  <div class="absolute inset-0 bg-hero-grid opacity-85 pointer-events-none z-0"></div>
+  <div class="absolute inset-0 bg-hero-grid-accent opacity-60 pointer-events-none z-0"></div>
+  <div class="absolute inset-0 bg-dot-grid opacity-30 pointer-events-none z-0"></div>
 
-  <!-- Atmospheric Brand Gradient Glow Orbs -->
+  <!-- Atmospheric Animated Aurora Gradient Mesh & Glow Orbs -->
   <div class="absolute inset-0 pointer-events-none overflow-hidden z-0">
-    <!-- Left Teal Glow Blob -->
-    <div class="absolute -top-24 -left-32 w-[600px] h-[600px] bg-gradient-to-br from-[#20C5CA]/30 via-[#20C5CA]/15 to-transparent rounded-full blur-[110px] animate-pulse-glow"></div>
+    <!-- Aurora Mesh Blob 1 (Top-Left Vibrant Teal & Cyan) -->
+    <div class="absolute -top-44 -left-44 w-[720px] h-[720px] bg-gradient-to-tr from-[#20C5CA]/40 via-sky-400/25 to-indigo-500/20 rounded-full blur-[135px] animate-aurora-1"></div>
     
-    <!-- Right Sky Blue & Soft Indigo Glow Blob -->
-    <div class="absolute -top-10 -right-32 w-[580px] h-[580px] bg-gradient-to-bl from-sky-400/25 via-indigo-400/15 to-transparent rounded-full blur-[105px] animate-pulse-glow" style="animation-delay: 3s;"></div>
+    <!-- Aurora Mesh Blob 2 (Top-Right Sky Blue & Emerald) -->
+    <div class="absolute -top-20 -right-44 w-[700px] h-[700px] bg-gradient-to-bl from-sky-400/35 via-[#0284c7]/25 to-emerald-400/20 rounded-full blur-[130px] animate-aurora-2"></div>
     
-    <!-- Center Radiant Highlight -->
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-gradient-to-b from-[#0284c7]/15 via-[#20C5CA]/10 to-transparent rounded-full blur-[120px]"></div>
+    <!-- Aurora Mesh Blob 3 (Center Deep Core Glow) -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[950px] h-[450px] bg-gradient-to-r from-[#20C5CA]/25 via-[#041B3B]/15 to-sky-400/25 rounded-full blur-[140px] animate-aurora-3"></div>
+
+    <!-- Animated Grid Scan Light Beam -->
+    <div class="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-transparent via-[#20C5CA]/10 to-transparent animate-grid-scan"></div>
   </div>
 
-  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- MAIN HERO TOP GRID: Content (Left) & Glass Card (Right) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      
+      <!-- LEFT COLUMN: Content & CTAs (7 cols on lg) -->
+      <div class="lg:col-span-7 text-left space-y-6">
+        
+        <!-- Live Status Pill Badge -->
+        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-gradient-to-r from-[#20C5CA]/15 via-sky-500/10 to-[#041B3B]/10 border border-[#20C5CA]/40 text-[#041B3B] text-xs sm:text-sm font-bold tracking-wide shadow-xs hover:border-[#20C5CA] transition-all cursor-default">
+          <span class="relative flex h-2.5 w-2.5">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+          </span>
+          <span class="text-[#041B3B] font-semibold">NEXT-GEN IT & TECH TALENT ELEVATION PLATFORM</span>
+          <span class="hidden sm:inline-block px-2 py-0.5 rounded-full bg-[#20C5CA] text-[#041B3B] text-[10px] font-extrabold uppercase">Live Match 2.0</span>
+        </div>
+
+        <!-- Headline (H1) -->
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#041B3B] leading-[1.08]">
+          Where High-Impact Talent & Dream Careers <br class="hidden sm:block"/>
+          <span class="relative inline-block bg-gradient-to-r from-[#041B3B] via-[#0284c7] to-[#20C5CA] bg-clip-text text-transparent animate-text-gradient font-black">
+            Align Seamlessly.
+            <span class="absolute bottom-1 left-0 w-full h-3 bg-[#20C5CA]/25 -z-10 rounded-xs transform -rotate-1"></span>
+          </span>
+        </h1>
+
+        <!-- Audience Interactive Toggle Pills -->
+        <div class="pt-1">
+          <div class="inline-flex p-1 bg-slate-200/70 backdrop-blur-md rounded-2xl border border-slate-300/80 shadow-inner">
+            <button 
+              id="hero-toggle-candidate"
+              class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-300 flex items-center gap-2 bg-[#041B3B] text-white shadow-md cursor-pointer"
+            >
+              <Users class="w-4 h-4 text-[#20C5CA]" />
+              <span>For Job Seekers</span>
+            </button>
+            <button 
+              id="hero-toggle-employer"
+              class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-300 flex items-center gap-2 text-slate-600 hover:text-[#041B3B] cursor-pointer"
+            >
+              <Building2 class="w-4 h-4 text-slate-500" />
+              <span>For Employers</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Dynamic Value Proposition Paragraphs -->
+        <div class="relative min-h-[90px]">
+          <!-- Candidate View Text -->
+          <div id="hero-text-candidate" class="transition-all duration-300 opacity-100 block">
+            <p class="text-lg sm:text-xl font-semibold text-slate-700 leading-snug">
+              Accelerate your technology career with 1-on-1 executive coaching, ATS resume optimization, and direct access to high-impact engineering & leadership roles.
+            </p>
+            <p class="mt-2 text-sm sm:text-base text-slate-600 leading-relaxed">
+              We eliminate gatekeeping. Get pre-vetted by industry leaders, bypass automated recruiter filters, and secure top-tier compensation packages.
+            </p>
+          </div>
+
+          <!-- Employer View Text -->
+          <div id="hero-text-employer" class="transition-all duration-300 opacity-0 hidden">
+            <p class="text-lg sm:text-xl font-semibold text-slate-700 leading-snug">
+              Deploy elite IT & Non-IT specialists in 48 hours with precision talent sourcing and full performance safety net.
+            </p>
+            <p class="mt-2 text-sm sm:text-base text-slate-600 leading-relaxed">
+              Skip traditional 60-day hiring cycles. We match pre-evaluated full-stack engineers, cloud architects, and tech leaders aligned to your exact stack.
+            </p>
+          </div>
+        </div>
+
+        <!-- Dynamic Audience Action Buttons -->
+        <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+          <button 
+            onclick="openBookingModal(document.getElementById('hero-toggle-candidate')?.classList.contains('bg-[#041B3B]') ? 'candidate' : 'employer')"
+            class="group relative px-8 py-4 text-base font-bold text-white bg-[#041B3B] hover:bg-[#082854] rounded-2xl flex items-center justify-center gap-3 shadow-xl shadow-[#041B3B]/20 transition-all duration-300 hover:scale-[1.02] cursor-pointer overflow-hidden"
+          >
+            <!-- Shiny light pass effect -->
+            <div class="absolute inset-0 w-1/2 h-full bg-white/10 skew-x-12 -translate-x-full group-hover:translate-x-[300%] transition-transform duration-1000 ease-out"></div>
+            <span id="hero-primary-cta-label">Elevate My Career</span>
+            <ArrowRight class="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </button>
+
+          <!-- Candidate Secondary CTA (Visible in Job Seeker Mode) -->
+          <a 
+            id="hero-sec-cta-candidate"
+            href="/roles"
+            class="px-8 py-4 text-base font-bold neon-button rounded-2xl flex items-center justify-center gap-2 hover:scale-[1.02] transition-all cursor-pointer block"
+          >
+            <span>Explore Open Roles</span>
+            <ChevronRight class="w-4 h-4 text-[#041B3B]" />
+          </a>
+
+          <!-- Employer Secondary CTA (Visible in Employer Mode) -->
+          <a 
+            id="hero-sec-cta-employer"
+            href="/employers"
+            class="px-8 py-4 text-base font-bold neon-button rounded-2xl flex items-center justify-center gap-2 hover:scale-[1.02] transition-all cursor-pointer hidden"
+          >
+            <span>Hire Top Talent</span>
+            <Zap class="w-4 h-4 text-[#041B3B]" />
+          </a>
+        </div>
+
+        <!-- DYNAMIC SOCIAL PROOF STRIP CONTAINERS -->
+        
+        <!-- CANDIDATE SOCIAL PROOF STRIP (SINGLE LINE) -->
+        <div id="hero-social-candidate" class="pt-5 border-t border-slate-200/80 transition-all duration-300 block">
+          <div class="flex flex-wrap sm:flex-nowrap items-center gap-3 sm:gap-4 text-xs sm:text-sm font-semibold text-slate-700">
+            <!-- Star Rating + Audience Label -->
+            <div class="flex items-center gap-2 shrink-0">
+              <div class="flex items-center text-amber-400">
+                <Star class="w-4 h-4 fill-amber-400 text-amber-400" />
+                <Star class="w-4 h-4 fill-amber-400 text-amber-400" />
+                <Star class="w-4 h-4 fill-amber-400 text-amber-400" />
+                <Star class="w-4 h-4 fill-amber-400 text-amber-400" />
+                <Star class="w-4 h-4 fill-amber-400 text-amber-400" />
+              </div>
+              <span class="font-extrabold text-[#041B3B]">4.9/5</span>
+              <span class="text-slate-500 font-medium">(550+ Placed Engineers)</span>
+            </div>
+
+            <span class="hidden sm:inline-block text-slate-300">•</span>
+
+            <!-- Key Candidate Trust Badges -->
+            <div class="flex items-center gap-2 shrink-0">
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-emerald-50 border border-emerald-200/80 text-xs font-bold text-emerald-700">
+                <CheckCircle2 class="w-3.5 h-3.5 text-emerald-600" />
+                <span>1st-Year Support Net</span>
+              </span>
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#20C5CA]/10 border border-[#20C5CA]/30 text-xs font-bold text-[#041B3B]">
+                <Target class="w-3.5 h-3.5 text-[#19A4A8]" />
+                <span>98.4% ATS Match</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- EMPLOYER SOCIAL PROOF STRIP (SINGLE LINE - Hidden initially) -->
+        <div id="hero-social-employer" class="pt-5 border-t border-slate-200/80 transition-all duration-300 hidden">
+          <div class="flex flex-wrap sm:flex-nowrap items-center gap-3 sm:gap-4 text-xs sm:text-sm font-semibold text-slate-700">
+            <!-- Star Rating + Audience Label -->
+            <div class="flex items-center gap-2 shrink-0">
+              <div class="flex items-center text-amber-400">
+                <Star class="w-4 h-4 fill-amber-400 text-amber-400" />
+                <Star class="w-4 h-4 fill-amber-400 text-amber-400" />
+                <Star class="w-4 h-4 fill-amber-400 text-amber-400" />
+                <Star class="w-4 h-4 fill-amber-400 text-amber-400" />
+                <Star class="w-4 h-4 fill-amber-400 text-amber-400" />
+              </div>
+              <span class="font-extrabold text-[#041B3B]">4.9/5</span>
+              <span class="text-slate-500 font-medium">(100+ Enterprise Clients)</span>
+            </div>
+
+            <span class="hidden sm:inline-block text-slate-300">•</span>
+
+            <!-- Key Employer Trust Badges -->
+            <div class="flex items-center gap-2 shrink-0">
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-sky-50 border border-sky-200/80 text-xs font-bold text-sky-700">
+                <Zap class="w-3.5 h-3.5 text-sky-600" />
+                <span>48h SLA Sourcing</span>
+              </span>
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-emerald-50 border border-emerald-200/80 text-xs font-bold text-emerald-700">
+                <ShieldCheck class="w-3.5 h-3.5 text-emerald-600" />
+                <span>100% Replacement Net</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- RIGHT COLUMN: Interactive 3D Glass Dashboard Card (5 cols on lg) -->
+      <div class="lg:col-span-5 relative mt-6 lg:mt-0">
+        
+        <!-- Background Ambient Ring Glow behind card -->
+        <div class="absolute -inset-4 bg-gradient-to-r from-[#20C5CA]/30 via-sky-400/20 to-[#041B3B]/20 rounded-3xl blur-2xl opacity-70 -z-10 animate-pulse-glow"></div>
+
+        <!-- Floating Decorative Chip 1 (Top Right) -->
+        <div class="absolute -top-5 -right-3 z-20 hidden sm:flex items-center gap-2.5 px-3.5 py-2 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200/90 shadow-md animate-float-slow">
+          <div class="w-7 h-7 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center shrink-0">
+            <BadgeCheck class="w-4 h-4 text-emerald-600" />
+          </div>
+          <div>
+            <div class="text-[11px] font-bold text-[#041B3B]">High Match Verified</div>
+            <div class="text-[10px] font-semibold text-emerald-600 flex items-center gap-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span>
+              <span>Top 2% Vetted Specialist</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating Decorative Chip 2 (Bottom Left) -->
+        <div class="absolute -bottom-3 -left-3 z-20 hidden sm:flex items-center gap-2.5 px-3.5 py-2 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200/90 shadow-md animate-float-delayed">
+          <div class="w-7 h-7 rounded-xl bg-[#20C5CA]/15 border border-[#20C5CA]/30 flex items-center justify-center shrink-0">
+            <TrendingUp class="w-4 h-4 text-[#041B3B]" />
+          </div>
+          <div>
+            <div class="text-[11px] font-bold text-[#041B3B]">Career Growth Spike</div>
+            <div class="text-[10px] font-extrabold text-[#19A4A8]">+35% Avg Hike Package</div>
+          </div>
+        </div>
+
+        <!-- MAIN INTERACTIVE GLASS CARD CONTAINER -->
+        <div id="hero-interactive-card" class="glass-card-glow rounded-3xl p-6 sm:p-7 relative overflow-hidden transition-all duration-500">
+          
+          <!-- Card Header / Operating Status Bar -->
+          <div class="flex items-center justify-between pb-4 mb-5 border-b border-slate-200/80">
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-rose-400"></span>
+              <span class="w-3 h-3 rounded-full bg-amber-400"></span>
+              <span class="w-3 h-3 rounded-full bg-emerald-400"></span>
+              <span class="ml-2 text-xs font-bold text-slate-500 tracking-wider uppercase">PlexEra Engine 2.4</span>
+            </div>
+            <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-emerald-50 border border-emerald-200 text-emerald-700 text-[11px] font-bold">
+              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span id="card-status-badge">Candidate Mode</span>
+            </div>
+          </div>
+
+          <!-- CANDIDATE VIEW CARD PANEL -->
+          <div id="card-panel-candidate" class="space-y-5 transition-all duration-300">
+            
+            <!-- ATS Resume Optimizer Visual Meter -->
+            <div class="p-4 rounded-2xl bg-slate-50/90 border border-slate-200/90 space-y-3">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <Target class="w-4 h-4 text-[#0284c7]" />
+                  <span class="text-xs font-bold text-[#041B3B]">ATS Resume Score Match</span>
+                </div>
+                <span class="text-xs font-extrabold text-emerald-600 bg-emerald-100/80 px-2 py-0.5 rounded-full">98/100 Optimal</span>
+              </div>
+              
+              <!-- Progress Bar -->
+              <div class="w-full bg-slate-200 h-2.5 rounded-full overflow-hidden">
+                <div class="bg-gradient-to-r from-[#0284c7] via-[#20C5CA] to-emerald-500 h-full rounded-full w-[98%] transition-all duration-1000"></div>
+              </div>
+
+              <div class="grid grid-cols-3 gap-2 pt-1">
+                <div class="flex items-center gap-1 text-[11px] font-semibold text-slate-600">
+                  <Check class="w-3.5 h-3.5 text-emerald-600" />
+                  <span>Keywords</span>
+                </div>
+                <div class="flex items-center gap-1 text-[11px] font-semibold text-slate-600">
+                  <Check class="w-3.5 h-3.5 text-emerald-600" />
+                  <span>Formatting</span>
+                </div>
+                <div class="flex items-center gap-1 text-[11px] font-semibold text-slate-600">
+                  <Check class="w-3.5 h-3.5 text-emerald-600" />
+                  <span>Recruiter Hook</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Active Opportunity Match List -->
+            <div class="space-y-2.5">
+              <div class="text-xs font-bold text-slate-500 uppercase tracking-wider">Matched High-Growth Roles</div>
+
+              <!-- Role Item 1 -->
+              <div class="p-3.5 rounded-2xl bg-white border border-slate-200/90 hover:border-[#20C5CA] transition-all flex items-center justify-between shadow-2xs">
+                <div class="flex items-center gap-3">
+                  <div class="w-9 h-9 rounded-xl bg-[#041B3B]/5 border border-[#041B3B]/10 flex items-center justify-center font-bold text-[#041B3B] text-xs">
+                    IT
+                  </div>
+                  <div>
+                    <div class="text-xs font-bold text-[#041B3B]">Senior Lead Architect</div>
+                    <div class="text-[11px] font-medium text-slate-500">$140k - $175k · Remote USA/India</div>
+                  </div>
+                </div>
+                <span class="px-2.5 py-1 rounded-lg bg-[#20C5CA]/15 text-[#041B3B] text-[11px] font-bold">99% Match</span>
+              </div>
+
+              <!-- Role Item 2 -->
+              <div class="p-3.5 rounded-2xl bg-white border border-slate-200/90 hover:border-[#20C5CA] transition-all flex items-center justify-between shadow-2xs">
+                <div class="flex items-center gap-3">
+                  <div class="w-9 h-9 rounded-xl bg-sky-50 border border-sky-100 flex items-center justify-center font-bold text-sky-700 text-xs">
+                    AI
+                  </div>
+                  <div>
+                    <div class="text-xs font-bold text-[#041B3B]">Cloud DevOps Lead</div>
+                    <div class="text-[11px] font-medium text-slate-500">$130k - $160k · Hybrid</div>
+                  </div>
+                </div>
+                <span class="px-2.5 py-1 rounded-lg bg-[#20C5CA]/15 text-[#041B3B] text-[11px] font-bold">97% Match</span>
+              </div>
+            </div>
+
+            <!-- 1-on-1 Coaching Indicator -->
+            <div class="p-3.5 rounded-2xl bg-gradient-to-r from-[#041B3B] to-[#082854] text-white flex items-center justify-between shadow-md">
+              <div class="flex items-center gap-3">
+                <div class="p-2 rounded-xl bg-[#20C5CA]/20 text-[#20C5CA]">
+                  <Award class="w-4 h-4" />
+                </div>
+                <div>
+                  <div class="text-xs font-bold">1-on-1 Executive Coaching</div>
+                  <div class="text-[11px] text-slate-300">Mock Interviews & Salary Negotiation</div>
+                </div>
+              </div>
+              <span class="text-xs font-bold text-[#20C5CA]">Included</span>
+            </div>
+
+          </div>
+
+          <!-- EMPLOYER VIEW CARD PANEL (Initially Hidden) -->
+          <div id="card-panel-employer" class="space-y-5 transition-all duration-300 hidden">
+            
+            <!-- Talent Pipeline Status -->
+            <div class="p-4 rounded-2xl bg-slate-50/90 border border-slate-200/90 space-y-3">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <Zap class="w-4 h-4 text-emerald-600" />
+                  <span class="text-xs font-bold text-[#041B3B]">Instant Sourcing Pipeline SLA</span>
+                </div>
+                <span class="text-xs font-extrabold text-emerald-600 bg-emerald-100/80 px-2 py-0.5 rounded-full">48h Delivery</span>
+              </div>
+
+              <!-- Animated SLA Meter -->
+              <div class="w-full bg-slate-200 h-2.5 rounded-full overflow-hidden">
+                <div class="bg-gradient-to-r from-emerald-500 via-[#20C5CA] to-[#0284c7] h-full rounded-full w-[100%]"></div>
+              </div>
+
+              <div class="text-[11px] text-slate-600 font-medium">
+                ⚡ 5 Pre-screened candidates delivered to your inbox within 48 hours.
+              </div>
+            </div>
+
+            <!-- Verified Tech Stack Badges -->
+            <div class="space-y-2.5">
+              <div class="text-xs font-bold text-slate-500 uppercase tracking-wider">Ready-to-Deploy Talent Pools</div>
+              
+              <div class="grid grid-cols-2 gap-2.5">
+                <div class="p-3 rounded-xl bg-white border border-slate-200/90 text-left space-y-1">
+                  <div class="text-xs font-bold text-[#041B3B]">Full-Stack & Cloud</div>
+                  <div class="text-[10px] text-slate-500">React, Node, AWS, Kubernetes</div>
+                  <div class="text-[10px] font-bold text-emerald-600">120+ Vetted Engineers</div>
+                </div>
+
+                <div class="p-3 rounded-xl bg-white border border-slate-200/90 text-left space-y-1">
+                  <div class="text-xs font-bold text-[#041B3B]">AI & Data Science</div>
+                  <div class="text-[10px] text-slate-500">PyTorch, ML Pipelines, LLMs</div>
+                  <div class="text-[10px] font-bold text-emerald-600">85+ Specialists</div>
+                </div>
+
+                <div class="p-3 rounded-xl bg-white border border-slate-200/90 text-left space-y-1">
+                  <div class="text-xs font-bold text-[#041B3B]">Cybersecurity</div>
+                  <div class="text-[10px] text-slate-500">SOC, DevSecOps, Compliance</div>
+                  <div class="text-[10px] font-bold text-emerald-600">60+ Specialists</div>
+                </div>
+
+                <div class="p-3 rounded-xl bg-white border border-slate-200/90 text-left space-y-1">
+                  <div class="text-xs font-bold text-[#041B3B]">Non-IT Operations</div>
+                  <div class="text-[10px] text-slate-500">Project Management, HR, Ops</div>
+                  <div class="text-[10px] font-bold text-emerald-600">95+ Professionals</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Guarantee Safety Net Box -->
+            <div class="p-3.5 rounded-2xl bg-[#041B3B] text-white flex items-center justify-between shadow-md">
+              <div class="flex items-center gap-3">
+                <ShieldCheck class="w-5 h-5 text-[#20C5CA] shrink-0" />
+                <div>
+                  <div class="text-xs font-bold">First-Year Job Support Safety Net</div>
+                  <div class="text-[11px] text-slate-300">Continuous post-placement onboarding support</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- DYNAMIC INTEGRATED HERO STATS DASHBOARD BAR -->
     
-    <!-- Eyebrow Badge -->
-    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#20C5CA]/10 border border-[#20C5CA]/30 text-[#041B3B] text-xs sm:text-sm font-bold tracking-wide mb-8 shadow-xs">
-      <Sparkles class="w-4 h-4 text-[#19A4A8]" />
-      <span>REDEFINING IT & NON-IT STAFFING & CAREER ELEVATION</span>
+    <!-- CANDIDATE HERO STATS BAR -->
+    <div id="hero-stats-candidate" class="mt-12 lg:mt-16 pt-8 border-t border-slate-200/80 transition-all duration-300 block">
+      <div class="bg-white/85 backdrop-blur-xl rounded-2xl p-5 sm:p-7 border border-slate-200/90 shadow-xl shadow-slate-900/5 hover:border-[#20C5CA]/40 transition-all">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 divide-y sm:divide-y-0 sm:divide-x divide-slate-200/70">
+          
+          <!-- Stat 1 -->
+          <div class="flex items-center gap-3.5 p-2 justify-center sm:justify-start">
+            <div class="p-3 rounded-2xl bg-gradient-to-tr from-[#041B3B] to-[#082854] text-[#20C5CA] border border-[#20C5CA]/30 shadow-md shrink-0">
+              <Users class="w-5 h-5 sm:w-6 sm:h-6" />
+            </div>
+            <div>
+              <div 
+                class="counter-value text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#041B3B] tracking-tight font-heading"
+                data-target="550"
+                data-suffix="+"
+              >
+                0+
+              </div>
+              <div class="text-xs sm:text-sm font-bold text-slate-700">Tech Professionals Placed</div>
+              <div class="text-[11px] font-semibold text-emerald-600 flex items-center gap-1 mt-0.5">
+                <CheckCircle2 class="w-3 h-3 text-emerald-500" />
+                <span>Verified Career Elevation</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stat 2 -->
+          <div class="flex items-center gap-3.5 p-2 pt-4 sm:pt-2 justify-center sm:justify-start sm:pl-6">
+            <div class="p-3 rounded-2xl bg-gradient-to-tr from-[#20C5CA] to-sky-500 text-[#041B3B] border border-white/40 shadow-md shrink-0">
+              <TrendingUp class="w-5 h-5 sm:w-6 sm:h-6" />
+            </div>
+            <div>
+              <div 
+                class="counter-value text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#041B3B] tracking-tight font-heading"
+                data-target="95"
+                data-suffix="%"
+              >
+                0%
+              </div>
+              <div class="text-xs sm:text-sm font-bold text-slate-700">Interview Success Rate</div>
+              <div class="text-[11px] font-semibold text-[#19A4A8] flex items-center gap-1 mt-0.5">
+                <Sparkles class="w-3 h-3 text-[#19A4A8]" />
+                <span>1-on-1 Coaching Boost</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stat 3 -->
+          <div class="flex items-center gap-3.5 p-2 pt-4 lg:pt-2 justify-center sm:justify-start lg:pl-6">
+            <div class="p-3 rounded-2xl bg-gradient-to-tr from-sky-500 to-indigo-600 text-white border border-white/20 shadow-md shrink-0">
+              <TrendingUp class="w-5 h-5 sm:w-6 sm:h-6" />
+            </div>
+            <div>
+              <div 
+                class="counter-value text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#041B3B] tracking-tight font-heading"
+                data-target="35"
+                data-suffix="%"
+                data-[#prefix]="+"
+              >
+                +0%
+              </div>
+              <div class="text-xs sm:text-sm font-bold text-slate-700">Average Salary Hike</div>
+              <div class="text-[11px] font-semibold text-sky-600 flex items-center gap-1 mt-0.5">
+                <ArrowUpRight class="w-3 h-3 text-sky-500" />
+                <span>High Impact Compensation</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stat 4 -->
+          <div class="flex items-center gap-3.5 p-2 pt-4 lg:pt-2 justify-center sm:justify-start lg:pl-6">
+            <div class="p-3 rounded-2xl bg-gradient-to-tr from-emerald-500 to-teal-600 text-white border border-white/20 shadow-md shrink-0">
+              <Target class="w-5 h-5 sm:w-6 sm:h-6" />
+            </div>
+            <div>
+              <div 
+                class="counter-value text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#041B3B] tracking-tight font-heading"
+                data-target="98"
+                data-suffix="%"
+              >
+                0%
+              </div>
+              <div class="text-xs sm:text-sm font-bold text-slate-700 whitespace-nowrap">ATS Resume Match Rate</div>
+              <div class="text-[11px] font-semibold text-teal-600 flex items-center gap-1 mt-0.5 whitespace-nowrap">
+                <CheckCircle2 class="w-3 h-3 text-teal-500" />
+                <span>Bypass Recruiter Filters</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </div>
 
-    <!-- H1 Headline -->
-    <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-[#041B3B] max-w-5xl mx-auto leading-[1.1]">
-      Where Potential <span class="relative inline-block text-[#0284c7]">Belongs.<span class="absolute bottom-2 left-0 w-full h-3 bg-[#20C5CA]/30 -z-10 rounded-xs"></span></span>
-    </h1>
+    <!-- EMPLOYER HERO STATS BAR (Hidden initially) -->
+    <div id="hero-stats-employer" class="mt-12 lg:mt-16 pt-8 border-t border-slate-200/80 transition-all duration-300 hidden">
+      <div class="bg-white/85 backdrop-blur-xl rounded-2xl p-5 sm:p-7 border border-slate-200/90 shadow-xl shadow-slate-900/5 hover:border-[#20C5CA]/40 transition-all">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 divide-y sm:divide-y-0 sm:divide-x divide-slate-200/70">
+          
+          <!-- Stat 1 -->
+          <div class="flex items-center gap-3.5 p-2 justify-center sm:justify-start">
+            <div class="p-3 rounded-2xl bg-gradient-to-tr from-[#20C5CA] to-sky-500 text-[#041B3B] border border-white/40 shadow-md shrink-0">
+              <Clock class="w-5 h-5 sm:w-6 sm:h-6" />
+            </div>
+            <div>
+              <div 
+                class="counter-value text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#041B3B] tracking-tight font-heading"
+                data-target="48"
+                data-suffix="h"
+              >
+                0h
+              </div>
+              <div class="text-xs sm:text-sm font-bold text-slate-700 whitespace-nowrap">Time-to-Match SLA</div>
+              <div class="text-[11px] font-semibold text-emerald-600 flex items-center gap-1 mt-0.5 whitespace-nowrap">
+                <Zap class="w-3 h-3 text-emerald-500" />
+                <span>Instant Sourcing SLA</span>
+              </div>
+            </div>
+          </div>
 
-    <!-- Subheadline -->
-    <p class="mt-4 text-xl sm:text-2xl font-semibold text-slate-700 max-w-3xl mx-auto">
-      Accelerating Tech & Industry Careers with Precision Talent Sourcing.
-    </p>
+          <!-- Stat 2 -->
+          <div class="flex items-center gap-3.5 p-2 pt-4 sm:pt-2 justify-center sm:justify-start sm:pl-6">
+            <div class="p-3 rounded-2xl bg-gradient-to-tr from-[#041B3B] to-[#082854] text-[#20C5CA] border border-[#20C5CA]/30 shadow-md shrink-0">
+              <Building2 class="w-5 h-5 sm:w-6 sm:h-6" />
+            </div>
+            <div>
+              <div 
+                class="counter-value text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#041B3B] tracking-tight font-heading"
+                data-target="100"
+                data-suffix="+"
+              >
+                0+
+              </div>
+              <div class="text-xs sm:text-sm font-bold text-slate-700 whitespace-nowrap">Enterprise Tech Clients</div>
+              <div class="text-[11px] font-semibold text-[#19A4A8] flex items-center gap-1 mt-0.5 whitespace-nowrap">
+                <ShieldCheck class="w-3 h-3 text-[#19A4A8]" />
+                <span>Fortune 500 & Scale-Ups</span>
+              </div>
+            </div>
+          </div>
 
-    <!-- Body Copy -->
-    <p class="mt-6 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-      PlexEra pairs high-performing IT and Non-IT specialists with visionary enterprises. Whether you are a candidate seeking your next high-impact engineering or business role or an employer accelerating your operational roadmap, we engineer the perfect match.
-    </p>
+          <!-- Stat 3 -->
+          <div class="flex items-center gap-3.5 p-2 pt-4 lg:pt-2 justify-center sm:justify-start lg:pl-6">
+            <div class="p-3 rounded-2xl bg-gradient-to-tr from-sky-500 to-indigo-600 text-white border border-white/20 shadow-md shrink-0">
+              <UserCheck class="w-5 h-5 sm:w-6 sm:h-6" />
+            </div>
+            <div>
+              <div 
+                class="counter-value text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#041B3B] tracking-tight font-heading"
+                data-target="99"
+                data-suffix="%"
+              >
+                0%
+              </div>
+              <div class="text-xs sm:text-sm font-bold text-slate-700 whitespace-nowrap">Placement Retention Rate</div>
+              <div class="text-[11px] font-semibold text-sky-600 flex items-center gap-1 mt-0.5 whitespace-nowrap">
+                <BadgeCheck class="w-3 h-3 text-sky-500" />
+                <span>Top 2% Pre-Vetted Talent</span>
+              </div>
+            </div>
+          </div>
 
-    <!-- Dual Action Buttons -->
-    <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
-      <button 
-        onclick="document.getElementById('booking-modal').classList.remove('hidden')"
-        class="w-full sm:w-auto px-8 py-4 text-base font-bold text-white bg-[#041B3B] hover:bg-[#082854] rounded-2xl flex items-center justify-center gap-2 shadow-lg shadow-[#041B3B]/15 transition-all hover:scale-[1.01] cursor-pointer"
-      >
-        <span>Elevate My Career</span>
-        <ArrowRight class="w-5 h-5" />
-      </button>
+          <!-- Stat 4 -->
+          <div class="flex items-center gap-3.5 p-2 pt-4 lg:pt-2 justify-center sm:justify-start lg:pl-6">
+            <div class="p-3 rounded-2xl bg-gradient-to-tr from-emerald-500 to-teal-600 text-white border border-white/20 shadow-md shrink-0">
+              <TrendingUp class="w-5 h-5 sm:w-6 sm:h-6" />
+            </div>
+            <div>
+              <div 
+                class="counter-value text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#041B3B] tracking-tight font-heading"
+                data-target="60"
+                data-suffix="%"
+              >
+                0%
+              </div>
+              <div class="text-xs sm:text-sm font-bold text-slate-700 whitespace-nowrap">Hiring Cost & Time Saved</div>
+              <div class="text-[11px] font-semibold text-teal-600 flex items-center gap-1 mt-0.5 whitespace-nowrap">
+                <CheckCircle2 class="w-3 h-3 text-teal-500" />
+                <span>Zero-Friction Recruitment</span>
+              </div>
+            </div>
+          </div>
 
-      <a 
-        href="/employers"
-        class="w-full sm:w-auto px-8 py-4 text-base font-bold neon-button rounded-2xl flex items-center justify-center gap-2"
-      >
-        <span>Hire Top Talent</span>
-        <Zap class="w-4 h-4 text-[#041B3B]" />
-      </a>
-    </div>
-
-    <!-- Trust Micro-Copy Strip -->
-    <div class="mt-14 pt-8 border-t border-slate-200/80 max-w-3xl mx-auto flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-xs sm:text-sm font-semibold text-slate-600">
-      <div class="flex items-center gap-2">
-        <CheckCircle2 class="w-4 h-4 text-emerald-600 shrink-0" />
-        <span>ATS-Optimized Strategies</span>
-      </div>
-      <div class="flex items-center gap-2">
-        <Award class="w-4 h-4 text-[#041B3B] shrink-0" />
-        <span>1-on-1 Executive Coaching</span>
-      </div>
-      <div class="flex items-center gap-2">
-        <ShieldCheck class="w-4 h-4 text-[#19A4A8] shrink-0" />
-        <span>First-Year Job Support Safety Net</span>
+        </div>
       </div>
     </div>
 
   </div>
 </section>
+
+<!-- Combined Hero Interactivity & Animated Counter Script -->
+<script>
+  function setupHeroInteractivity() {
+    // Mode Switcher Elements
+    const btnCandidate = document.getElementById('hero-toggle-candidate');
+    const btnEmployer = document.getElementById('hero-toggle-employer');
+    
+    const textCandidate = document.getElementById('hero-text-candidate');
+    const textEmployer = document.getElementById('hero-text-employer');
+    
+    const panelCandidate = document.getElementById('card-panel-candidate');
+    const panelEmployer = document.getElementById('card-panel-employer');
+
+    const socialCandidate = document.getElementById('hero-social-candidate');
+    const socialEmployer = document.getElementById('hero-social-employer');
+
+    const statsCandidate = document.getElementById('hero-stats-candidate');
+    const statsEmployer = document.getElementById('hero-stats-employer');
+
+    const secCtaCandidate = document.getElementById('hero-sec-cta-candidate');
+    const secCtaEmployer = document.getElementById('hero-sec-cta-employer');
+    
+    const cardStatusBadge = document.getElementById('card-status-badge');
+    const primaryCtaLabel = document.getElementById('hero-primary-cta-label');
+
+    function runCounters(container: HTMLElement) {
+      const counters = container.querySelectorAll<HTMLElement>('.counter-value');
+      counters.forEach(el => {
+        const target = parseInt(el.getAttribute('data-target') || '0', 10);
+        const suffix = el.getAttribute('data-suffix') || '';
+        const prefix = el.getAttribute('data-prefix') || '';
+        
+        let start = 0;
+        const duration = 1400;
+        const startTime = performance.now();
+
+        function step(currentTime: number) {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+          const currentVal = Math.floor(easeProgress * target);
+
+          el.textContent = `${prefix}${currentVal}${suffix}`;
+
+          if (progress < 1) {
+            requestAnimationFrame(step);
+          } else {
+            el.textContent = `${prefix}${target}${suffix}`;
+          }
+        }
+
+        requestAnimationFrame(step);
+      });
+    }
+
+    if (btnCandidate && btnEmployer) {
+      btnCandidate.addEventListener('click', () => {
+        btnCandidate.className = "px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-300 flex items-center gap-2 bg-[#041B3B] text-white shadow-md cursor-pointer";
+        btnEmployer.className = "px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-300 flex items-center gap-2 text-slate-600 hover:text-[#041B3B] cursor-pointer";
+
+        // Text switch
+        if (textCandidate && textEmployer) {
+          textCandidate.classList.remove('hidden', 'opacity-0');
+          textCandidate.classList.add('block', 'opacity-100');
+          textEmployer.classList.remove('block', 'opacity-100');
+          textEmployer.classList.add('hidden', 'opacity-0');
+        }
+
+        // Panel switch
+        if (panelCandidate && panelEmployer) {
+          panelCandidate.classList.remove('hidden', 'opacity-0');
+          panelCandidate.classList.add('block', 'opacity-100');
+          panelEmployer.classList.remove('block', 'opacity-100');
+          panelEmployer.classList.add('hidden', 'opacity-0');
+        }
+
+        // Secondary CTA switch
+        if (secCtaCandidate && secCtaEmployer) {
+          secCtaCandidate.classList.remove('hidden', 'opacity-0');
+          secCtaCandidate.classList.add('block', 'opacity-100');
+          secCtaEmployer.classList.remove('block', 'opacity-100');
+          secCtaEmployer.classList.add('hidden', 'opacity-0');
+        }
+
+        // Social Proof Strip switch
+        if (socialCandidate && socialEmployer) {
+          socialCandidate.classList.remove('hidden', 'opacity-0');
+          socialCandidate.classList.add('block', 'opacity-100');
+          socialEmployer.classList.remove('block', 'opacity-100');
+          socialEmployer.classList.add('hidden', 'opacity-0');
+        }
+
+        // Integrated Stats Bar switch
+        if (statsCandidate && statsEmployer) {
+          statsCandidate.classList.remove('hidden', 'opacity-0');
+          statsCandidate.classList.add('block', 'opacity-100');
+          statsEmployer.classList.remove('block', 'opacity-100');
+          statsEmployer.classList.add('hidden', 'opacity-0');
+          runCounters(statsCandidate);
+        }
+
+        if (cardStatusBadge) cardStatusBadge.textContent = "Candidate Mode";
+        if (primaryCtaLabel) primaryCtaLabel.textContent = "Elevate My Career";
+      });
+
+      btnEmployer.addEventListener('click', () => {
+        btnEmployer.className = "px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-300 flex items-center gap-2 bg-[#041B3B] text-white shadow-md cursor-pointer";
+        btnCandidate.className = "px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-300 flex items-center gap-2 text-slate-600 hover:text-[#041B3B] cursor-pointer";
+
+        // Text switch
+        if (textCandidate && textEmployer) {
+          textEmployer.classList.remove('hidden', 'opacity-0');
+          textEmployer.classList.add('block', 'opacity-100');
+          textCandidate.classList.remove('block', 'opacity-100');
+          textCandidate.classList.add('hidden', 'opacity-0');
+        }
+
+        // Panel switch
+        if (panelCandidate && panelEmployer) {
+          panelEmployer.classList.remove('hidden', 'opacity-0');
+          panelEmployer.classList.add('block', 'opacity-100');
+          panelCandidate.classList.remove('block', 'opacity-100');
+          panelCandidate.classList.add('hidden', 'opacity-0');
+        }
+
+        // Secondary CTA switch
+        if (secCtaCandidate && secCtaEmployer) {
+          secCtaEmployer.classList.remove('hidden', 'opacity-0');
+          secCtaEmployer.classList.add('block', 'opacity-100');
+          secCtaCandidate.classList.remove('block', 'opacity-100');
+          secCtaCandidate.classList.add('hidden', 'opacity-0');
+        }
+
+        // Social Proof Strip switch
+        if (socialCandidate && socialEmployer) {
+          socialEmployer.classList.remove('hidden', 'opacity-0');
+          socialEmployer.classList.add('block', 'opacity-100');
+          socialCandidate.classList.remove('block', 'opacity-100');
+          socialCandidate.classList.add('hidden', 'opacity-0');
+        }
+
+        // Integrated Stats Bar switch
+        if (statsCandidate && statsEmployer) {
+          statsEmployer.classList.remove('hidden', 'opacity-0');
+          statsEmployer.classList.add('block', 'opacity-100');
+          statsCandidate.classList.remove('block', 'opacity-100');
+          statsCandidate.classList.add('hidden', 'opacity-0');
+          runCounters(statsEmployer);
+        }
+
+        if (cardStatusBadge) cardStatusBadge.textContent = "Employer SLA Mode";
+        if (primaryCtaLabel) primaryCtaLabel.textContent = "Schedule Hiring Call";
+      });
+    }
+
+    // Subtle 3D Card Hover Perspective Effect on Desktop
+    const heroCard = document.getElementById('hero-interactive-card');
+    if (heroCard && window.innerWidth > 768) {
+      heroCard.addEventListener('mousemove', (e) => {
+        const rect = heroCard.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = (y - centerY) / 35;
+        const rotateY = (centerX - x) / 35;
+        heroCard.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      });
+
+      heroCard.addEventListener('mouseleave', () => {
+        heroCard.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg)`;
+      });
+    }
+
+    // Initial Count Up Trigger
+    if (statsCandidate) runCounters(statsCandidate);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupHeroInteractivity);
+  } else {
+    setupHeroInteractivity();
+  }
+</script>
