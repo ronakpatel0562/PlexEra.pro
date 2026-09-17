@@ -28,30 +28,28 @@ To avoid mixed/duplicated information across markdown files, maintain strict sep
 
 ## 🪵 Session & Progress Log
 
-### Session: 2026-09-10 (Documentation & Memory Architecture Setup)
+### Session: 2026-09-17 (Form Submissions Routing to contact@plexera.pro)
 - **Agent/Dev**: Antigravity AI Agent
 - **Key Actions**:
-  - Established project documentation taxonomy to prevent information overlap.
-  - Created [`MEMORY.md`](file:///f:/Learning/Projects/Micro/PlexEra.pro/MEMORY.md) for session tracking and memory persistence.
-  - Updated [`AGENTS.md`](file:///f:/Learning/Projects/Micro/PlexEra.pro/AGENTS.md) with explicit rules for automatic `.md` maintenance.
-  - Updated [`README.md`](file:///f:/Learning/Projects/Micro/PlexEra.pro/README.md) to replace generic template with PlexEra project guide.
+  - Wired all form submissions across the portal (`BookingModal.astro` candidate & employer forms, and `src/pages/contact.astro` embedded advisory forms) to deliver directly to `contact@plexera.pro`.
+  - Built `src/utils/formMailer.ts` providing standardized form delivery utilities.
+  - Implemented FormSubmit AJAX integration (`https://formsubmit.co/ajax/contact@plexera.pro`) enabling serverless static-site dispatch with zero backend complexity.
+  - Added full `name` attributes, file attachment support for candidate resumes (`.pdf`, `.docx`), live loading state spinners, success banners, and graceful mailto fallbacks.
+  - Upgraded `/contact` page with an embedded interactive direct consultation form (Candidate / Employer tabs) alongside the modal launcher.
+  - Verified static compilation with `npm run build` (all 48 static routes compiled cleanly).
 - **Architectural Decisions**:
-  - Adopted strict single-responsibility boundaries for documentation files.
-  - Standardized local file linking using GitHub markdown `file:///` format for easy navigation.
+  - Used FormSubmit's AJAX endpoint with `_template: table`, `_replyto` dynamic sender mapping, `_captcha: false`, and metadata (`Audience_Type`, `Source_URL`, `Submission_Time`).
+  - Upon the first submission, FormSubmit requires a 1-time activation confirmation link clicked by the inbox owner at `contact@plexera.pro` to activate immediate forwarding.
 
 ---
 
 ## 🎯 Active Backlog & Next Actionable Steps
 
-1. **Frontend Foundation**:
-   - Build global CSS layout following Geist Design Tokens from [`DESIGN.md`](file:///f:/Learning/Projects/Micro/PlexEra.pro/DESIGN.md).
-   - Construct reusable Astro header, navigation, and footer components.
-2. **Page Development**:
-   - Landing Page (`/`): Hero with mesh gradient option, value propositions, service highlights, call to actions.
-   - Services Page (`/services`): Staffing, architectural consulting, DevOps automation.
-   - Contact / Consultation Form (`/contact`).
-3. **Content Integration**:
-   - Utilize copy ideas and market signals from [`referencecontent.md`](file:///f:/Learning/Projects/Micro/PlexEra.pro/referencecontent.md).
+1. **Email Routing Verification**:
+   - Submit first test consultation form from the portal and click the one-time activation link sent to `contact@plexera.pro`.
+2. **Page Development & Polish**:
+   - Continue responsive fine-tuning across mobile viewport widths.
+   - Expand SEO metadata and structured JSON-LD schemas.
 
 ---
 
@@ -59,3 +57,4 @@ To avoid mixed/duplicated information across markdown files, maintain strict sep
 - Always inspect [`MEMORY.md`](file:///f:/Learning/Projects/Micro/PlexEra.pro/MEMORY.md) first to understand recent progress and open tasks.
 - Run Astro dev server in background using `astro dev --background` as specified in [`AGENTS.md`](file:///f:/Learning/Projects/Micro/PlexEra.pro/AGENTS.md).
 - Keep [`MEMORY.md`](file:///f:/Learning/Projects/Micro/PlexEra.pro/MEMORY.md) updated before concluding tasks.
+
