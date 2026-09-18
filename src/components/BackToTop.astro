@@ -1,0 +1,119 @@
+---
+import { ArrowUp } from 'lucide-astro';
+---
+
+<!-- Back to Top Floating Action Button -->
+<button
+  id="back-to-top"
+  type="button"
+  aria-label="Back to top"
+  title="Back to top"
+  class="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-40 w-12 h-12 sm:w-13 sm:h-13 rounded-full flex items-center justify-center bg-white/90 dark:bg-[#041B3B]/90 backdrop-blur-md border border-slate-200/80 dark:border-[#20C5CA]/30 text-[#041B3B] dark:text-white shadow-lg shadow-slate-900/10 dark:shadow-black/40 hover:shadow-[0_0_22px_rgba(32,197,202,0.45)] hover:border-[#20C5CA] transition-all duration-300 ease-out opacity-0 translate-y-5 scale-90 pointer-events-none group cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#20C5CA] focus-visible:ring-offset-2 active:scale-95"
+>
+  <!-- Circular Progress Ring -->
+  <svg
+    class="absolute inset-0 w-full h-full -rotate-90 pointer-events-none p-0.5"
+    viewBox="0 0 48 48"
+    aria-hidden="true"
+  >
+    <!-- Background Track -->
+    <circle
+      cx="24"
+      cy="24"
+      r="20"
+      class="stroke-slate-200/70 dark:stroke-slate-700/50 fill-none"
+      stroke-width="2.5"
+    />
+    <!-- Active Scroll Progress Ring -->
+    <circle
+      id="back-to-top-progress"
+      cx="24"
+      cy="24"
+      r="20"
+      class="stroke-[#20C5CA] fill-none transition-[stroke-dashoffset] duration-75 ease-linear"
+      stroke-width="2.5"
+      stroke-linecap="round"
+      stroke-dasharray="125.66"
+      stroke-dashoffset="125.66"
+    />
+  </svg>
+
+  <!-- Arrow Icon -->
+  <ArrowUp
+    class="w-5 h-5 transition-transform duration-200 ease-out text-[#041B3B] dark:text-slate-100 group-hover:text-[#20C5CA] group-hover:-translate-y-0.5 relative z-10"
+  />
+</button>
+
+<script>
+  function initBackToTop() {
+    const button = document.getElementById('back-to-top');
+    const progressCircle = document.getElementById('back-to-top-progress') as SVGCircleElement | null;
+    if (!button || !progressCircle) return;
+
+    // Circumference for r=20 is 2 * PI * 20 = 125.6637
+    const circumference = 2 * Math.PI * 20;
+    progressCircle.style.strokeDasharray = `${circumference}`;
+    progressCircle.style.strokeDashoffset = `${circumference}`;
+
+    let isVisible = false;
+    let ticking = false;
+
+    const updateScroll = () => {
+      const scrollY = window.scrollY || document.documentElement.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+      // Visibility threshold: show after scrolling down 300px
+      const shouldShow = scrollY > 300;
+      if (shouldShow !== isVisible) {
+        isVisible = shouldShow;
+        if (isVisible) {
+          button.classList.remove('opacity-0', 'translate-y-5', 'scale-90', 'pointer-events-none');
+          button.classList.add('opacity-100', 'translate-y-0', 'scale-100', 'pointer-events-auto');
+        } else {
+          button.classList.remove('opacity-100', 'translate-y-0', 'scale-100', 'pointer-events-auto');
+          button.classList.add('opacity-0', 'translate-y-5', 'scale-90', 'pointer-events-none');
+        }
+      }
+
+      // Update scroll progress ring
+      if (scrollHeight > 0) {
+        const progress = Math.min(Math.max(scrollY / scrollHeight, 0), 1);
+        const offset = circumference - progress * circumference;
+        progressCircle.style.strokeDashoffset = `${offset}`;
+      }
+
+      ticking = false;
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateScroll);
+        ticking = true;
+      }
+    };
+
+    const scrollToTop = () => {
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({
+        top: 0,
+        behavior: prefersReducedMotion ? 'auto' : 'smooth'
+      });
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    button.addEventListener('click', scrollToTop);
+
+    // Initial check
+    updateScroll();
+  }
+
+  // Initialize on load and on view transitions / page swaps if present
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initBackToTop);
+  } else {
+    initBackToTop();
+  }
+
+  document.addEventListener('astro:page-load', initBackToTop);
+</script>
