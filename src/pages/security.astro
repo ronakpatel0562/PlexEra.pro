@@ -1,0 +1,315 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { 
+  ShieldCheck, 
+  Lock, 
+  Server, 
+  FileCheck2, 
+  AlertTriangle, 
+  CheckCircle2, 
+  Mail, 
+  MapPin, 
+  Phone, 
+  ArrowRight,
+  EyeOff,
+  Scale,
+  Award,
+  KeyRound,
+  FileSpreadsheet
+} from 'lucide-astro';
+
+const securityPillars = [
+  {
+    icon: Lock,
+    title: "Bank-Grade Encryption",
+    desc: "TLS 1.3 enforced for all browser sessions with AES-256 data encryption at rest across databases and document repositories."
+  },
+  {
+    icon: FileCheck2,
+    title: "Resume & File Sandboxing",
+    desc: "Uploaded candidate documents (.pdf, .docx) undergo automated deep antivirus and malware inspection in isolated sandbox environments."
+  },
+  {
+    icon: KeyRound,
+    title: "Least-Privilege Access (RBAC)",
+    desc: "Role-based authorization and mandatory Multi-Factor Authentication (MFA) restrict candidate records strictly to authorized account strategists."
+  },
+  {
+    icon: Scale,
+    title: "EOE & Labor Compliance",
+    desc: "Zero-tolerance non-discrimination policies aligned with US Equal Employment Opportunity standards, FLSA guidelines, and visa compliance."
+  }
+];
+
+const complianceBadges = [
+  { label: "SOC 2 Type II Aligned", sub: "Enterprise Data Handling" },
+  { label: "GDPR & CCPA/CPRA", sub: "Data Privacy & Erasure" },
+  { label: "EOE Certified Practice", sub: "Fair Hiring Standards" },
+  { label: "Bilateral NDA Protected", sub: "IP & Codebase Secrecy" },
+  { label: "Continuous 24/7 SIEM", sub: "Automated Threat Triage" },
+  { label: "Sandboxed File Vault", sub: "Clean Document Pipeline" }
+];
+
+const quickSections = [
+  { id: "infrastructure", label: "1. Cloud & Network Security" },
+  { id: "documents", label: "2. Candidate File Sandboxing" },
+  { id: "employment", label: "3. Employment & EOE Compliance" },
+  { id: "nda", label: "4. Confidentiality & NDAs" },
+  { id: "incident-response", label: "5. Incident Response SLA" },
+  { id: "disclosure", label: "6. Responsible Disclosure" }
+];
+---
+
+<Layout 
+  title="Security & Compliance | PlexEra — Enterprise Trust & Data Integrity"
+  description="Explore PlexEra LLC's security architecture, file sandboxing, SOC 2 alignment, EOE compliance, and technical data protection standards."
+>
+  <!-- Hero Section -->
+  <section class="py-16 sm:py-20 relative overflow-hidden bg-gradient-to-b from-white via-slate-50/50 to-slate-100/60 dark:from-[#09090b] dark:via-[#09090b] dark:to-[#0f172a]/40 border-b border-slate-200 dark:border-white/10">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      
+      <!-- Badge -->
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#20C5CA]/10 dark:bg-[#20C5CA]/15 border border-[#20C5CA]/30 text-[#041B3B] dark:text-[#20C5CA] text-xs font-bold mb-6">
+        <ShieldCheck class="w-4 h-4 text-[#19A4A8] dark:text-[#20C5CA]" />
+        <span>ENTERPRISE TRUST, RESUME INTEGRITY & COMPLIANCE</span>
+      </div>
+
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#041B3B] dark:text-white tracking-tight">
+        Security & <span class="bg-gradient-to-r from-[#0284c7] via-[#19A4A8] to-[#20C5CA] bg-clip-text text-transparent">Compliance</span>
+      </h1>
+
+      <p class="mt-5 text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed font-medium">
+        How PlexEra combines military-grade data protection, ethical recruitment standards, and legal compliance to protect technical talent and enterprise engineering teams.
+      </p>
+
+      <div class="mt-6 flex flex-wrap items-center justify-center gap-4 text-xs font-semibold text-slate-500 dark:text-slate-400">
+        <span class="px-3 py-1 rounded-full bg-slate-200/60 dark:bg-white/10">Architecture: Zero-Trust Multi-Tenant</span>
+        <span class="px-3 py-1 rounded-full bg-slate-200/60 dark:bg-white/10">Threat Monitoring: 24/7/365</span>
+        <span class="px-3 py-1 rounded-full bg-slate-200/60 dark:bg-white/10">Compliance: US & Global Standards</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Compliance Trust Badges -->
+  <section class="py-8 bg-slate-50/80 dark:bg-[#0c0d12] border-b border-slate-200 dark:border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
+        {complianceBadges.map((badge) => (
+          <div class="p-3.5 rounded-2xl bg-white dark:bg-[#121215] border border-slate-200 dark:border-white/10 text-center shadow-xs">
+            <span class="text-xs font-bold text-[#041B3B] dark:text-white block">{badge.label}</span>
+            <span class="text-[10px] text-slate-500 dark:text-slate-400 block mt-0.5">{badge.sub}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Security Pillars Grid -->
+  <section class="py-12 bg-white dark:bg-[#09090b] border-b border-slate-200 dark:border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-[#19A4A8] dark:text-[#20C5CA]">SECURITY ARCHITECTURE</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-[#041B3B] dark:text-white mt-1">Multi-Layered Protection Standards</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {securityPillars.map((pillar) => {
+          const Icon = pillar.icon;
+          return (
+            <div class="p-6 rounded-2xl bg-slate-50 dark:bg-[#121215] border border-slate-200 dark:border-white/10 shadow-xs hover:border-[#20C5CA]/40 transition-colors">
+              <div class="p-3 rounded-xl bg-[#20C5CA]/15 text-[#041B3B] dark:text-[#20C5CA] w-fit mb-4">
+                <Icon class="w-5 h-5" />
+              </div>
+              <h3 class="font-bold text-sm sm:text-base text-[#041B3B] dark:text-white mb-2">{pillar.title}</h3>
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">{pillar.desc}</p>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Compliance Body -->
+  <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      
+      <!-- Quick Navigation Sidebar -->
+      <aside class="hidden lg:block lg:col-span-4 sticky top-28 space-y-4">
+        <div class="p-5 rounded-2xl bg-white dark:bg-[#121215] border border-slate-200 dark:border-white/10 shadow-sm">
+          <h3 class="text-xs font-extrabold uppercase tracking-wider text-slate-400 dark:text-slate-400 mb-3">
+            Security Topics
+          </h3>
+          <nav class="space-y-1 text-xs">
+            {quickSections.map((sec) => (
+              <a 
+                href={`#${sec.id}`} 
+                class="block px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-[#041B3B] dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5 font-semibold transition-colors"
+              >
+                {sec.label}
+              </a>
+            ))}
+          </nav>
+
+          <div class="mt-6 pt-5 border-t border-slate-100 dark:border-white/10 text-xs space-y-2">
+            <span class="font-bold text-[#041B3B] dark:text-white block">Security Operations Center</span>
+            <p class="text-slate-500 dark:text-slate-400 leading-relaxed">
+              Report vulnerabilities or request compliance documentation directly from our SecOps team.
+            </p>
+            <a 
+              href="mailto:contact@plexera.pro" 
+              class="inline-flex items-center gap-1.5 text-xs font-bold text-[#0284c7] dark:text-[#20C5CA] hover:underline pt-1"
+            >
+              <span>contact@plexera.pro</span>
+              <ArrowRight class="w-3 h-3" />
+            </a>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Security Clauses & Content -->
+      <div class="lg:col-span-8 space-y-10 text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
+        
+        <!-- Clause 1 -->
+        <article id="infrastructure" class="scroll-mt-32 p-7 sm:p-9 rounded-3xl bg-white dark:bg-[#121215] border border-slate-200 dark:border-white/10 shadow-sm">
+          <h2 class="text-xl sm:text-2xl font-bold text-[#041B3B] dark:text-white mb-4">
+            1. Cloud Infrastructure & Perimeter Security
+          </h2>
+          <p class="mb-4">
+            PlexEra systems and candidate intake workflows are hosted on secure, isolated cloud infrastructure (AWS US-East and Google Cloud Platform) leveraging modern zero-trust network architectures:
+          </p>
+          <div class="space-y-3 text-xs sm:text-sm my-4">
+            <div class="flex items-start gap-3 p-3.5 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/8">
+              <CheckCircle2 class="w-4 h-4 text-[#20C5CA] shrink-0 mt-0.5" />
+              <span><strong>Edge Protection & WAF:</strong> Managed Cloudflare edge proxies filter inbound traffic, mitigate DDoS attacks, and enforce strict Web Application Firewall rate limits.</span>
+            </div>
+            <div class="flex items-start gap-3 p-3.5 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/8">
+              <CheckCircle2 class="w-4 h-4 text-[#20C5CA] shrink-0 mt-0.5" />
+              <span><strong>Transport Layer Security:</strong> All client and candidate connections mandate HTTPS with TLS 1.3 encryption and HSTS headers.</span>
+            </div>
+            <div class="flex items-start gap-3 p-3.5 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/8">
+              <CheckCircle2 class="w-4 h-4 text-[#20C5CA] shrink-0 mt-0.5" />
+              <span><strong>Isolated Data Storage:</strong> Candidate resume files and enterprise requisition briefs reside in encrypted S3 buckets with strict bucket policies and private VPC gateways.</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Clause 2 -->
+        <article id="documents" class="scroll-mt-32 p-7 sm:p-9 rounded-3xl bg-white dark:bg-[#121215] border border-slate-200 dark:border-white/10 shadow-sm">
+          <h2 class="text-xl sm:text-2xl font-bold text-[#041B3B] dark:text-white mb-4">
+            2. Candidate Resume Sandboxing & Ingestion Pipeline
+          </h2>
+          <p class="mb-4">
+            When candidates upload resumes (.pdf, .docx) via our consultation modals or direct intake endpoints:
+          </p>
+          <ul class="list-disc pl-5 space-y-2 text-xs sm:text-sm mb-4">
+            <li><strong>Automated Malware & Macro Scanning:</strong> Uploaded files are quarantined and inspected for malicious scripts, embedded executables, or anomalous macros before entering recruiter queues.</li>
+            <li><strong>Metadata Sanitization:</strong> Hidden revision metadata, tracking tokens, and device identifiers are stripped from candidate resumes to preserve candidate privacy and prevent tracking.</li>
+            <li><strong>Zero Public Indexing:</strong> Uploaded resumes are never hosted on publicly indexable URLs or web directories. Search engine crawlers (Googlebot, Bingbot) are explicitly blocked from accessing internal document stores.</li>
+            <li><strong>Secure Dispatch:</strong> Document payloads are routed directly to authorized partners via our centralized inbox at <a href="mailto:contact@plexera.pro" class="text-[#0284c7] dark:text-[#20C5CA] font-bold underline">contact@plexera.pro</a>.</li>
+          </ul>
+        </article>
+
+        <!-- Clause 3 -->
+        <article id="employment" class="scroll-mt-32 p-7 sm:p-9 rounded-3xl bg-white dark:bg-[#121215] border border-slate-200 dark:border-white/10 shadow-sm">
+          <h2 class="text-xl sm:text-2xl font-bold text-[#041B3B] dark:text-white mb-4">
+            3. Equal Opportunity Employment (EOE) & Regulatory Compliance
+          </h2>
+          <p class="mb-4">
+            PlexEra is deeply committed to ethical recruitment and strict adherence to federal, state, and international labor standards:
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
+            <div class="p-4 rounded-xl border border-slate-100 dark:border-white/8 bg-slate-50 dark:bg-white/5">
+              <h4 class="font-bold text-[#041B3B] dark:text-white text-xs uppercase mb-1">EEO Non-Discrimination</h4>
+              <p class="text-xs text-slate-600 dark:text-slate-300">
+                PlexEra evaluates talent strictly based on technical capability, verifiable experience, and cultural alignment—without regard to race, gender, sexual orientation, disability, veteran status, or religion.
+              </p>
+            </div>
+            <div class="p-4 rounded-xl border border-slate-100 dark:border-white/8 bg-slate-50 dark:bg-white/5">
+              <h4 class="font-bold text-[#041B3B] dark:text-white text-xs uppercase mb-1">Work Authorization Compliance</h4>
+              <p class="text-xs text-slate-600 dark:text-slate-300">
+                Full compliance with US Department of Labor and USCIS standards, supporting verified W2, 1099, C2C, H-1B transfer, and TN visa protocols with rigorous I-9 verification.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Clause 4 -->
+        <article id="nda" class="scroll-mt-32 p-7 sm:p-9 rounded-3xl bg-white dark:bg-[#121215] border border-slate-200 dark:border-white/10 shadow-sm">
+          <h2 class="text-xl sm:text-2xl font-bold text-[#041B3B] dark:text-white mb-4">
+            4. Enterprise Non-Disclosure & Codebase Secrecy
+          </h2>
+          <p class="mb-4">
+            Technical talent staffing often requires deep insight into enterprise software architectures, microservice blueprints, and proprietary product roadmaps.
+          </p>
+          <p class="mb-4 text-xs sm:text-sm">
+            All PlexEra recruiters, account executives, and interview coaches (including former Google & AWS tech leads who conduct our 1-on-1 mock coaching labs) are bound by rigorous, enforceable Non-Disclosure Agreements (NDAs).
+          </p>
+          <div class="p-4 rounded-xl bg-slate-50 dark:bg-white/5 border-l-4 border-[#20C5CA] text-xs text-slate-600 dark:text-slate-300">
+            <strong>Client Assurance:</strong> Proprietary tech stacks, codebase vulnerabilities, sprint backlogs, and confidential engineering requisitions discussed during advisory sessions remain strictly confidential under bilateral NDA terms.
+          </div>
+        </article>
+
+        <!-- Clause 5 -->
+        <article id="incident-response" class="scroll-mt-32 p-7 sm:p-9 rounded-3xl bg-white dark:bg-[#121215] border border-slate-200 dark:border-white/10 shadow-sm">
+          <h2 class="text-xl sm:text-2xl font-bold text-[#041B3B] dark:text-white mb-4">
+            5. Incident Response SLA & Threat Monitoring
+          </h2>
+          <p class="mb-4">
+            PlexEra maintains a proactive Incident Response Plan designed to detect, contain, and remediate potential security events with high urgency:
+          </p>
+          <div class="space-y-3 text-xs sm:text-sm mb-4">
+            <div class="flex items-start gap-3 p-3.5 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/8">
+              <span class="px-2 py-0.5 rounded-md bg-[#041B3B] dark:bg-slate-700 text-white font-mono font-bold text-xs shrink-0">&lt; 2h</span>
+              <span><strong>Critical Triage SLA:</strong> Suspected security anomalies or credential vulnerabilities are assessed by engineering leads within 2 hours.</span>
+            </div>
+            <div class="flex items-start gap-3 p-3.5 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/8">
+              <span class="px-2 py-0.5 rounded-md bg-[#041B3B] dark:bg-slate-700 text-white font-mono font-bold text-xs shrink-0">&lt; 24h</span>
+              <span><strong>Root Cause & Containment:</strong> Full isolation and mitigation of the identified vector with verifiable audit logging.</span>
+            </div>
+            <div class="flex items-start gap-3 p-3.5 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/8">
+              <span class="px-2 py-0.5 rounded-md bg-[#041B3B] dark:bg-slate-700 text-white font-mono font-bold text-xs shrink-0">&lt; 72h</span>
+              <span><strong>Mandatory Regulatory Notice:</strong> In the unlikely event of data compromise, affected candidates and enterprise partners receive direct, transparent notification within 72 hours in compliance with GDPR & US state notification laws.</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Clause 6 -->
+        <article id="disclosure" class="scroll-mt-32 p-7 sm:p-9 rounded-3xl bg-white dark:bg-[#121215] border border-slate-200 dark:border-white/10 shadow-sm">
+          <h2 class="text-xl sm:text-2xl font-bold text-[#041B3B] dark:text-white mb-4">
+            6. Responsible Disclosure Program
+          </h2>
+          <p class="mb-4">
+            We value the contributions of ethical security researchers and the broader cybersecurity community. If you discover a potential vulnerability or configuration issue across our web application or services:
+          </p>
+          <ul class="list-disc pl-5 space-y-1.5 text-xs sm:text-sm mb-6">
+            <li>Notify us immediately by emailing <a href="mailto:contact@plexera.pro" class="text-[#0284c7] dark:text-[#20C5CA] font-bold underline">contact@plexera.pro</a> with the subject <em>"Vulnerability Disclosure: [Short Description]"</em>.</li>
+            <li>Provide reasonable detail, including reproducible proof-of-concept steps.</li>
+            <li>Allow us a reasonable window to remediate the vulnerability before public disclosure.</li>
+            <li>Refrain from attempting data exfiltration, privacy violations, or service disruption during your testing.</li>
+          </ul>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/8 space-y-1">
+              <Mail class="w-4 h-4 text-[#20C5CA] mb-2" />
+              <span class="font-bold text-[#041B3B] dark:text-white block">SecOps Desk</span>
+              <a href="mailto:contact@plexera.pro" class="text-[#0284c7] dark:text-[#20C5CA] hover:underline">contact@plexera.pro</a>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/8 space-y-1">
+              <Phone class="w-4 h-4 text-[#20C5CA] mb-2" />
+              <span class="font-bold text-[#041B3B] dark:text-white block">Emergency Hotline</span>
+              <span>+1 (800) 555-PLEX</span>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/8 space-y-1">
+              <MapPin class="w-4 h-4 text-[#20C5CA] mb-2" />
+              <span class="font-bold text-[#041B3B] dark:text-white block">USA Headquarters</span>
+              <span>Kingsville, Texas 78363</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,310 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { 
+  FileText, 
+  Scale, 
+  CheckCircle2, 
+  AlertCircle, 
+  Briefcase, 
+  Sparkles, 
+  Mail, 
+  MapPin, 
+  Phone, 
+  ArrowRight,
+  ShieldAlert
+} from 'lucide-astro';
+
+const termsHighlights = [
+  {
+    icon: Scale,
+    title: "Fair & Transparent Terms",
+    desc: "Clear obligations and rights for candidates navigating career acceleration and enterprises engaging engineering talent."
+  },
+  {
+    icon: Briefcase,
+    title: "Dedicated Service Scopes",
+    desc: "Unambiguous boundaries for complimentary career consults, ATS resume revamps, mock coaching labs, and staffing SOWs."
+  },
+  {
+    icon: Sparkles,
+    title: "IP & Framework Protection",
+    desc: "Candidates retain 100% ownership of their credentials; PlexEra protects proprietary interview coaching frameworks and scoring rubrics."
+  },
+  {
+    icon: CheckCircle2,
+    title: "First-Year Safety Net",
+    desc: "Post-placement onboarding backing and technical mentoring commitments ensuring durable candidate and client success."
+  }
+];
+
+const quickSections = [
+  { id: "acceptance", label: "1. Acceptance of Terms" },
+  { id: "services", label: "2. Description of Services" },
+  { id: "candidate-terms", label: "3. Candidate Responsibilities" },
+  { id: "employer-terms", label: "4. Enterprise Client Terms" },
+  { id: "ip", label: "5. Intellectual Property" },
+  { id: "fees", label: "6. Fee Structures & Bookings" },
+  { id: "disclaimers", label: "7. Disclaimers & Liability" },
+  { id: "governing-law", label: "8. Governing Law & Jurisdiction" }
+];
+---
+
+<Layout 
+  title="Terms of Service | PlexEra — Staffing & Career Elevation Agreements"
+  description="Read PlexEra LLC's Terms of Service governing career advisory consultations, ATS resume revamps, executive interview coaching, and enterprise IT staffing."
+>
+  <!-- Hero Section -->
+  <section class="py-16 sm:py-20 relative overflow-hidden bg-gradient-to-b from-white via-slate-50/50 to-slate-100/60 dark:from-[#09090b] dark:via-[#09090b] dark:to-[#0f172a]/40 border-b border-slate-200 dark:border-white/10">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      
+      <!-- Badge -->
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#20C5CA]/10 dark:bg-[#20C5CA]/15 border border-[#20C5CA]/30 text-[#041B3B] dark:text-[#20C5CA] text-xs font-bold mb-6">
+        <Scale class="w-4 h-4 text-[#19A4A8] dark:text-[#20C5CA]" />
+        <span>LEGAL FRAMEWORK & SERVICE COVENANTS</span>
+      </div>
+
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#041B3B] dark:text-white tracking-tight">
+        Terms of <span class="bg-gradient-to-r from-[#0284c7] via-[#19A4A8] to-[#20C5CA] bg-clip-text text-transparent">Service</span>
+      </h1>
+
+      <p class="mt-5 text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed font-medium">
+        These Terms of Service outline the mutual agreements, responsibilities, and professional standards governing your relationship with PlexEra LLC.
+      </p>
+
+      <div class="mt-6 flex flex-wrap items-center justify-center gap-4 text-xs font-semibold text-slate-500 dark:text-slate-400">
+        <span class="px-3 py-1 rounded-full bg-slate-200/60 dark:bg-white/10">Effective Date: September 2026</span>
+        <span class="px-3 py-1 rounded-full bg-slate-200/60 dark:bg-white/10">Jurisdiction: Texas, USA</span>
+        <span class="px-3 py-1 rounded-full bg-slate-200/60 dark:bg-white/10">Governs: Candidates, Clients & Platform Users</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Highlights Grid -->
+  <section class="py-12 bg-white dark:bg-[#0c0d12] border-b border-slate-200 dark:border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-[#19A4A8] dark:text-[#20C5CA]">CORE PRINCIPLES</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-[#041B3B] dark:text-white mt-1">Service & Partnership Highlights</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {termsHighlights.map((item) => {
+          const Icon = item.icon;
+          return (
+            <div class="p-6 rounded-2xl bg-slate-50 dark:bg-[#121215] border border-slate-200 dark:border-white/10 shadow-xs hover:border-[#20C5CA]/40 transition-colors">
+              <div class="p-3 rounded-xl bg-[#20C5CA]/15 text-[#041B3B] dark:text-[#20C5CA] w-fit mb-4">
+                <Icon class="w-5 h-5" />
+              </div>
+              <h3 class="font-bold text-sm sm:text-base text-[#041B3B] dark:text-white mb-2">{item.title}</h3>
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">{item.desc}</p>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- Legal Body Content -->
+  <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      
+      <!-- Quick Navigation Sidebar -->
+      <aside class="hidden lg:block lg:col-span-4 sticky top-28 space-y-4">
+        <div class="p-5 rounded-2xl bg-white dark:bg-[#121215] border border-slate-200 dark:border-white/10 shadow-sm">
+          <h3 class="text-xs font-extrabold uppercase tracking-wider text-slate-400 dark:text-slate-400 mb-3">
+            Table of Contents
+          </h3>
+          <nav class="space-y-1 text-xs">
+            {quickSections.map((sec) => (
+              <a 
+                href={`#${sec.id}`} 
+                class="block px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-[#041B3B] dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5 font-semibold transition-colors"
+              >
+                {sec.label}
+              </a>
+            ))}
+          </nav>
+
+          <div class="mt-6 pt-5 border-t border-slate-100 dark:border-white/10 text-xs space-y-2">
+            <span class="font-bold text-[#041B3B] dark:text-white block">Contractual Inquiries</span>
+            <p class="text-slate-500 dark:text-slate-400 leading-relaxed">
+              For MSAs, SOWs, or legal notices, contact our corporate contracts desk.
+            </p>
+            <a 
+              href="mailto:contact@plexera.pro" 
+              class="inline-flex items-center gap-1.5 text-xs font-bold text-[#0284c7] dark:text-[#20C5CA] hover:underline pt-1"
+            >
+              <span>contact@plexera.pro</span>
+              <ArrowRight class="w-3 h-3" />
+            </a>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Terms Articles -->
+      <div class="lg:col-span-8 space-y-10 text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
+        
+        <!-- Article 1 -->
+        <article id="acceptance" class="scroll-mt-32 p-7 sm:p-9 rounded-3xl bg-white dark:bg-[#121215] border border-slate-200 dark:border-white/10 shadow-sm">
+          <h2 class="text-xl sm:text-2xl font-bold text-[#041B3B] dark:text-white mb-4">
+            1. Agreement to Terms
+          </h2>
+          <p class="mb-4">
+            These Terms of Service ("Terms") constitute a legally binding agreement between you—whether individually as a candidate or on behalf of an entity as a corporate client—and <strong>PlexEra LLC</strong> ("PlexEra," "we," "us," or "our"), governing your access to and use of <a href="https://plexera.pro" class="text-[#0284c7] dark:text-[#20C5CA] underline font-medium">https://plexera.pro</a> and any associated advisory, coaching, or talent staffing services.
+          </p>
+          <p>
+            By accessing our platform, scheduling a career advisory session, submitting a candidate application, or requesting an enterprise talent strategy session, you signify your full agreement to be bound by these Terms and our Privacy Policy. If you do not agree with any part of these Terms, you must discontinue platform use immediately.
+          </p>
+        </article>
+
+        <!-- Article 2 -->
+        <article id="services" class="scroll-mt-32 p-7 sm:p-9 rounded-3xl bg-white dark:bg-[#121215] border border-slate-200 dark:border-white/10 shadow-sm">
+          <h2 class="text-xl sm:text-2xl font-bold text-[#041B3B] dark:text-white mb-4">
+            2. Description of PlexEra Services
+          </h2>
+          <p class="mb-4">
+            PlexEra operates a dual-pathway platform engineered for career elevation and enterprise technical staffing:
+          </p>
+
+          <h3 class="font-bold text-base text-[#041B3B] dark:text-white mt-4 mb-2">A. Candidate Career Elevation Services</h3>
+          <ul class="list-disc pl-5 space-y-1.5 text-xs sm:text-sm mb-4">
+            <li><strong>ATS Resume & LinkedIn Revamps:</strong> Engineering keyword-dense, recruiter-tested profiles designed to surpass automated filtering systems.</li>
+            <li><strong>1-on-1 Mock Interview Labs:</strong> Practice sessions and system design audits led by experienced tech leads and mentors.</li>
+            <li><strong>Targeted Application Engine:</strong> Precision matching and verified submissions tailored to candidate preferences.</li>
+            <li><strong>Salary & Offer Negotiation:</strong> Objective market compensation benchmarking and offer strategy advisory.</li>
+            <li><strong>Year-1 Onboarding Safety Net:</strong> Post-placement architectural mentoring and guidance to ensure seamless transition into new roles.</li>
+          </ul>
+
+          <h3 class="font-bold text-base text-[#041B3B] dark:text-white mt-4 mb-2">B. Enterprise Staffing & Talent Augmentation</h3>
+          <ul class="list-disc pl-5 space-y-1.5 text-xs sm:text-sm">
+            <li><strong>Contract & Sprint Augmentation:</strong> Deployment of pre-vetted specialists in as little as 48 hours for immediate roadmap execution.</li>
+            <li><strong>Direct Hire & Executive Search:</strong> Placement of principal engineers, staff architects, and engineering leadership.</li>
+            <li><strong>Recruitment Process Outsourcing (RPO):</strong> End-to-end management of engineering talent pipelines and candidate qualification.</li>
+          </ul>
+        </article>
+
+        <!-- Article 3 -->
+        <article id="candidate-terms" class="scroll-mt-32 p-7 sm:p-9 rounded-3xl bg-white dark:bg-[#121215] border border-slate-200 dark:border-white/10 shadow-sm">
+          <h2 class="text-xl sm:text-2xl font-bold text-[#041B3B] dark:text-white mb-4">
+            3. Candidate Representations & Code of Conduct
+          </h2>
+          <p class="mb-4">
+            As a participating professional or job candidate engaging PlexEra services, you represent and warrant that:
+          </p>
+          <ul class="list-disc pl-5 space-y-2 text-xs sm:text-sm mb-4">
+            <li>All credentials, employment history, degrees, and technical skills listed on submitted resumes or portfolios are truthful, authentic, and accurate.</li>
+            <li>You hold the legal right and necessary work authorization to accept employment or contract engagements in your indicated jurisdictions.</li>
+            <li>You will maintain professional conduct and timely communication during scheduled mock coaching interviews and prospective employer evaluations.</li>
+            <li>You will not misrepresent identity or use automated scraping bots to compromise the platform.</li>
+          </ul>
+        </article>
+
+        <!-- Article 4 -->
+        <article id="employer-terms" class="scroll-mt-32 p-7 sm:p-9 rounded-3xl bg-white dark:bg-[#121215] border border-slate-200 dark:border-white/10 shadow-sm">
+          <h2 class="text-xl sm:text-2xl font-bold text-[#041B3B] dark:text-white mb-4">
+            4. Enterprise Client Engagements & Terms
+          </h2>
+          <p class="mb-4">
+            Organizations engaging PlexEra for staffing, talent augmentation, or direct placement agree that:
+          </p>
+          <ul class="list-disc pl-5 space-y-2 text-xs sm:text-sm mb-4">
+            <li>All submitted job requisitions reflect genuine, funded employment or contract opportunities.</li>
+            <li>Hiring criteria and evaluation processes strictly comply with federal, state, and local non-discrimination and Equal Opportunity Employment (EOE) laws.</li>
+            <li>Commercial terms, placement fees, payment schedules, and candidate replacement guarantees are governed by mutually executed Master Services Agreements (MSAs) or Statements of Work (SOWs).</li>
+            <li>PlexEra candidate presentation records remain confidential; candidate poaching or circumventing agreed fee structures is strictly prohibited.</li>
+          </ul>
+        </article>
+
+        <!-- Article 5 -->
+        <article id="ip" class="scroll-mt-32 p-7 sm:p-9 rounded-3xl bg-white dark:bg-[#121215] border border-slate-200 dark:border-white/10 shadow-sm">
+          <h2 class="text-xl sm:text-2xl font-bold text-[#041B3B] dark:text-white mb-4">
+            5. Intellectual Property Rights & Ownership
+          </h2>
+          <p class="mb-4">
+            The division of intellectual property under these Terms is strictly defined:
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
+            <div class="p-4 rounded-xl border border-slate-100 dark:border-white/8 bg-slate-50 dark:bg-white/5">
+              <h4 class="font-bold text-[#041B3B] dark:text-white text-xs uppercase mb-1">Your Property</h4>
+              <p class="text-xs text-slate-600 dark:text-slate-300">
+                Candidates retain full, unencumbered ownership of their original career records, resumes, and portfolios. Clients retain proprietary ownership of their corporate codebases and roadmaps.
+              </p>
+            </div>
+            <div class="p-4 rounded-xl border border-slate-100 dark:border-white/8 bg-slate-50 dark:bg-white/5">
+              <h4 class="font-bold text-[#041B3B] dark:text-white text-xs uppercase mb-1">PlexEra Property</h4>
+              <p class="text-xs text-slate-600 dark:text-slate-300">
+                PlexEra trademarks, logo marks, ATS revamp methodologies, mock interview question repositories, proprietary screening rubrics, and web code remain exclusive property of PlexEra LLC.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 6 -->
+        <article id="fees" class="scroll-mt-32 p-7 sm:p-9 rounded-3xl bg-white dark:bg-[#121215] border border-slate-200 dark:border-white/10 shadow-sm">
+          <h2 class="text-xl sm:text-2xl font-bold text-[#041B3B] dark:text-white mb-4">
+            6. Fee Structures, Free Consultations & Bookings
+          </h2>
+          <p class="mb-4">
+            PlexEra offers complimentary introductory consultations ("Book Free Consult") designed to evaluate career roadmaps and technical staffing requisitions with zero upfront obligation.
+          </p>
+          <p class="mb-4 text-xs sm:text-sm">
+            Paid programs (including specialized 1-on-1 coaching packages, resume rewrites, or dedicated enterprise search retainers) are agreed upon via written confirmation prior to service delivery. All invoices and wire instructions are communicated exclusively through official `@plexera.pro` domains.
+          </p>
+          <div class="p-4 rounded-xl bg-amber-500/10 border-l-4 border-amber-500 text-xs text-amber-900 dark:text-amber-200">
+            <strong>Security Warning:</strong> PlexEra will never request payment via informal peer-to-peer apps, gift cards, or personal accounts. Always verify correspondence with <a href="mailto:contact@plexera.pro" class="underline font-bold">contact@plexera.pro</a>.
+          </div>
+        </article>
+
+        <!-- Article 7 -->
+        <article id="disclaimers" class="scroll-mt-32 p-7 sm:p-9 rounded-3xl bg-white dark:bg-[#121215] border border-slate-200 dark:border-white/10 shadow-sm">
+          <h2 class="text-xl sm:text-2xl font-bold text-[#041B3B] dark:text-white mb-4">
+            7. Warranty Disclaimers & Limitation of Liability
+          </h2>
+          <p class="mb-4">
+            While PlexEra maintains industry-leading placement metrics (including 98% ATS pass efficiency and rapid 48-hour contractor deployment), services are provided on an "as is" and "as available" basis.
+          </p>
+          <p class="mb-4 text-xs sm:text-sm">
+            Final hiring decisions, offer extensions, workplace management, and employment terminations remain the sole responsibility of the hiring employer. PlexEra makes no guarantee that any individual candidate will receive a specific salary offer, nor that an employer will select any specific applicant.
+          </p>
+          <p class="text-xs sm:text-sm">
+            To the maximum extent permitted by applicable law, PlexEra LLC and its officers, directors, and agents shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of your access to or inability to use our services.
+          </p>
+        </article>
+
+        <!-- Article 8 -->
+        <article id="governing-law" class="scroll-mt-32 p-7 sm:p-9 rounded-3xl bg-white dark:bg-[#121215] border border-slate-200 dark:border-white/10 shadow-sm">
+          <h2 class="text-xl sm:text-2xl font-bold text-[#041B3B] dark:text-white mb-4">
+            8. Governing Law, Dispute Resolution & Contact
+          </h2>
+          <p class="mb-4">
+            These Terms shall be governed by, construed, and enforced in accordance with the substantive laws of the <strong>State of Texas, United States</strong>, without regard to conflict of law principles.
+          </p>
+          <p class="mb-6 text-xs sm:text-sm">
+            Any dispute arising out of or relating to these Terms or PlexEra services shall first be submitted to good-faith negotiation. If unresolved within 30 days, disputes shall be submitted to confidential, binding arbitration in Texas, USA.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/8 space-y-1">
+              <Mail class="w-4 h-4 text-[#20C5CA] mb-2" />
+              <span class="font-bold text-[#041B3B] dark:text-white block">Legal Mailbox</span>
+              <a href="mailto:contact@plexera.pro" class="text-[#0284c7] dark:text-[#20C5CA] hover:underline">contact@plexera.pro</a>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/8 space-y-1">
+              <Phone class="w-4 h-4 text-[#20C5CA] mb-2" />
+              <span class="font-bold text-[#041B3B] dark:text-white block">Corporate Phone</span>
+              <span>+1 (800) 555-PLEX</span>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/8 space-y-1">
+              <MapPin class="w-4 h-4 text-[#20C5CA] mb-2" />
+              <span class="font-bold text-[#041B3B] dark:text-white block">USA Headquarters</span>
+              <span>Kingsville, Texas 78363</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+</Layout>

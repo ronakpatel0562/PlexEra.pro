@@ -28,6 +28,23 @@ To avoid mixed/duplicated information across markdown files, maintain strict sep
 
 ## 🪵 Session & Progress Log
 
+### Session: 2026-09-23 (Dark Mode Toggle, White Logo Switch & Legal/Compliance Suite)
+- **Agent/Dev**: Antigravity AI Agent
+- **Key Actions**:
+  - Activated dark mode toggle master switch (`ENABLE_DARK_MODE = true`) across [`Layout.astro`](file:///c:/Users/ADMIN/Downloads/PlexEra.pro-main/PlexEra.pro-main/src/layouts/Layout.astro) and [`Navbar.astro`](file:///c:/Users/ADMIN/Downloads/PlexEra.pro-main/PlexEra.pro-main/src/components/Navbar.astro).
+  - Configured navbar brand logo to display `/logos/logo-white-full.png` in dark mode while preserving `/logos/logo-full.png` in light mode with explicit visibility utilities in [`global.css`](file:///c:/Users/ADMIN/Downloads/PlexEra.pro-main/PlexEra.pro-main/src/styles/global.css).
+  - Resolved Windows PowerShell script execution policy and PATH sync for Node.js (`v24.21.0`) and npm (`v11.19.0`).
+  - Created three dedicated, content-rich legal and governance pages:
+    - [`/privacy`](file:///c:/Users/ADMIN/Downloads/PlexEra.pro-main/PlexEra.pro-main/src/pages/privacy.astro): Candidate resume privacy, zero monetization covenant, explicit consent policies, GDPR/CCPA rights, and Kingsville HQ contact channels.
+    - [`/terms`](file:///c:/Users/ADMIN/Downloads/PlexEra.pro-main/PlexEra.pro-main/src/pages/terms.astro): Dual candidate and enterprise agreements, service scopes (ATS revamp, mock labs, staffing SOWs), IP ownership, fee structures, and Texas jurisdiction clauses.
+    - [`/security`](file:///c:/Users/ADMIN/Downloads/PlexEra.pro-main/PlexEra.pro-main/src/pages/security.astro): Multi-layered zero-trust cloud infrastructure, resume document sandboxing and sanitization, EOE compliance, bilateral NDAs, 2-hour incident response SLA, and responsible vulnerability disclosure.
+  - Added 301 redirects for long-form URLs (`/privacy-policy`, `/terms-of-service`, `/security-compliance`).
+  - Linked all three pages in [`Footer.astro`](file:///c:/Users/ADMIN/Downloads/PlexEra.pro-main/PlexEra.pro-main/src/components/Footer.astro).
+  - Added custom error pages:
+    - [`src/pages/404.astro`](file:///c:/Users/ADMIN/Downloads/PlexEra.pro-main/PlexEra.pro-main/src/pages/404.astro): Branded 404 page with high-tech badge, giant gradient visual, navigation fallbacks (Home, In-Demand Roles, Consult Booking Modal), and popular directory cards.
+    - [`src/pages/500.astro`](file:///c:/Users/ADMIN/Downloads/PlexEra.pro-main/PlexEra.pro-main/src/pages/500.astro): Branded 500 internal server error page with live subsystem health indicators, page reload action, and direct operations desk dispatch.
+  - Validated static build with `npm run build` (all 56 static pages including `/404.html` and `/500.html` compiled cleanly).
+
 ### Session: 2026-09-17 (Form Submissions Routing to contact@plexera.pro)
 - **Agent/Dev**: Antigravity AI Agent
 - **Key Actions**:

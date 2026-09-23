@@ -1,0 +1,129 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { 
+  AlertTriangle, 
+  RotateCcw, 
+  Home, 
+  Mail, 
+  ShieldCheck, 
+  CheckCircle2, 
+  Server, 
+  ArrowRight,
+  Phone
+} from 'lucide-astro';
+
+const systemStatuses = [
+  { name: "Core Staffing Pipelines", status: "Operational", healthy: true },
+  { name: "Candidate Resume Vault", status: "Secured & Active", healthy: true },
+  { name: "Advisory Booking Mailer", status: "Operational", healthy: true }
+];
+---
+
+<Layout 
+  title="500: Internal Server Error | PlexEra — Engineering Support"
+  description="An unexpected server error occurred. Our engineering operations team has been notified. Return to PlexEra or reach our team directly."
+>
+  <section class="min-h-[80vh] flex items-center justify-center py-16 sm:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <!-- Ambient Background Glows -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 sm:w-[600px] h-96 sm:h-[600px] bg-gradient-to-tr from-amber-500/15 via-[#20C5CA]/10 to-transparent rounded-full blur-3xl pointer-events-none -z-10"></div>
+    <div class="absolute bottom-10 left-10 w-72 h-72 bg-[#041B3B]/5 dark:bg-amber-500/5 rounded-full blur-2xl pointer-events-none -z-10"></div>
+
+    <div class="max-w-3xl mx-auto w-full text-center">
+      
+      <!-- Eyebrow Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 dark:bg-amber-500/15 border border-amber-500/30 text-amber-700 dark:text-amber-400 text-xs font-bold mb-6 tracking-wide">
+        <AlertTriangle class="w-4 h-4 text-amber-600 dark:text-amber-400" />
+        <span>ERROR 500 — SYSTEM ANOMALY</span>
+      </div>
+
+      <!-- Giant 500 Visual Display -->
+      <div class="relative my-2 select-none">
+        <h1 class="text-7xl sm:text-9xl lg:text-[11rem] font-black tracking-tighter text-[#041B3B]/10 dark:text-white/5 leading-none">
+          500
+        </h1>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <span class="text-5xl sm:text-7xl lg:text-8xl font-black bg-gradient-to-r from-amber-500 via-[#19A4A8] to-[#20C5CA] bg-clip-text text-transparent drop-shadow-sm">
+            500
+          </span>
+        </div>
+      </div>
+
+      <!-- Descriptive Typography -->
+      <h2 class="text-2xl sm:text-4xl font-extrabold text-[#041B3B] dark:text-white tracking-tight mt-4">
+        Engineering Operations on the Wire.
+      </h2>
+
+      <p class="mt-4 text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-xl mx-auto leading-relaxed font-medium">
+        Our servers encountered an unexpected exception while handling this request. Our technical operations center monitors this 24/7 and has recorded this event.
+      </p>
+
+      <!-- Recovery Actions -->
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+        <button 
+          onclick="window.location.reload()" 
+          class="px-6 py-3.5 text-xs sm:text-sm font-bold neon-button rounded-xl flex items-center gap-2 shadow-lg shadow-[#20C5CA]/20 transition-all hover:scale-[1.02] cursor-pointer"
+        >
+          <RotateCcw class="w-4 h-4" />
+          <span>Reload Page</span>
+        </button>
+
+        <a 
+          href="/" 
+          class="px-6 py-3.5 text-xs sm:text-sm font-bold text-[#041B3B] dark:text-white bg-white dark:bg-[#121215] hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-white/10 rounded-xl flex items-center gap-2 shadow-sm transition-all hover:border-[#20C5CA]/40 cursor-pointer"
+        >
+          <Home class="w-4 h-4 text-[#19A4A8] dark:text-[#20C5CA]" />
+          <span>Return to Homepage</span>
+        </a>
+
+        <a 
+          href="mailto:contact@plexera.pro?subject=500%20Error%20Report" 
+          class="px-6 py-3.5 text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-300 hover:text-[#041B3B] dark:hover:text-white bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 rounded-xl flex items-center gap-2 transition-colors cursor-pointer"
+        >
+          <Mail class="w-4 h-4 text-[#20C5CA]" />
+          <span>Report Incident</span>
+        </a>
+      </div>
+
+      <!-- Infrastructure Health Card -->
+      <div class="mt-12 p-6 rounded-3xl bg-white dark:bg-[#121215] border border-slate-200 dark:border-white/10 shadow-sm text-left max-w-xl mx-auto">
+        <div class="flex items-center justify-between pb-4 mb-4 border-b border-slate-100 dark:border-white/8">
+          <div class="flex items-center gap-2">
+            <Server class="w-4 h-4 text-[#20C5CA]" />
+            <span class="text-xs font-bold text-[#041B3B] dark:text-white uppercase tracking-wider">
+              Core Subsystem Health
+            </span>
+          </div>
+          <span class="inline-flex items-center gap-1.5 text-[11px] font-bold text-emerald-600 dark:text-emerald-400">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+            <span>Online</span>
+          </span>
+        </div>
+
+        <div class="space-y-3">
+          {systemStatuses.map((subsystem) => (
+            <div class="flex items-center justify-between text-xs">
+              <span class="text-slate-600 dark:text-slate-300 font-medium">{subsystem.name}</span>
+              <span class="flex items-center gap-1 text-emerald-600 dark:text-emerald-400 font-semibold">
+                <CheckCircle2 class="w-3.5 h-3.5" />
+                <span>{subsystem.status}</span>
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Urgent Assistance Contact -->
+      <div class="mt-10 flex flex-wrap items-center justify-center gap-6 text-xs text-slate-500 dark:text-slate-400">
+        <div class="flex items-center gap-1.5">
+          <Mail class="w-3.5 h-3.5 text-[#20C5CA]" />
+          <span>Direct: <a href="mailto:contact@plexera.pro" class="underline hover:text-[#041B3B] dark:hover:text-white font-medium">contact@plexera.pro</a></span>
+        </div>
+        <div class="flex items-center gap-1.5">
+          <Phone class="w-3.5 h-3.5 text-[#20C5CA]" />
+          <span>Priority Desk: <strong>+1 (800) 555-PLEX</strong></span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</Layout>

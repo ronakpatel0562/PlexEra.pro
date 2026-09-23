@@ -20,6 +20,8 @@
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 
+  html.dark,
+  :root.dark,
   .dark html {
     background-color: #030C1B;
     color: #f8fafc;
@@ -332,6 +334,8 @@
 }
 
 /* Base Body & Section Canvas in Dark Mode (Pitch Dark #09090b canvas) */
+html.dark,
+:root.dark,
 .dark html,
 .dark body {
   background-color: #09090b !important;
@@ -490,5 +494,44 @@
   background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px) !important;
 }
 
+/* Theme Toggle Icon Utilities */
+html.dark .theme-toggle-moon,
+:root.dark .theme-toggle-moon {
+  display: none !important;
+}
 
+html.dark .theme-toggle-sun,
+:root.dark .theme-toggle-sun {
+  display: block !important;
+}
 
+html:not(.dark) .theme-toggle-sun,
+:root:not(.dark) .theme-toggle-sun {
+  display: none !important;
+}
+
+html:not(.dark) .theme-toggle-moon,
+:root:not(.dark) .theme-toggle-moon {
+  display: block !important;
+}
+
+/* Nav Logo Light/Dark Utilities */
+html.dark .logo-light,
+:root.dark .logo-light {
+  display: none !important;
+}
+
+html.dark .logo-dark,
+:root.dark .logo-dark {
+  display: block !important;
+}
+
+html:not(.dark) .logo-dark,
+:root:not(.dark) .logo-dark {
+  display: none !important;
+}
+
+html:not(.dark) .logo-light,
+:root:not(.dark) .logo-light {
+  display: block !important;
+}

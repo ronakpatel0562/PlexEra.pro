@@ -5,7 +5,7 @@ interface Props {
   showThemeToggle?: boolean;
 }
 
-const { showThemeToggle = false } = Astro.props;
+const { showThemeToggle = true } = Astro.props;
 ---
 
 <header class="sticky top-0 z-40 w-full bg-white/90 dark:bg-[#09090b]/90 backdrop-blur-md border-b border-slate-200/80 dark:border-white/10 shadow-xs transition-colors duration-300">
@@ -14,10 +14,17 @@ const { showThemeToggle = false } = Astro.props;
       
       <!-- Brand Logo -->
       <a href="/" class="flex items-center gap-3 group py-1">
+        <!-- Light Mode Logo -->
         <img 
           src="/logos/logo-full.png" 
           alt="PlexEra - Where Potential Belongs" 
-          class="h-10 sm:h-11 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02] dark:brightness-110" 
+          class="h-10 sm:h-11 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02] dark:hidden block logo-light" 
+        />
+        <!-- Dark Mode Logo -->
+        <img 
+          src="/logos/logo-white-full.png" 
+          alt="PlexEra - Where Potential Belongs" 
+          class="h-10 sm:h-11 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02] dark:block hidden logo-dark" 
         />
       </a>
 
@@ -99,13 +106,15 @@ const { showThemeToggle = false } = Astro.props;
         <!-- Theme Toggle Button (Controlled via showThemeToggle prop) -->
         {showThemeToggle && (
           <button 
+            type="button"
+            id="theme-toggle"
             onclick="window.toggleTheme && window.toggleTheme()"
             aria-label="Toggle Dark Mode"
             title="Toggle Dark Mode"
             class="p-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:text-[#041B3B] dark:hover:text-white bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 transition-colors cursor-pointer"
           >
-            <Sun class="w-4 h-4 hidden dark:block text-amber-400" />
-            <Moon class="w-4 h-4 block dark:hidden text-slate-700" />
+            <Sun class="w-4 h-4 hidden dark:block text-amber-400 theme-toggle-sun" />
+            <Moon class="w-4 h-4 block dark:hidden text-slate-700 theme-toggle-moon" />
           </button>
         )}
 
@@ -123,13 +132,15 @@ const { showThemeToggle = false } = Astro.props;
         <!-- Mobile Theme Toggle Button -->
         {showThemeToggle && (
           <button 
+            type="button"
+            id="theme-toggle-mobile"
             onclick="window.toggleTheme && window.toggleTheme()"
             aria-label="Toggle Dark Mode"
             title="Toggle Dark Mode"
-            class="p-2.5 rounded-xl text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 cursor-pointer"
+            class="sm:hidden p-2.5 rounded-xl text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 cursor-pointer"
           >
-            <Sun class="w-5 h-5 hidden dark:block text-amber-400" />
-            <Moon class="w-5 h-5 block dark:hidden text-slate-700" />
+            <Sun class="w-5 h-5 hidden dark:block text-amber-400 theme-toggle-sun" />
+            <Moon class="w-5 h-5 block dark:hidden text-slate-700 theme-toggle-moon" />
           </button>
         )}
 
