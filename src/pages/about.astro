@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import LeadershipGrid from '../components/LeadershipGrid.astro';
 import { Sparkles, Target, ShieldCheck, Heart, Award, MapPin, Globe } from 'lucide-astro';
 
 const coreValues = [
@@ -17,7 +16,7 @@ const coreValues = [
   {
     icon: ShieldCheck,
     title: "Radical Transparency",
-    desc: "Clear communication, named executive leadership, and physical office groundings in North America and APAC."
+    desc: "Clear communication, verified talent alignment standards, and physical office groundings in North America and APAC."
   },
   {
     icon: Award,
@@ -28,8 +27,8 @@ const coreValues = [
 ---
 
 <Layout 
-  title="About PlexEra — Vision, Mission & Executive Leadership"
-  description="Learn about PlexEra's mission to bridge human potential with enterprise growth. Discover our leadership team and corporate headquarters in Kingsville, Texas, USA."
+  title="About PlexEra — Vision, Mission & Core Values"
+  description="Learn about PlexEra's mission to bridge human potential with enterprise growth. Discover our foundational values and corporate headquarters in Kingsville, Texas, USA."
 >
   <!-- About Hero -->
   <section class="py-20 relative overflow-hidden text-center bg-gradient-to-b from-white to-[#f8fafc]">
@@ -73,9 +72,6 @@ const coreValues = [
       })}
     </div>
   </section>
-
-  <!-- Leadership Component -->
-  <LeadershipGrid />
 
   <!-- Corporate Headquarters Showcase -->
   <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
